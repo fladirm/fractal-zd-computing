@@ -1,0 +1,39 @@
+{
+  "release_url": "https://github.com/fladirm/fractal-zd-computing/releases/tag/v1.0.0",
+  "published_at": "2026-10-25T03:40:12Z",
+  "verified_at": "2026-10-25T03:40:44.768793+00:00",
+  "assets": [
+    {
+      "name": "Paper_A_Mathematics_CS.pdf",
+      "url": "https://github.com/fladirm/fractal-zd-computing/releases/download/v1.0.0/Paper_A_Mathematics_CS.pdf",
+      "http_status": 200,
+      "bytes": 99109,
+      "sha256": "787e6fd84cc0fb41a3383c566751952dbe4c7aeb6d5054932d77860fbf741b82",
+      "matches_original": true
+    },
+    {
+      "name": "Paper_A_Mathematics_EN.pdf",
+      "url": "https://github.com/fladirm/fractal-zd-computing/releases/download/v1.0.0/Paper_A_Mathematics_EN.pdf",
+      "http_status": 200,
+      "bytes": 86068,
+      "sha256": "03647d43c6f5551a163cb24f3792dd2715198f1fca45f73cd56f5327cb886eb0",
+      "matches_original": true
+    },
+    {
+      "name": "Paper_B_Computing_CS.pdf",
+      "url": "https://github.com/fladirm/fractal-zd-computing/releases/download/v1.0.0/Paper_B_Computing_CS.pdf",
+      "http_status": 200,
+      "bytes": 106312,
+      "sha256": "11181374e12e54538ecb02c9eaf0c76a392845e857380ea3ca170a7cd591d5a8",
+      "matches_original": true
+    },
+    {
+      "name": "Paper_B_Computing_EN.pdf",
+      "url": "https://github.com/fladirm/fractal-zd-computing/releases/download/v1.0.0/Paper_B_Computing_EN.pdf",
+      "http_status": 200,
+      "bytes": 95420,
+      "sha256": "5ccc6a7f7262867e79378a4eb4c47160359fffda8ce2f2d3bfb0ad48b3e436ea",
+      "matches_original": true
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 **Autor: Vladimír Bíža (2026).**
 
-[Živé demo](https://fladirm.github.io/fractal-zd-computing/demo/) · [Web projektu](https://fladirm.github.io/fractal-zd-computing/) · [Výsledky publikace](PUBLICATION_RESULTS.md)
+[Živé demo](https://fladirm.github.io/fractal-zd-computing/demo/) · [Web projektu](https://fladirm.github.io/fractal-zd-computing/) · [Výsledky publikace](PUBLICATION_RESULTS.md) · [Release v1.0.0 se čtyřmi PDF](https://github.com/fladirm/fractal-zd-computing/releases/tag/v1.0.0)
 
 **[Spustit offline HYPERION-ZD](demo/index.html)** — stačí otevřít HTML dvojklikem. Bez serveru, instalace a cloudu.
 

@@ -7,7 +7,7 @@
 
 ## Try the demo first
 
-**[Live demo](https://fladirm.github.io/fractal-zd-computing/demo/)** · [Project website](https://fladirm.github.io/fractal-zd-computing/) · [GitHub repository](https://github.com/fladirm/fractal-zd-computing)
+**[Live demo](https://fladirm.github.io/fractal-zd-computing/demo/)** · [Project website](https://fladirm.github.io/fractal-zd-computing/) · [GitHub repository](https://github.com/fladirm/fractal-zd-computing) · [v1.0.0 — four paper PDFs](https://github.com/fladirm/fractal-zd-computing/releases/tag/v1.0.0)
 
 **[Launch HYPERION-ZD (offline, one HTML file)](demo/index.html)** · [Screenshots](assets/demo-desktop.png)
 

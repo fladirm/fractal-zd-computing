@@ -1,0 +1,118 @@
+{
+  "checked_at": "2026-10-25T03:41:12.750419+00:00",
+  "source_commit": "7c901268180e8a20e02ab0a7daa7cb7b1cf0677a",
+  "results": [
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 5797,
+      "sha256": "dec37a8a9a2ad10837e85d14a18392a7cff1efff5ed1d81a7f0e0f290bd89adc",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/demo/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 46908,
+      "sha256": "a98817ccddd07b771f5477ce3af8389496a7f81781d4b200198da4ec4cd3edcd",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/cs/Paper_A_Mathematics_CS.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 101411,
+      "sha256": "72a8c5dae045fe2bdd3e15602881a41d5b82c32f8c9326dc3f27dfb2b1cf2cc7",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/cs/Paper_A_Mathematics_CS.md",
+      "status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 20468,
+      "sha256": "42deabd0a428605dbc2ec7faf16a0f2f4dccbca98787d85d1ce4b4d29e8080cf",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/cs/Paper_A_Mathematics_CS.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 99109,
+      "sha256": "787e6fd84cc0fb41a3383c566751952dbe4c7aeb6d5054932d77860fbf741b82",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/cs/Paper_B_Computing_CS.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 39538,
+      "sha256": "e93c4492e45bdd457380928bbb2046da10e55f6e4c4fd2a7b856881ed7729b7f",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/cs/Paper_B_Computing_CS.md",
+      "status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 14554,
+      "sha256": "0c638f935f334146c43b39e96c548a27055408a14d50e796c6e2cdf70ad940c1",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/cs/Paper_B_Computing_CS.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 106312,
+      "sha256": "11181374e12e54538ecb02c9eaf0c76a392845e857380ea3ca170a7cd591d5a8",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/en/Paper_A_Mathematics_EN.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 51852,
+      "sha256": "8f527921ee67cd07c33dfc5f32d3bc762db39223a5f45d0824cc168bd54bc879",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/en/Paper_A_Mathematics_EN.md",
+      "status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 16176,
+      "sha256": "bd52930ec0e44b93e6c80647dea10c51129064b2a276905196053257fef659fe",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/en/Paper_A_Mathematics_EN.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 86068,
+      "sha256": "03647d43c6f5551a163cb24f3792dd2715198f1fca45f73cd56f5327cb886eb0",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/en/Paper_B_Computing_EN.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 28727,
+      "sha256": "75683deee2ac9ef50a6791473c808c741abd756f737ad08959c38b9cabf2cdc6",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/en/Paper_B_Computing_EN.md",
+      "status": 200,
+      "content_type": "text/markdown; charset=utf-8",
+      "bytes": 12720,
+      "sha256": "7061878aec2ba066b3baa0ab81e5a2f81ba5dcd687b29c15fe98f49ee4cd0b80",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/papers/en/Paper_B_Computing_EN.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "bytes": 95420,
+      "sha256": "5ccc6a7f7262867e79378a4eb4c47160359fffda8ce2f2d3bfb0ad48b3e436ea",
+      "matches_source": true
+    }
+  ]
+}
