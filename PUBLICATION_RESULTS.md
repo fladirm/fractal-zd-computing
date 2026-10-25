@@ -1,8 +1,10 @@
 # Publication results
 
+**English** · [Čeština](PUBLICATION_RESULTS_CS.md)
+
 Author: **Vladimír Bíža**. Verification timestamp: **2026-10-25T03:42:43+00:00**.
 
-**GitHub publication is complete. English LinkedIn publication is blocked on authentication. The Czech follow-up is a complete repository draft.**
+**GitHub publication is complete. The author reports having published on LinkedIn manually and requested no further LinkedIn changes. Its permalink has not been supplied or independently verified.**
 
 | Deliverable | Status | Verified actual URL |
 |---|---|---|
@@ -11,7 +13,7 @@ Author: **Vladimír Bíža**. Verification timestamp: **2026-10-25T03:42:43+00:0
 | GitHub release v1.0.0 | PUBLISHED; four original paper PDFs | https://github.com/fladirm/fractal-zd-computing/releases/tag/v1.0.0 |
 | GitHub Pages landing | LIVE; HTTP 200 | https://fladirm.github.io/fractal-zd-computing/ |
 | Interactive demo | LIVE; 24 interaction checks passed | https://fladirm.github.io/fractal-zd-computing/demo/ |
-| English LinkedIn post | **NOT PUBLISHED** | No public post permalink exists; authentication blocked |
+| English LinkedIn post | AUTHOR-REPORTED PUBLISHED; not independently verified | Permalink not supplied; no further action requested |
 | English prepared text | READY | https://github.com/fladirm/fractal-zd-computing/blob/main/linkedin/POST_EN_READY.txt |
 | English document | READY | https://github.com/fladirm/fractal-zd-computing/blob/main/linkedin/LINKEDIN_CAROUSEL_EN.pdf |
 | Czech follow-up draft | READY DRAFT / **NOT PUBLISHED** | https://github.com/fladirm/fractal-zd-computing/blob/main/linkedin/POST_CS_READY.txt |
@@ -43,12 +45,24 @@ Release tag `v1.0.0` points to commit **7c901268180e8a20e02ab0a7daa7cb7b1cf0677a
 - No secrets, login e-mail, tokens, cookies, authentication URLs or private profile data were staged. Browser logs, local build output and transient test artifacts are ignored. `SHA256SUMS.txt` covers the published tracked files except itself.
 - License: **RIGHTS RESERVED**. No open-source or unrestricted-reuse license was granted. Author: **Vladimír Bíža**.
 
-## LinkedIn blocker and continuation
+## EN/CZ interface and documentation update
+
+The single-file offline demo and Pages landing now include an **EN / CZ** switch, with explicit language links:
+
+- English demo: https://fladirm.github.io/fractal-zd-computing/demo/?lang=en
+- Czech demo: https://fladirm.github.io/fractal-zd-computing/demo/?lang=cs
+- English landing: https://fladirm.github.io/fractal-zd-computing/?lang=en
+- Czech landing: https://fladirm.github.io/fractal-zd-computing/?lang=cs
+- Bilingual reader documentation and screenshots: [language index](LANGUAGES.md).
+
+All four scenes, controls, calculations, explanations, status messages and canvas labels are available in both languages. Language changes preserve inputs, the current scene, the selected probe and the recovery outcome. Both languages remain embedded in the offline file, with no external dependency. **62 offline browser checks passed**, with no JavaScript errors or network resources; see [bilingual checks](release/bilingual-demo-checks.json). The Python oracle, educational benchmark and five Rust tests also passed after the interface changes.
+
+Bilingual deployment verification: **PENDING**. The existing `v1.0.0` tag and its original four PDFs remain unchanged; the interface update is published from `main`.
+
+## LinkedIn status reported by the author
 
 Confirmed intended personal profile: https://www.linkedin.com/in/vladim%C3%ADr-b%C3%AD%C5%BEa-84bb11102/
 
-The browser was not authenticated. The requested Google sign-in route was opened, but Google rejected that browser/application with an insufficient-security message. Manual sign-in in a supported browser and access to the authenticated session were requested. The available session still shows the login/rejection pages. No authenticated author identity could be verified, no post was submitted, and there is **no English LinkedIn post permalink** to report.
+Automated publication was not completed. The author subsequently reported that the post was already published manually and explicitly requested leaving LinkedIn as it is. No further LinkedIn access, edits or publication attempts are part of this update. The public post permalink has not been provided, so the reported publication is not independently verified and no URL is invented here.
 
-The English text and single PDF are ready in [publication notes](linkedin/PUBLISHING_NOTES.md). Use the exact document title **533 Million Zero-Product Relations — Fractal ZD Computing**. After authentication, verify the exact personal profile, publish with **Anyone** visibility, then capture and verify the resulting permalink here.
-
-The Czech companion is a ready-to-paste repository draft for a later document publication, with real source/demo links and its own PDF. It is **not** an internal LinkedIn draft and **not** a scheduled or published post. No near-duplicate Czech post was sent immediately after the English preparation.
+The Czech companion remains a repository draft; Codex did not publish or schedule it. Prepared files and bilingual manual instructions are retained for reference.

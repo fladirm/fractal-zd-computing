@@ -1,4 +1,4 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>HYPERION · ZD — Algebraický informační les · interaktivní výpočty</title><style>:root{color-scheme:dark;--bg:#060913;--panel:#0c1220;--panel2:#0e192a;--edge:#22344b;--fg:#e9f3ff;--mut:#93a5bb;--cyan:#54f5e1;--purple:#ba9dff;--gold:#ffcc71;--coral:#ff728c;--blue:#72adff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>HYPERION · ZD — Algebraický informační les · interaktivní výpočty</title><style>:root{color-scheme:dark;--bg:#060913;--panel:#0c1220;--panel2:#0e192a;--edge:#22344b;--fg:#e9f3ff;--mut:#93a5bb;--cyan:#54f5e1;--purple:#ba9dff;--gold:#ffcc71;--coral:#ff728c;--blue:#72adff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 40% -10%,#15304b 0,transparent 46%),linear-gradient(130deg,#050812,#0a101d 70%,#0b0a1c);min-height:100vh;color:var(--fg)}button,input{font:inherit}button{cursor:pointer}.wrap{max-width:1720px;margin:auto;padding:22px 30px 50px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:20px}.mark{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border:1px solid #53e6d78c;border-radius:12px;display:grid;place-items:center;background:radial-gradient(circle,#3dffd43a,transparent);font-size:22px;color:var(--cyan);box-shadow:0 0 27px #2ce8d51a}.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-weight:750;font-size:10px;color:#83bdcf}.brand{font-weight:870;letter-spacing:.04em;font-size:21px}.brand small{color:#75eee2}.topright{display:flex;gap:12px;align-items:center;color:#a2b8cc;font-size:12px}.live{border:1px solid #52d6a559;background:#1c583a36;color:#8dffd3;border-radius:30px;padding:9px 13px;font-size:10px;letter-spacing:.13em;font-weight:820}.outlineBtn{border:1px solid #32475a;border-radius:9px;background:#152032;color:#c7d8e8;padding:10px 14px}
 .hero{display:flex;justify-content:space-between;gap:20px;align-items:end;margin:13px 0 22px}.hero h1{font-size:clamp(28px,3.2vw,54px);letter-spacing:-.055em;line-height:1.05;margin:5px 0 10px;max-width:950px}.hero h1 em{font-style:normal;color:var(--cyan);text-shadow:0 0 28px #35edce32}.hero p{color:#a7b8ca;line-height:1.6;max-width:880px;font-size:15px;margin:0}.hero-figure{display:flex;flex-direction:column;align-items:end;white-space:nowrap;gap:2px}.hero-figure strong{font-size:clamp(22px,3vw,38px);font-weight:850;letter-spacing:-.055em;font-variant-numeric:tabular-nums}.hero-figure span{color:#99c5c9;font-size:11px;text-transform:uppercase;letter-spacing:.15em}
 nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.tab{display:flex;align-items:center;gap:11px;padding:14px 16px;border-radius:12px;background:#0b1522;border:1px solid #213248;color:#bdcce0;min-height:60px;flex:1 1 180px;text-align:left;transition:all .2s}.tab:hover{border-color:#4c8c9b}.tab.active{border-color:#5decd0a8;color:#eefefd;background:linear-gradient(140deg,#173546,#10202f);box-shadow:inset 0 -2px #48eec8}.tab b{font-size:12px}.tab small{display:block;color:#7e93ab;font-size:10px;margin-top:3px}.tagNo{font-family:monospace;font-weight:bold;border:1px solid #496577;border-radius:7px;color:var(--cyan);padding:7px}
@@ -6,9 +6,10 @@ nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.tab{display:flex;a
 .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:13px}.metric{border:1px solid #22384e;border-radius:14px;background:#0b1524;padding:15px 17px}.metric .mname{color:#91a8bf;font-size:10px;letter-spacing:.08em;text-transform:uppercase;line-height:1.4}.metric strong{display:block;font-size:clamp(17px,2vw,28px);letter-spacing:-.04em;margin:8px 0 4px;font-variant-numeric:tabular-nums}.metric span{color:#7f9eb2;font-size:10px;line-height:1.3}.below{display:grid;grid-template-columns:1.1fr 1fr;gap:13px;margin-top:14px}.info{border:1px solid #24384d;border-radius:14px;background:#0c1422;padding:24px}.info h3{font-size:18px;margin:0 0 12px}.info p{font-size:13px;line-height:1.75;color:#acbfd0;margin:0 0 12px}.info p:last-child{margin-bottom:0}.info strong{color:#e9faff}.info code{color:#8cf6e0;font-size:11px;overflow-wrap:anywhere}.flowsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:12px}.flowstep{border:1px solid #273f52;background:#0d1a29;padding:14px;border-radius:10px}.flowstep strong{display:block;color:#c6f5ef;font-size:11px}.flowstep small{font-size:11px;color:#8eabc1;line-height:1.5;display:block;margin-top:7px}.bottom{font-size:11px;color:#758ea4;text-align:center;padding:30px 10px 4px}.bottom a{color:#7bded8}.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.legend span{color:#98b9c6;border:1px solid #2a4658;border-radius:8px;padding:6px 8px;font-size:10px}.legend .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:middle}.mini-compare{width:100%;border-collapse:collapse;margin-top:16px;font-size:11px}.mini-compare td,.mini-compare th{border-bottom:1px solid #2b4152;padding:11px 6px;text-align:left}.mini-compare th{color:#8ac5ca}.mini-compare td{color:#afc8d7}.mini-compare td b{color:#ccf8eb}.mini-compare td:nth-child(1){width:35%}.kicker{color:#66f3d4;font-size:10px;text-transform:uppercase;font-weight:800;letter-spacing:.13em}.chipbar{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.chip{border-radius:8px;border:1px solid #31516b;padding:8px 10px;background:#132338;color:#afd0df;font-size:11px}.chip.active{border-color:#53e9d0;background:#1e514a;color:#d6fffa}.formula{padding:11px;background:#060f19;border:1px solid #294459;border-radius:10px;color:#79e7db;font-size:11px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}.nolayout{position:absolute;left:-99999px}
 @media(max-width:1050px){.dashboard,.below{grid-template-columns:1fr}.stage,.panel{min-height:430px}.stage canvas{height:100%}.panel{min-height:0}.metrics{grid-template-columns:repeat(2,1fr)}.hero-figure{display:none}}
 @media(max-width:650px){.wrap{padding:14px}.top{align-items:flex-start}.topright .smallhide{display:none}.hero h1{font-size:30px}.hero p{font-size:13px}.tab{flex:1 1 calc(50% - 8px);padding:10px;min-height:60px}.tab b{font-size:11px}.tab small{font-size:9px}.stage canvas{height:100%}.stage{min-height:330px}.hud{padding:13px}.stagecount{font-size:22px}.panel{padding:17px}.flowsteps{grid-template-columns:1fr}.metric{padding:12px}.metric strong{font-size:20px}}
+.languages{display:flex;gap:3px;flex-shrink:0;border:1px solid #36546d;border-radius:9px;padding:3px}.languages button{border:0;border-radius:6px;padding:7px 9px;background:transparent;color:#bbd5df;font-weight:750;font-size:12px}.languages button[aria-pressed=true]{background:#63f2d4;color:#08212a}.languages button:focus-visible{outline:2px solid #fff;outline-offset:2px}@media(max-width:650px){.top{flex-wrap:wrap;gap:10px}.topright{width:100%;justify-content:space-between}.topright .live{font-size:9px}.mark{min-width:0}}
 </style></head><body>
 <div class="wrap">
- <header class="top"><div class="mark"><div class="logo">◈</div><div><div class="eyebrow">FRACTAL ZERO-DIVISOR COMPUTING · INDEPENDENT SOFTWARE RESEARCH</div><div class="brand">HYPERION <small>/ ZD</small></div></div></div><div class="topright"><span class="live">● LIVE ALGEBRA · OFFLINE</span><button class="outlineBtn smallhide" id="resetAll">↻ Reset ukázky</button></div></header>
+ <header class="top"><div class="mark"><div class="logo">◈</div><div><div class="eyebrow">FRACTAL ZERO-DIVISOR COMPUTING · INDEPENDENT SOFTWARE RESEARCH</div><div class="brand">HYPERION <small>/ ZD</small></div></div></div><div class="topright"><div class="languages" role="group" aria-label="Language / Jazyk"><button type="button" data-lang="en" lang="en" aria-label="Switch to English" aria-pressed="true">EN</button><button type="button" data-lang="cs" lang="cs" aria-label="Přepnout do češtiny" aria-pressed="false">CZ</button></div><span class="live">● LIVE ALGEBRA · OFFLINE</span><button class="outlineBtn smallhide" id="resetAll">↻ Reset ukázky</button></div></header>
  <section class="hero"><div><div class="kicker">Čtyři úlohy. Jediný matematický motor. Bez trénování a bez uloženého grafu.</div><h1>Co když miliardy vztahů <em>nemusíš uložit?</em></h1><p>Neprohlížíš si obrázek grafu. Opravdu měníš vstupy, spouštíš výpočty a vidíš výsledky odvozené z Cayley–Dicksonovy algebry. Každý scénář má vysvětlení pro člověka i kódovou interpretaci pro vývojáře.</p></div><div class="hero-figure"><strong id="heroCount">533 208 060</strong><span>ZD vazeb v K2048</span></div></section>
  <nav class="tabs" aria-label="Scénáře">
   <button data-scene="atlas" class="tab active"><span class="tagNo">01</span><span><b>NEVIDITELNÁ SÍŤ</b><small>533 milionů vazeb · bez grafu</small></span></button>
@@ -28,11 +29,282 @@ nav.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}.tab{display:flex;a
  <section class="info"><div class="kicker">PRO VÝVOJÁŘE · REÁLNÉ SROVNÁNÍ</div><h3 id="compareTitle">Co je nové — a co už dnešní software umí?</h3><p id="compareIntro">GraphBLAS a cuSPARSE umějí efektivně zpracovávat explicitní řídké matice. Implicitní operátory umějí totéž bez ukládání hran, pokud znají generující pravidlo. ZD dodává konkrétní pravidlo s dalšími exaktními informačními vrstvami.</p><table class="mini-compare"><thead><tr><th>Metoda</th><th>Co ukládá</th><th>Co sama zná</th></tr></thead><tbody id="compareBody"></tbody></table><div class="legend"><span><i class="dot" style="background:var(--cyan)"></i> ZD / nula</span><span><i class="dot" style="background:var(--gold)"></i> non-ZD</span><span><i class="dot" style="background:var(--purple)"></i> asociátor</span><span><i class="dot" style="background:var(--coral)"></i> nový vznik</span></div></section></div>
  <footer class="bottom">HYPERION / ZD · offline, bez serveru a bez závislostí · signed-CD oracle · přesné algebraické identity · vizualizace ilustrační, výpočty živé · <span id="testFlag">interní testy při načtení…</span></footer>
 </div><script>'use strict';
+// Both languages are embedded so file:// works without network access.
+const EN_TEXT = {
+  "ZD / anihilace": "ZD / annihilation",
+  "non-ZD / součin": "non-ZD / product",
+  "komutátor": "commutator",
+  "asociátor": "associator",
+  "alternátor": "alternator",
+  "SCÉNÁŘ 01 · ALGEBRAICKÁ MAPA BEZ MAPY": "SCENE 01 · AN ALGEBRAIC ADDRESS ORACLE",
+  "Zadej dva body. ZD oracle rozhodne jejich vztah.": "Choose two addresses. The ZD oracle determines their relation.",
+  "Uvažuj síť, jejíž spojení nejsou v databázi. Jejich existence je vypočitatelná z číselných adres. Změň adresy a sleduj exaktní součin.": "Consider a network whose connections can be calculated from numerical addresses. Change the addresses and inspect the exact product.",
+  "ZJISTIT VZTAH": "CHECK RELATION",
+  "JINÉ ADRESY": "NEW ADDRESSES",
+  "ZMĚŘIT 3 000 DOTAZŮ": "TIME 3,000 QUERIES",
+  "Síť, která je ukrytá v pravidle, nikoli v tabulce.": "A network defined by an algebraic rule.",
+  "Kdybys měl popsat každý vztah zvlášť, vznikne obří seznam. ZD genealogie poskytuje algoritmus, který konkrétní vztah vypočte z adres za několik zdvojení.": "Listing every relation would require a large table. ZD genealogy supplies an algorithm that computes a selected relation from its addresses through successive doubling steps.",
+  "Počet 533 milionů označuje ZD hrany vybraného dvoučlenného assessor atlasu K2048; na plátně vidíš jen 7 přesných kořenových χ buněk K16. Vyšší vrstvy zobrazují pravdivý výřez 7 χ tříd, vždy 75 assessorů; nejde o celý graf.": "The 533 million count refers to the selected two-term assessor atlas at K2048. At K16 the canvas shows seven exact root χ cells. Higher levels show sampled relations in seven χ classes, with 75 displayed assessors per class, rather than the entire atlas.",
+  "1 · ZADÁŠ": "1 · ENTER",
+  "Adresy a,c a společné XOR χ": "Addresses a,c and a shared XOR color χ",
+  "2 · PROVEDEŠ": "2 · COMPUTE",
+  "Čtyřbodový test znamének ε": "The four-address sign predicate ε",
+  "3 · VÍŠ": "3 · INSPECT",
+  "Nula / nenula, znamení, původ": "Zero / nonzero, sign and provenance",
+  "Hrany nebo přístup k matici": "Edges or access to a matrix",
+  "Velmi efektivní dotaz, pokud je graf zadaný": "Efficient queries when the graph is provided",
+  "Implicitní algoritmus": "Implicit algorithm",
+  "Generující pravidlo": "Generating rule",
+  "Stejná paměťová výhoda jako ZD při známém pravidle": "The same storage advantage when a generating rule is known",
+  "Adresy + signed-CD rekurze": "Addresses + signed-CD recursion",
+  "Generuje speciální vztahy, znaménka a vrstvy bez tabulky": "Generates these specific relations, signs and levels without an edge table",
+  "SCÉNÁŘ 02 · CHAOS MONKEY, ALE POČÍTANÝ": "SCENE 02 · COMPUTED FAILURE AND RECOVERY",
+  "Vypni 70 % uzlů. Uvidíš, co lze skutečně obnovit.": "Disable 70% of the nodes. Find out what can be recovered.",
+  "32 úložišť drží 8 informačních symbolů s redundantním kódováním. Myší nastav podíl výpadku a proveď rekonstrukci. Matematika neobnoví informaci, která nikde nezůstala.": "32 storage nodes hold a redundant encoding of eight source symbols. Set the failure percentage and run reconstruction. Recovery requires enough surviving information.",
+  "ROZBÍT CLUSTER": "FAIL NODES",
+  "REKONSTRUOVAT": "RECONSTRUCT",
+  "NOVÁ DATA": "NEW DATA",
+  "Když spadne server, nikdo nevykouzlí chybějící bity.": "Recovery depends on the information that survives.",
+  "Na obrazovce je 32 disků. Každý obsahuje jeden matematicky zakódovaný pohled na 8 původních čísel. Po výpadku musí přeživší disky obsahovat dost nezávislých informací.": "The 32 disks each store one encoded observation of eight source numbers. After a failure, the surviving disks must contain enough independent information.",
+  "Ukážeme reálnou modulární interpolaci (bez zaokrouhlování). To je klasické erasure coding, nikoliv nový ZD bezpečnostní protokol. ZD zde určuje adresní topologii; obnova ukazuje hranici následného P5/rank principu.": "This runs exact modular interpolation: conventional erasure coding. ZD supplies an address topology; the recovery example illustrates the information-rank requirement. It is not a new security protocol.",
+  "1 · ULOŽÍŠ": "1 · STORE",
+  "8 hodnot do 32 kódovaných uzlů": "Eight values encoded across 32 nodes",
+  "2 · ZNIČÍŠ": "2 · REMOVE",
+  "70 % serverů najednou": "70% of the storage nodes at once",
+  "3 · ZMĚŘÍŠ": "3 · MEASURE",
+  "Zbylý rank a obnovená data": "Surviving rank and reconstructed data",
+  "Replikace 3×": "3× replication",
+  "Tři kopie celého záznamu": "Three copies of the entire record",
+  "Při velkém náhodném výpadku mohou zmizet všechny kopie": "A large random failure can remove every copy",
+  "32 symbolů pro 8 datových": "32 encoded symbols for eight source symbols",
+  "Stejně přesná obnova za stejných datových podmínek": "The same exact recovery under the same data conditions",
+  "Algebraické adresy + MDS redundance": "Algebraic addresses + MDS redundancy",
+  "Topologické pravidlo; obnova stále vyžaduje dost dat": "A topology rule; recovery still requires enough data",
+  "SCÉNÁŘ 03 · ZPRÁVA UVNITŘ ZD NULY": "SCENE 03 · HIGHER-ORDER INFORMATION",
+  "Stejná dvojice. Přidáš třetí operaci a objevíš skrytou informaci.": "Keep the same pair. A third input reveals more information.",
+  "Dva nenulové prvky se násobí přesně na nulu. Když však mezi ně vložíš třetí prvek, rozhoduje pořadí závorek. Vyber dva klíče a sleduj, proč se výsledky liší.": "Two nonzero elements multiply to exactly zero. With a third element, parenthesization matters. Switch between the two contexts and compare the results.",
+  "SPOČÍTAT ASOCIÁTOR": "COMPUTE ASSOCIATOR",
+  "PŘEPNOUT KONTEXT": "SWITCH CONTEXT",
+  "Nula nemusí znamenat, že neexistuje další informace.": "A zero product can coexist with higher-order information.",
+  "Když vynásobíš X a Y, dostaneš přesně nulu. Běžný párový test tím končí. Jenže tři operace mohou zachovat rozdíl mezi dvěma závorkováními.": "Multiplying X and Y gives exactly zero. That completes a pairwise test. A three-input calculation can also distinguish two parenthesizations.",
+  "Pro e₁ je rozdíl −4e₇, pro e₈ je nula. Pro binární zero/nonzero graf to není dostupná informace. Vyšší tensor, hypergraf nebo program schopný počítat asociátor ji naopak uchovat umí.": "The difference is −4e₇ for e₁ and zero for e₈. A binary zero/nonzero adjacency omits this information. A higher-order tensor, hypergraph or associator-aware program can retain it.",
+  "1 · OVĚŘÍŠ": "1 · VERIFY",
+  "2 · ZMĚNÍŠ": "2 · SWITCH",
+  "3 · ZÍSKÁŠ": "3 · OBTAIN",
+  "−4e₇ ↔ 0, exaktně": "−4e₇ ↔ 0, exactly",
+  "Binární ZD graf": "Binary ZD graph",
+  "Pouze hrana „součin nula“": "Only the zero-product edge label",
+  "Ztratil trojné znaménko a asociátor": "Omits the triple sign information and associator",
+  "Trojný vztah je uložen či naučen": "The three-input relation is stored or learned",
+  "Umí asociátor reprezentovat, musí znát jeho hodnoty": "Can represent the associator when its values are supplied",
+  "Pravidla násobení + adresy": "Multiplication rules + addresses",
+  "Trojný výsledek přesně vypočítá bez trénování": "Computes the exact three-input result without training",
+  "SCÉNÁŘ 04 · ŽIVÉ ZROZENÍ NOVÝCH VAZEB": "SCENE 04 · THE BIRTH OF NEW RELATIONS",
+  "Zdvojnásob velikost. Staré vztahy přežijí, nové se narodí.": "Double the dimension. Old relations lift and new ones appear.",
+  "Při přechodu Kₙ → K₂ₙ se každá stará ZD vazba zdědí ve čtyřech kopiích. Zbytek jsou skutečně nové vazby. Podívej se, jak výrazně přibývají.": "At Kₙ → K₂ₙ, each old ZD edge lifts to four inherited edges. The remainder are newborn edges. Explore their exact counts.",
+  "ZDVOJNÁSOBIT K": "DOUBLE K",
+  "OD K16 ZNOVU": "RESTART AT K16",
+  "Tohle není zoom do většího obrázku. Je to vznik nových pravidelných vztahů.": "Higher levels contain newly qualified algebraic relations.",
+  "Větší algebra obsahuje menší jako podalgebru. Její staré vazby lze jednoznačně zdědit. Ale vyšší dimenze má také nové ZD hrany, které menší struktura neobsahovala.": "The larger algebra contains the smaller one as a subalgebra. Its old relations have defined lifts. The higher dimension also contains ZD edges absent from the smaller structure.",
+  "V grafu, který jen kopíruješ, se nové vazby neobjeví bez dalšího zadání. Zde přesné kombinatorické formule určují jejich počty a signed-CD oracle jednotlivé vztahy rozhodne.": "Copying a graph alone supplies no additional relations. Here exact combinatorial formulas determine the counts, and the signed-CD oracle classifies individual address tuples.",
+  "1 · VLOŽÍŠ": "1 · EMBED",
+  "Stávající Kₙ do K₂ₙ": "The existing Kₙ into K₂ₙ",
+  "2 · ZDĚDÍŠ": "2 · INHERIT",
+  "Čtyři kopie každé staré vazby": "Four lifts of every old edge",
+  "3 · OBJEVÍŠ": "3 · CLASSIFY",
+  "Nové hrany podle E(2N)−4E(N)": "New edges counted by E(2N)−4E(N)",
+  "Obecné dynamické grafy": "General dynamic graphs",
+  "Nové uzly, záznamy, pravidla": "New nodes, records and rules",
+  "Libovolné nové hrany musíte dodat nebo generovat": "Arbitrary new edges must be supplied or generated",
+  "Fraktální graf / Kronecker": "Fractal / Kronecker graph",
+  "Rekurzivní transformační pravidlo": "Recursive transformation rule",
+  "Také dovede deterministicky generovat nové hrany": "Can also generate new edges deterministically",
+  "ZD genealogie": "ZD genealogy",
+  "Signed-CD + dědičné vazby": "Signed-CD + inherited relations",
+  "Exaktní algebraický zrod + nulové součiny + další kanály": "Exact algebraic birth, zero products and other channels",
+  "PŘESNÁ NULA": "EXACT ZERO",
+  "NENULOVÝ SOUČIN": "NONZERO PRODUCT",
+  "VYBER RŮZNÉ INDEXY": "CHOOSE DISTINCT INDICES",
+  "ALGEBRAICKÁ ADRESACE K": "ALGEBRAIC ADDRESSING K",
+  "Žádná tabulka. Jen adresy a matematika.": "Compute relations directly from addresses.",
+  "ZD HRANY V K": "ZD EDGES IN K",
+  "celkový exaktní cenzus, nikoliv počet nakreslených čar": "exact atlas census, not the number of drawn lines",
+  "První assessor": "First assessor",
+  "Druhý assessor": "Second assessor",
+  "+1 · anihilace možná": "+1 · annihilation possible",
+  "−1 · nikoliv": "−1 · no annihilation",
+  "Sonda": "Probe",
+  "Konkrétní výstup": "Computed result",
+  "ZD / ano": "ZD / yes",
+  "ZD / ne": "ZD / no",
+  "non-ZD / ne": "non-ZD / no",
+  "non-ZD / ano": "non-ZD / yes",
+  "Obě adresy musí být různé.": "The two addresses must be distinct.",
+  "CO SE PRÁVĚ STALO?": "WHAT WAS COMPUTED?",
+  "Generace": "Generation",
+  "ZD hrany": "ZD edges",
+  "přesný úplný počet": "exact atlas total",
+  "výpočet epsilon po zdvojeních": "epsilon computation through doubling",
+  "Výsledek": "Result",
+  "NULA": "ZERO",
+  "W test + skutečný součin": "W predicate + actual product",
+  "REÁLNÉ MAZÁNÍ SYMBOLŮ · GF(257)": "ACTUAL SYMBOL LOSS · GF(257)",
+  "Ztráta dat není otázka víry, ale ranku.": "Recovery depends on surviving rank.",
+  "ZBYLÉ NEZÁVISLÉ VZORKY": "SURVIVING INDEPENDENT SAMPLES",
+  "OBNOVENO BEZE ZTRÁTY": "RECOVERED EXACTLY",
+  "NEDOSTATEK INFORMACÍ": "INSUFFICIENT INFORMATION",
+  "klikni „Rekonstruovat“": "click “Reconstruct”",
+  "Zničené disky": "Failed disks",
+  "Přeživší disky": "Surviving disks",
+  "Rank pozorování": "Observation rank",
+  "8/8 symbolů identických": "8/8 symbols identical",
+  "rekonstrukce nemožná": "recovery impossible",
+  "čekají na rekonstrukci": "awaiting reconstruction",
+  "PŘESNÁ OBNOVA: 8 původních symbolů se shoduje bit po bitu.": "EXACT RECOVERY: all eight source symbols match bit for bit.",
+  "NEDOSTATEK RANKU: informace nelze dopočítat bez dalších dat.": "INSUFFICIENT RANK: recovery requires additional information.",
+  "Simulovaný výpadek hotov. Zkus rekonstrukci.": "Failure simulated. Try reconstruction.",
+  "CO ZNAMENÁ VÝSLEDEK?": "WHAT DOES THE RESULT MEAN?",
+  "Rekonstrukce je přesná, protože přežilo alespoň osm nezávislých kódovaných vzorků. Stejně by fungoval vhodný současný MDS/RS systém; ZD zde není zázračný náhradník konsenzu.": "Recovery is exact because at least eight independent encoded samples survived. An appropriate MDS/RS code has the same behavior. ZD does not replace consensus.",
+  "Zbylo méně než osm nezávislých pozorování. Žádná pseudoinverze nezíská chybějící informaci jen z geometrie.": "Fewer than eight independent observations remain. A pseudoinverse cannot reconstruct missing information from geometry alone.",
+  "Zkus 70 % a 85 %: u prvního zůstane dost dat, u druhého už ne. Není to připravená iluze; probíhá skutečné řešení 8×8 rovnic nad GF(257).": "Try 70% and 85%: the first leaves enough data, the second does not. The demo solves an actual 8×8 system over GF(257).",
+  "Ztráta": "Loss",
+  "skutečně simulovaná": "actually simulated",
+  "Pozorovací rank": "Observation rank",
+  "plný rank = obnovitelnost": "full rank permits recovery",
+  "Rekonstrukce": "Reconstruction",
+  "EXAKTNÍ": "EXACT",
+  "NELZE": "IMPOSSIBLE",
+  "PŘIPRAVENA": "READY",
+  "GF(257), 8×8 eliminace": "GF(257), 8×8 elimination",
+  "Výpočetní čas": "Computation time",
+  "jen lokální matematika": "local computation only",
+  "NEASOCIATIVNÍ INFORMACE · K16": "NONASSOCIATIVE INFORMATION · K16",
+  "Dvě stejné nuly. Třetí operace rozhodne.": "The same zero product. A different third context.",
+  "ASOCIÁTOR [X,Z,Y]": "ASSOCIATOR [X,Z,Y]",
+  "nenulová informace v rozdílu závorkování": "nonzero difference between parenthesizations",
+  "algebraicky přesná nula": "algebraically exact zero",
+  "Přímý součin X·Y": "Direct product X·Y",
+  "Opačný Y·X": "Reverse product Y·X",
+  "Levá větev (XZ)Y": "Left branch (XZ)Y",
+  "Pravá větev X(ZY)": "Right branch X(ZY)",
+  "Rozdíl větví": "Branch difference",
+  "Zvolený kontext má přesně nulový asociátor. Změň Z na e₁.": "This context has an exactly zero associator. Change Z to e₁.",
+  "V ČEM JE TEN SKUTEČNÝ TRIK?": "WHAT DOES THE THIRD INPUT REVEAL?",
+  "Stejná X a Y, pořád XY=YX=0. Ale asociátor je funkce celé trojice a uzávorkování. Párový graf tuto hodnotu nemůže rekonstruovat, pokud nezná další pravidla. Není to šifra ani kryptografická autorizace.": "X and Y still satisfy XY=YX=0. The associator depends on the whole triple and its parenthesization. Pairwise adjacency cannot recover it without additional rules. This is not encryption or cryptographic authorization.",
+  "Párový X·Y": "Pairwise X·Y",
+  "oba vektory nenulové": "both vectors are nonzero",
+  "Kontext Z": "Context Z",
+  "měníš jediný prvek": "change one input",
+  "přesný celočíselný vektor": "exact integer vector",
+  "Trénování": "Training",
+  "zdrojové ε znaménko": "source multiplication sign ε",
+  "GENEALOGIE CAYLEY–DICKSON · K": "CAYLEY–DICKSON GENEALOGY · K",
+  "Každá generace rodí nové ZD vztahy.": "Each generation contains newborn ZD relations.",
+  "NOVĚ NAROZENÉ HRANY": "NEWBORN EDGES",
+  "Celý ZD les E(N)": "Full ZD atlas E(N)",
+  "Dědictví 4× E(N/2)": "Inherited 4× E(N/2)",
+  "Nové hrany B(N)": "Newborn edges B(N)",
+  "Podíl nových": "Newborn fraction",
+  "PROČ TO NENÍ OBYČEJNÉ KOPÍROVÁNÍ?": "WHAT DOES DOUBLING ADD?",
+  "Starý graf se ve čtyřech kombinacích dědí, ale v nové Cayley–Dicksonově vrstvě vznikají další typy nulových součinů. Matematické pravidlo je určuje. Právě vznik nových vazeb odlišuje plnou genealogii od zjednodušeného A⊗J benchmarku.": "Old edges lift in four combinations. The next Cayley–Dickson level also has newly qualified zero products. The algebra determines them. This newborn frontier distinguishes the full genealogy from the inherited A⊗J benchmark.",
+  "Vnitřní dimenze": "Algebra dimension",
+  "Celý les": "Full atlas",
+  "Vrozené z minulosti": "Inherited edges",
+  "4× předchozí E": "4× the previous E",
+  "Nově vzniklé": "Newborn edges",
+  "B(N) exaktně": "exact B(N)",
+  "7 χ výřezů · algebraická vzorková síť": "7 χ samples · algebraic network sample",
+  "✓ DATA OBNOVENA": "✓ DATA RECOVERED",
+  "POZOROVACÍ RANK": "OBSERVATION RANK",
+  "Přímý XY = 0 v obou případech": "Direct XY = 0 in both contexts",
+  "algebra roste · vztahy vznikají": "higher dimensions · new relations",
+  "7 × K₂,₂,₂ a 84 hran": "7 × K₂,₂,₂ and 84 edges",
+  "K32 1260 a 924 nových": "K32: 1260 edges, 924 newborn",
+  "HYPERION · ZD — Algebraický informační les · interaktivní výpočty": "HYPERION · ZD — Algebraic information forest · interactive computing",
+  "FRACTAL ZERO-DIVISOR COMPUTING · INDEPENDENT SOFTWARE RESEARCH": "FRACTAL ZERO-DIVISOR COMPUTING · INDEPENDENT SOFTWARE RESEARCH",
+  "↻ Reset ukázky": "↻ Reset demo",
+  "Čtyři úlohy. Jediný matematický motor. Bez trénování a bez uloženého grafu.": "Four scenes. One mathematical engine. Exact computation from addresses.",
+  "Co když miliardy vztahů": "What if billions of relations",
+  "nemusíš uložit?": "could be computed on demand?",
+  "Neprohlížíš si obrázek grafu. Opravdu měníš vstupy, spouštíš výpočty a vidíš výsledky odvozené z Cayley–Dicksonovy algebry. Každý scénář má vysvětlení pro člověka i kódovou interpretaci pro vývojáře.": "Change inputs, run calculations and inspect results derived from Cayley–Dickson algebra. Each scene explains the result and its meaning for software developers.",
+  "ZD vazeb v K2048": "qualified ZD edges in K2048",
+  "Scénáře": "Scenes",
+  "NEVIDITELNÁ SÍŤ": "INVISIBLE NETWORK",
+  "533 milionů vazeb · bez grafu": "533 million relations · generated on demand",
+  "70% výpadek · obnova dat": "70% failure · data recovery",
+  "SKRYTÝ KANÁL": "HIDDEN CHANNEL",
+  "XY = 0 · nenulový asociátor": "XY = 0 · nonzero associator",
+  "VZNIK NOVÝCH VAZEB": "NEWBORN RELATIONS",
+  "Nové hrany při každém zdvojení": "New edges at every doubling",
+  "Živá výpočetní vizualizace": "Live computational visualization",
+  "NÁVOD PRO LIDSKÉ BYTOSTI": "HOW IT WORKS",
+  "PRO VÝVOJÁŘE · REÁLNÉ SROVNÁNÍ": "FOR DEVELOPERS · FAIR COMPARISON",
+  "Co je nové — a co už dnešní software umí?": "How does this compare with existing software?",
+  "GraphBLAS a cuSPARSE umějí efektivně zpracovávat explicitní řídké matice. Implicitní operátory umějí totéž bez ukládání hran, pokud znají generující pravidlo. ZD dodává konkrétní pravidlo s dalšími exaktními informačními vrstvami.": "GraphBLAS and cuSPARSE efficiently process explicit sparse matrices. Matrix-free operators avoid storing edges when a generating rule is known. ZD supplies one specific rule with additional exact algebraic information.",
+  "Metoda": "Method",
+  "Co ukládá": "Stored representation",
+  "Co sama zná": "Information available",
+  "ZD / nula": "ZD / zero",
+  "nový vznik": "newborn edge",
+  "HYPERION / ZD · offline, bez serveru a bez závislostí · signed-CD oracle · přesné algebraické identity · vizualizace ilustrační, výpočty živé ·": "HYPERION / ZD · offline, no server or dependencies · signed-CD oracle · exact algebraic identities · illustrative visualization, live calculations ·",
+  "Dimenze algebry": "Algebra dimension",
+  "Barva / XOR třída": "Color / XOR class",
+  "První adresa": "First address",
+  "Druhá adresa": "Second address",
+  "Zničené uzly": "Failed nodes",
+  "32 uložených symbolů / 8 původních symbolů": "32 stored symbols / 8 source symbols",
+  "Obnova možná ⇔ zůstalo ≥ 8 nezávislých pozorování.": "Recovery possible ⇔ at least 8 independent observations survive.",
+  "Z = e₁ · odhalí rozdíl": "Z = e₁ · nonzero difference",
+  "Z = e₈ · nulový rozdíl": "Z = e₈ · zero difference"
+};
+function initialLanguage(){
+  const requested=new URLSearchParams(location.search).get('lang');
+  if(requested==='en'||requested==='cs'||requested==='cz')return requested==='cz'?'cs':requested;
+  try{const saved=localStorage.getItem('fractal-zd-language');if(saved==='en'||saved==='cs')return saved}catch{}
+  return 'en';
+}
+let lang=initialLanguage();
+function tr(text){return lang==='en'?(EN_TEXT[text]??text):text}
+function l(cs,en){return lang==='cs'?cs:en}
+function translateText(value){const key=value.trim();return key&&EN_TEXT[key]!==undefined?value.replace(key,tr(key)):value}
+function translatedMarkup(html){
+  const template=document.createElement('template');template.innerHTML=html;
+  const walker=document.createTreeWalker(template.content,NodeFilter.SHOW_TEXT);
+  while(walker.nextNode())walker.currentNode.nodeValue=translateText(walker.currentNode.nodeValue);
+  return template.innerHTML;
+}
+const staticCopy=[];const staticLabels=[];
+{
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  while(walker.nextNode()){
+    const node=walker.currentNode;
+    if(!node.parentElement.closest('script,style')&&EN_TEXT[node.nodeValue.trim()]!==undefined)staticCopy.push([node,node.nodeValue]);
+  }
+  document.querySelectorAll('[aria-label]').forEach(node=>staticLabels.push([node,node.getAttribute('aria-label')]));
+}
+function localizeStatic(){
+  for(const [node,original] of staticCopy)if(node.isConnected)node.nodeValue=translateText(original);
+  for(const [node,original] of staticLabels)node.setAttribute('aria-label',tr(original));
+  document.documentElement.lang=lang;
+  document.title=tr('HYPERION · ZD — Algebraický informační les · interaktivní výpočty');
+  document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
+  document.getElementById('heroCount').textContent=(533208060).toLocaleString(lang==='cs'?'cs-CZ':'en-US');
+}
+function setLanguage(next){
+  if(next!=='en'&&next!=='cs')return;
+  const wasHealed=scene==='crash'&&!!crashResult?.heal;
+  lang=next;probeNames=probeKeys.map(tr);localizeStatic();applyScene(scene);
+  if(scene==='crash'&&wasHealed)runCrash(true);
+  const T=testResults;document.getElementById('testFlag').textContent=l(`${T.filter(x=>x[1]).length}/${T.length} algebraických a reprodukčních testů PASS`,`${T.filter(x=>x[1]).length}/${T.length} algebra and recovery checks PASS`);
+  try{localStorage.setItem('fractal-zd-language',lang)}catch{}
+  try{const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url)}catch{}
+}
+
 /* HYPERION ZD — pure browser mathematics. No dependencies, no fetch, no CDN. */
-const $=id=>document.getElementById(id), fmt=n=>Math.round(n).toLocaleString('cs-CZ');
+const $=id=>document.getElementById(id), fmt=n=>Math.round(n).toLocaleString(lang==='cs'?'cs-CZ':'en-US');
 const COLORS=['#59f5d9','#6caeff','#c09cff','#ffcb76','#ff7f9a','#68e3ff','#a3fb99'];
 let scene='atlas', stageTime=0, selectedChi=1025, selectedN=2048, a=2,c=4, gateKey=1, loss=70, birthN=64, crashResult=null, pulse=0, selectedProbe=0;
-const probeNames=['ZD / anihilace','non-ZD / součin','komutátor','asociátor','alternátor'];
+const probeKeys=['ZD / anihilace','non-ZD / součin','komutátor','asociátor','alternátor'];let probeNames=probeKeys.map(tr);
 function eps(n,a,b){if(n===1)return 1;const h=n/2;if(a<h&&b<h)return eps(h,a,b);if(a<h)return eps(h,b-h,a);if(b<h)return (b===0?1:-1)*eps(h,a-h,b);return (b===h?-1:1)*eps(h,b-h,a-h)}
 function sparse(items){const m=new Map();for(const [i,v] of items){m.set(i,(m.get(i)||0)+v)}return [...m].filter(([,v])=>v!==0)}
 function prod(x,y,n=16){const m=new Map();for(const [a,s] of x)for(const [b,t] of y){const k=a^b;m.set(k,(m.get(k)||0)+s*t*eps(n,a,b))}return [...m].filter(([,v])=>v!==0).sort((a,b)=>a[0]-b[0])}
@@ -61,40 +333,40 @@ function updateCompare(rows){$('compareBody').innerHTML=rows.map(r=>`<tr><td><b>
 function basics(h,one,two,steps){$('storyTitle').textContent=h;$('storyOne').textContent=one;$('storyTwo').textContent=two;for(let i=1;i<=3;i++){$('f'+i+'t').textContent=steps[i-1][0];$('f'+i+'d').textContent=steps[i-1][1]}}
 function setStage(kicker,title,chip,metricLabel,metric,small,foot){setPanel({stageKicker:kicker,stageTitle:title,stageChip:chip,stageMetricLabel:metricLabel,stageFooter:foot});$('stageMetric').innerHTML=`${metric} <small>${small}</small>`}
 function setButtons(buttons){$('buttonControls').innerHTML=buttons.map(([id,label,cls])=>`<button class="btn ${cls||''}" id="${id}">${label}</button>`).join('')}
-function setControls(html){$('customControls').innerHTML=html}
+function setControls(html){$('customControls').innerHTML=translatedMarkup(html)}
 function applyScene(s){scene=s;document.querySelectorAll('[data-scene]').forEach(b=>b.classList.toggle('active',b.dataset.scene===s));pulse=1;
  if(s==='atlas'){
-  setPanel({panelKicker:'SCÉNÁŘ 01 · ALGEBRAICKÁ MAPA BEZ MAPY',panelTitle:'Zadej dva body. ZD oracle rozhodne jejich vztah.',panelIntro:'Uvažuj síť, jejíž spojení nejsou v databázi. Jejich existence je vypočitatelná z číselných adres. Změň adresy a sleduj exaktní součin.'});
+  setPanel({panelKicker:tr('SCÉNÁŘ 01 · ALGEBRAICKÁ MAPA BEZ MAPY'),panelTitle:tr('Zadej dva body. ZD oracle rozhodne jejich vztah.'),panelIntro:tr('Uvažuj síť, jejíž spojení nejsou v databázi. Jejich existence je vypočitatelná z číselných adres. Změň adresy a sleduj exaktní součin.')});
   setControls(`<div class="sliderbox"><div class="sliderHead">Dimenze algebry <strong id="nLabel">K${selectedN}</strong></div><input id="nSlider" type="range" min="4" max="11" value="${Math.log2(selectedN)}" step="1"></div><div class="sliderbox"><div class="sliderHead">Barva / XOR třída <strong id="chiLabel">χ = ${selectedChi}</strong></div><input id="chiSlider" type="range" min="0" max="6" value="${selectedChi===9?0:Math.max(0,selectedChi-9)}"></div><div class="sliderbox"><div class="sliderHead">První adresa <strong id="aLabel">a = ${a}</strong></div><input id="aSlider" type="range" min="1" max="7" value="${Math.min(a,7)}"></div><div class="sliderbox"><div class="sliderHead">Druhá adresa <strong id="cLabel">c = ${c}</strong></div><input id="cSlider" type="range" min="1" max="7" value="${Math.min(c,7)}"></div>`);
   $('customControls').insertAdjacentHTML('beforeend',`<div class="chipbar">${probeNames.map((n,i)=>`<button class="chip ${selectedProbe===i?'active':''}" data-probe="${i}">${i+1} · ${n}</button>`).join('')}</div>`);
-  setButtons([['calculate','ZJISTIT VZTAH'],['random','JINÉ ADRESY','secondary'],['bench','ZMĚŘIT 3 000 DOTAZŮ','secondary']]);
+  setButtons([['calculate',tr('ZJISTIT VZTAH')],['random',tr('JINÉ ADRESY'),'secondary'],['bench',tr('ZMĚŘIT 3 000 DOTAZŮ'),'secondary']]);
   $('nSlider').oninput=ev=>{selectedN=2**Number(ev.target.value); const h=selectedN/2; selectedChi=h+1;a=Math.min(a,h-1);c=Math.min(c,h-1);updateAtlasInputs();computeAtlas()};
   $('chiSlider').oninput=ev=>{selectedChi=selectedN/2+1+Number(ev.target.value)%(selectedN/2-1);updateAtlasInputs();computeAtlas()};
   $('aSlider').oninput=ev=>{a=+ev.target.value;computeAtlas()};$('cSlider').oninput=ev=>{c=+ev.target.value;computeAtlas()};
   document.querySelectorAll('[data-probe]').forEach(b=>b.onclick=()=>{selectedProbe=+b.dataset.probe;document.querySelectorAll('[data-probe]').forEach(x=>x.classList.toggle('active',x===b));computeAtlas()});
-  $('bench').onclick=()=>{let t0=performance.now(),cnt=0,h=selectedN/2, chi=selectedChi;for(let i=0;i<3000;i++){let a=1+(i*73)%(h-1),c=1+(i*119+17)%(h-1);if(a===c)c=c===h-1?1:c+1;if(plaq(selectedN,[a,a^chi],[c,c^chi]))cnt++}let dt=performance.now()-t0;status(`3 000 skutečných signed-CD dotazů: ${dt.toFixed(2)} ms; ${fmt(Math.round(3000/Math.max(dt,.001)*1000))} dotazů/s; ${cnt} ZD. Naměřeno v tomto prohlížeči.`)};
+  $('bench').onclick=()=>{let t0=performance.now(),cnt=0,h=selectedN/2, chi=selectedChi;for(let i=0;i<3000;i++){let a=1+(i*73)%(h-1),c=1+(i*119+17)%(h-1);if(a===c)c=c===h-1?1:c+1;if(plaq(selectedN,[a,a^chi],[c,c^chi]))cnt++}let dt=performance.now()-t0;status(l(`3 000 skutečných signed-CD dotazů: ${dt.toFixed(2)} ms; ${fmt(Math.round(3000/Math.max(dt,.001)*1000))} dotazů/s; ${cnt} ZD. Naměřeno v tomto prohlížeči.`,`3,000 actual signed-CD queries: ${dt.toFixed(2)} ms; ${fmt(Math.round(3000/Math.max(dt,.001)*1000))} queries/s; ${cnt} ZD. Measured in this browser.`))};
   $('calculate').onclick=computeAtlas;$('random').onclick=()=>{const h=selectedN/2;selectedChi=h+1+Math.floor(Math.random()*Math.min(h-1,7));a=1+Math.floor(Math.random()*(h-1));c=1+Math.floor(Math.random()*(h-1));if(a===c)c=c===h-1?1:c+1;updateAtlasInputs();computeAtlas()};
-  basics('Síť, která je ukrytá v pravidle, nikoli v tabulce.','Kdybys měl popsat každý vztah zvlášť, vznikne obří seznam. ZD genealogie poskytuje algoritmus, který konkrétní vztah vypočte z adres za několik zdvojení.','Počet 533 milionů označuje ZD hrany vybraného dvoučlenného assessor atlasu K2048; na plátně vidíš jen 7 přesných kořenových χ buněk K16. Vyšší vrstvy zobrazují pravdivý výřez 7 χ tříd, vždy 75 assessorů; nejde o celý graf.',[['1 · ZADÁŠ','Adresy a,c a společné XOR χ'],['2 · PROVEDEŠ','Čtyřbodový test znamének ε'],['3 · VÍŠ','Nula / nenula, znamení, původ']]);
-  updateCompare([['CSR / GraphBLAS','Hrany nebo přístup k matici','Velmi efektivní dotaz, pokud je graf zadaný'],['Implicitní algoritmus','Generující pravidlo','Stejná paměťová výhoda jako ZD při známém pravidle'],['ZD oracle','Adresy + signed-CD rekurze','Generuje speciální vztahy, znaménka a vrstvy bez tabulky']]);computeAtlas();
+  basics(tr('Síť, která je ukrytá v pravidle, nikoli v tabulce.'),tr('Kdybys měl popsat každý vztah zvlášť, vznikne obří seznam. ZD genealogie poskytuje algoritmus, který konkrétní vztah vypočte z adres za několik zdvojení.'),tr('Počet 533 milionů označuje ZD hrany vybraného dvoučlenného assessor atlasu K2048; na plátně vidíš jen 7 přesných kořenových χ buněk K16. Vyšší vrstvy zobrazují pravdivý výřez 7 χ tříd, vždy 75 assessorů; nejde o celý graf.'),[[tr('1 · ZADÁŠ'),tr('Adresy a,c a společné XOR χ')],[tr('2 · PROVEDEŠ'),tr('Čtyřbodový test znamének ε')],[tr('3 · VÍŠ'),tr('Nula / nenula, znamení, původ')]]);
+  updateCompare([['CSR / GraphBLAS',tr('Hrany nebo přístup k matici'),tr('Velmi efektivní dotaz, pokud je graf zadaný')],[tr('Implicitní algoritmus'),tr('Generující pravidlo'),tr('Stejná paměťová výhoda jako ZD při známém pravidle')],['ZD oracle',tr('Adresy + signed-CD rekurze'),tr('Generuje speciální vztahy, znaménka a vrstvy bez tabulky')]]);computeAtlas();
  }else if(s==='crash'){
-  setPanel({panelKicker:'SCÉNÁŘ 02 · CHAOS MONKEY, ALE POČÍTANÝ',panelTitle:'Vypni 70 % uzlů. Uvidíš, co lze skutečně obnovit.',panelIntro:'32 úložišť drží 8 informačních symbolů s redundantním kódováním. Myší nastav podíl výpadku a proveď rekonstrukci. Matematika neobnoví informaci, která nikde nezůstala.'});
+  setPanel({panelKicker:tr('SCÉNÁŘ 02 · CHAOS MONKEY, ALE POČÍTANÝ'),panelTitle:tr('Vypni 70 % uzlů. Uvidíš, co lze skutečně obnovit.'),panelIntro:tr('32 úložišť drží 8 informačních symbolů s redundantním kódováním. Myší nastav podíl výpadku a proveď rekonstrukci. Matematika neobnoví informaci, která nikde nezůstala.')});
   setControls(`<div class="sliderbox"><div class="sliderHead">Zničené uzly <strong id="lossLabel">${loss} %</strong></div><input id="lossSlider" type="range" min="0" max="95" step="5" value="${loss}"></div><div class="formula">32 uložených symbolů / 8 původních symbolů<br>Obnova možná ⇔ zůstalo ≥ 8 nezávislých pozorování.</div>`);
-  setButtons([['destroy','ROZBÍT CLUSTER','danger'],['heal','REKONSTRUOVAT'],['again','NOVÁ DATA','secondary']]);$('lossSlider').oninput=ev=>{loss=Number(ev.target.value);$('lossLabel').textContent=loss+' %';runCrash(false)};
+  setButtons([['destroy',tr('ROZBÍT CLUSTER'),'danger'],['heal',tr('REKONSTRUOVAT')],['again',tr('NOVÁ DATA'),'secondary']]);$('lossSlider').oninput=ev=>{loss=Number(ev.target.value);$('lossLabel').textContent=loss+' %';runCrash(false)};
   $('destroy').onclick=()=>runCrash(false);$('heal').onclick=()=>runCrash(true);$('again').onclick=()=>{seedData=seedData.map((v,i)=>(v+7+i*13)%257);runCrash(true)};
-  basics('Když spadne server, nikdo nevykouzlí chybějící bity.','Na obrazovce je 32 disků. Každý obsahuje jeden matematicky zakódovaný pohled na 8 původních čísel. Po výpadku musí přeživší disky obsahovat dost nezávislých informací.','Ukážeme reálnou modulární interpolaci (bez zaokrouhlování). To je klasické erasure coding, nikoliv nový ZD bezpečnostní protokol. ZD zde určuje adresní topologii; obnova ukazuje hranici následného P5/rank principu.',[['1 · ULOŽÍŠ','8 hodnot do 32 kódovaných uzlů'],['2 · ZNIČÍŠ','70 % serverů najednou'],['3 · ZMĚŘÍŠ','Zbylý rank a obnovená data']]);
-  updateCompare([['Replikace 3×','Tři kopie celého záznamu','Při velkém náhodném výpadku mohou zmizet všechny kopie'],['Reed–Solomon / MDS','32 symbolů pro 8 datových','Stejně přesná obnova za stejných datových podmínek'],['ZD + erasure coding','Algebraické adresy + MDS redundance','Topologické pravidlo; obnova stále vyžaduje dost dat']]);runCrash(false);
+  basics(tr('Když spadne server, nikdo nevykouzlí chybějící bity.'),tr('Na obrazovce je 32 disků. Každý obsahuje jeden matematicky zakódovaný pohled na 8 původních čísel. Po výpadku musí přeživší disky obsahovat dost nezávislých informací.'),tr('Ukážeme reálnou modulární interpolaci (bez zaokrouhlování). To je klasické erasure coding, nikoliv nový ZD bezpečnostní protokol. ZD zde určuje adresní topologii; obnova ukazuje hranici následného P5/rank principu.'),[[tr('1 · ULOŽÍŠ'),tr('8 hodnot do 32 kódovaných uzlů')],[tr('2 · ZNIČÍŠ'),tr('70 % serverů najednou')],[tr('3 · ZMĚŘÍŠ'),tr('Zbylý rank a obnovená data')]]);
+  updateCompare([[tr('Replikace 3×'),tr('Tři kopie celého záznamu'),tr('Při velkém náhodném výpadku mohou zmizet všechny kopie')],['Reed–Solomon / MDS',tr('32 symbolů pro 8 datových'),tr('Stejně přesná obnova za stejných datových podmínek')],['ZD + erasure coding',tr('Algebraické adresy + MDS redundance'),tr('Topologické pravidlo; obnova stále vyžaduje dost dat')]]);runCrash(false);
  }else if(s==='gate'){
-  setPanel({panelKicker:'SCÉNÁŘ 03 · ZPRÁVA UVNITŘ ZD NULY',panelTitle:'Stejná dvojice. Přidáš třetí operaci a objevíš skrytou informaci.',panelIntro:'Dva nenulové prvky se násobí přesně na nulu. Když však mezi ně vložíš třetí prvek, rozhoduje pořadí závorek. Vyber dva klíče a sleduj, proč se výsledky liší.'});
+  setPanel({panelKicker:tr('SCÉNÁŘ 03 · ZPRÁVA UVNITŘ ZD NULY'),panelTitle:tr('Stejná dvojice. Přidáš třetí operaci a objevíš skrytou informaci.'),panelIntro:tr('Dva nenulové prvky se násobí přesně na nulu. Když však mezi ně vložíš třetí prvek, rozhoduje pořadí závorek. Vyber dva klíče a sleduj, proč se výsledky liší.')});
   setControls(`<div class="chipbar"><button class="chip active" id="key1">Z = e₁ · odhalí rozdíl</button><button class="chip" id="key8">Z = e₈ · nulový rozdíl</button></div><div class="formula">X = e₂ + e₁₁<br>Y = e₄ − e₁₃<br>[X,Z,Y] = (XZ)Y − X(ZY)</div>`);
-  setButtons([['eval','SPOČÍTAT ASOCIÁTOR'],['alternate','PŘEPNOUT KONTEXT','secondary']]);$('key1').onclick=()=>{gateKey=1;computeGate()};$('key8').onclick=()=>{gateKey=8;computeGate()};$('eval').onclick=computeGate;$('alternate').onclick=()=>{gateKey=gateKey===1?8:1;computeGate()};
-  basics('Nula nemusí znamenat, že neexistuje další informace.','Když vynásobíš X a Y, dostaneš přesně nulu. Běžný párový test tím končí. Jenže tři operace mohou zachovat rozdíl mezi dvěma závorkováními.','Pro e₁ je rozdíl −4e₇, pro e₈ je nula. Pro binární zero/nonzero graf to není dostupná informace. Vyšší tensor, hypergraf nebo program schopný počítat asociátor ji naopak uchovat umí.',[['1 · OVĚŘÍŠ','X × Y = 0'],['2 · ZMĚNÍŠ','Z = e₁ ↔ e₈'],['3 · ZÍSKÁŠ','−4e₇ ↔ 0, exaktně']]);
-  updateCompare([['Binární ZD graf','Pouze hrana „součin nula“','Ztratil trojné znaménko a asociátor'],['Hypergraf / higher-order tensor','Trojný vztah je uložen či naučen','Umí asociátor reprezentovat, musí znát jeho hodnoty'],['Signed-CD ZD','Pravidla násobení + adresy','Trojný výsledek přesně vypočítá bez trénování']]);computeGate();
+  setButtons([['eval',tr('SPOČÍTAT ASOCIÁTOR')],['alternate',tr('PŘEPNOUT KONTEXT'),'secondary']]);$('key1').onclick=()=>{gateKey=1;computeGate()};$('key8').onclick=()=>{gateKey=8;computeGate()};$('eval').onclick=computeGate;$('alternate').onclick=()=>{gateKey=gateKey===1?8:1;computeGate()};
+  basics(tr('Nula nemusí znamenat, že neexistuje další informace.'),tr('Když vynásobíš X a Y, dostaneš přesně nulu. Běžný párový test tím končí. Jenže tři operace mohou zachovat rozdíl mezi dvěma závorkováními.'),tr('Pro e₁ je rozdíl −4e₇, pro e₈ je nula. Pro binární zero/nonzero graf to není dostupná informace. Vyšší tensor, hypergraf nebo program schopný počítat asociátor ji naopak uchovat umí.'),[[tr('1 · OVĚŘÍŠ'),'X × Y = 0'],[tr('2 · ZMĚNÍŠ'),'Z = e₁ ↔ e₈'],[tr('3 · ZÍSKÁŠ'),tr('−4e₇ ↔ 0, exaktně')]]);
+  updateCompare([[tr('Binární ZD graf'),tr('Pouze hrana „součin nula“'),tr('Ztratil trojné znaménko a asociátor')],['Hypergraf / higher-order tensor',tr('Trojný vztah je uložen či naučen'),tr('Umí asociátor reprezentovat, musí znát jeho hodnoty')],['Signed-CD ZD',tr('Pravidla násobení + adresy'),tr('Trojný výsledek přesně vypočítá bez trénování')]]);computeGate();
  }else{
-  setPanel({panelKicker:'SCÉNÁŘ 04 · ŽIVÉ ZROZENÍ NOVÝCH VAZEB',panelTitle:'Zdvojnásob velikost. Staré vztahy přežijí, nové se narodí.',panelIntro:'Při přechodu Kₙ → K₂ₙ se každá stará ZD vazba zdědí ve čtyřech kopiích. Zbytek jsou skutečně nové vazby. Podívej se, jak výrazně přibývají.'});
+  setPanel({panelKicker:tr('SCÉNÁŘ 04 · ŽIVÉ ZROZENÍ NOVÝCH VAZEB'),panelTitle:tr('Zdvojnásob velikost. Staré vztahy přežijí, nové se narodí.'),panelIntro:tr('Při přechodu Kₙ → K₂ₙ se každá stará ZD vazba zdědí ve čtyřech kopiích. Zbytek jsou skutečně nové vazby. Podívej se, jak výrazně přibývají.')});
   setControls(`<div class="sliderbox"><div class="sliderHead">Generace <strong id="genLabel">K${birthN}</strong></div><input id="genSlider" type="range" min="4" max="11" value="${Math.log2(birthN)}" step="1"></div><div class="formula">E(N) = (N−2)(N−4)(N−8) / 16<br>NEW(N) = E(N) − 4E(N/2)</div>`);
-  setButtons([['double','ZDVOJNÁSOBIT K'],['startAgain','OD K16 ZNOVU','secondary']]);$('genSlider').oninput=ev=>{birthN=2**Number(ev.target.value);computeBirth()};$('double').onclick=()=>{birthN=birthN===2048?16:birthN*2;computeBirth()};$('startAgain').onclick=()=>{birthN=16;computeBirth()};
-  basics('Tohle není zoom do většího obrázku. Je to vznik nových pravidelných vztahů.','Větší algebra obsahuje menší jako podalgebru. Její staré vazby lze jednoznačně zdědit. Ale vyšší dimenze má také nové ZD hrany, které menší struktura neobsahovala.','V grafu, který jen kopíruješ, se nové vazby neobjeví bez dalšího zadání. Zde přesné kombinatorické formule určují jejich počty a signed-CD oracle jednotlivé vztahy rozhodne.',[['1 · VLOŽÍŠ','Stávající Kₙ do K₂ₙ'],['2 · ZDĚDÍŠ','Čtyři kopie každé staré vazby'],['3 · OBJEVÍŠ','Nové hrany podle E(2N)−4E(N)']]);
-  updateCompare([['Obecné dynamické grafy','Nové uzly, záznamy, pravidla','Libovolné nové hrany musíte dodat nebo generovat'],['Fraktální graf / Kronecker','Rekurzivní transformační pravidlo','Také dovede deterministicky generovat nové hrany'],['ZD genealogie','Signed-CD + dědičné vazby','Exaktní algebraický zrod + nulové součiny + další kanály']]);computeBirth();
+  setButtons([['double',tr('ZDVOJNÁSOBIT K')],['startAgain',tr('OD K16 ZNOVU'),'secondary']]);$('genSlider').oninput=ev=>{birthN=2**Number(ev.target.value);computeBirth()};$('double').onclick=()=>{birthN=birthN===2048?16:birthN*2;computeBirth()};$('startAgain').onclick=()=>{birthN=16;computeBirth()};
+  basics(tr('Tohle není zoom do většího obrázku. Je to vznik nových pravidelných vztahů.'),tr('Větší algebra obsahuje menší jako podalgebru. Její staré vazby lze jednoznačně zdědit. Ale vyšší dimenze má také nové ZD hrany, které menší struktura neobsahovala.'),tr('V grafu, který jen kopíruješ, se nové vazby neobjeví bez dalšího zadání. Zde přesné kombinatorické formule určují jejich počty a signed-CD oracle jednotlivé vztahy rozhodne.'),[[tr('1 · VLOŽÍŠ'),tr('Stávající Kₙ do K₂ₙ')],[tr('2 · ZDĚDÍŠ'),tr('Čtyři kopie každé staré vazby')],[tr('3 · OBJEVÍŠ'),tr('Nové hrany podle E(2N)−4E(N)')]]);
+  updateCompare([[tr('Obecné dynamické grafy'),tr('Nové uzly, záznamy, pravidla'),tr('Libovolné nové hrany musíte dodat nebo generovat')],[tr('Fraktální graf / Kronecker'),tr('Rekurzivní transformační pravidlo'),tr('Také dovede deterministicky generovat nové hrany')],[tr('ZD genealogie'),tr('Signed-CD + dědičné vazby'),tr('Exaktní algebraický zrod + nulové součiny + další kanály')]]);computeBirth();
  }
 }
 function updateAtlasInputs(){const h=selectedN/2,cur=selectedChi-(h+1);$('nSlider').value=Math.log2(selectedN);$('nLabel').textContent='K'+selectedN;$('chiSlider').max=Math.min(6,h-2);$('chiSlider').value=Math.min(6,cur);$('chiLabel').textContent='χ = '+selectedChi;for(let [el,v] of [['aSlider',a],['cSlider',c]]){$(el).max=h-1;$(el).value=v};$('aLabel').textContent='a = '+a;$('cLabel').textContent='c = '+c}
@@ -103,17 +375,17 @@ function computeAtlas(){updateAtlasInputs();let h=selectedN/2,chi=selectedChi;co
  let out=[];
  // A representative zero divisor has sign + at e_a, -eps(a,d)*eps(b,c) at e_d.
  let vx=[[a,1],[p[1],1]],vy=[[c,1],[q[1],tau]];out=valid?prod(vx,vy,selectedN):[];
- const read=valid?(out.length===0?'PŘESNÁ NULA':'NENULOVÝ SOUČIN'):'VYBER RŮZNÉ INDEXY';
+ const read=valid?(out.length===0?tr('PŘESNÁ NULA'):tr('NENULOVÝ SOUČIN')):tr('VYBER RŮZNÉ INDEXY');
  let x0=[[a,1],[p[1],1]], y0=[[c,1],[q[1],tau]], z0=[[1,1]],probeVal=out;
  if(selectedProbe===2)probeVal=minus(prod(x0,y0,selectedN),prod(y0,x0,selectedN));
  if(selectedProbe===3)probeVal=minus(prod(prod(x0,z0,selectedN),y0,selectedN),prod(x0,prod(z0,y0,selectedN),selectedN));
  if(selectedProbe===4)probeVal=minus(prod(prod(x0,x0,selectedN),y0,selectedN),prod(x0,prod(x0,y0,selectedN),selectedN));
  selectedChi=chi;
- setStage('ALGEBRAICKÁ ADRESACE K'+selectedN,'Žádná tabulka. Jen adresy a matematika.','χ = '+chi,'ZD HRANY V K'+selectedN,fmt(Number(ecount(selectedN))),'celkový exaktní cenzus, nikoliv počet nakreslených čar','ε·ε·ε·ε = '+(valid?(z?'+1':'−1'):'?'));
- subRows([['První assessor',`(${p[0]}, ${p[1]})`],['Druhý assessor',`(${q[0]}, ${q[1]})`],['Plaquette W',valid?(z?'+1 · anihilace možná':'−1 · nikoliv'):'—'],['Sonda',probeNames[selectedProbe]],['Konkrétní výstup',valid?(selectedProbe<2?(selectedProbe===0?(z?'ZD / ano':'ZD / ne'):(z?'non-ZD / ne':'non-ZD / ano')):textVec(probeVal)):'—']]);
- status(valid?`${probeNames[selectedProbe]}: ${selectedProbe<2?read:textVec(probeVal)}. Přímý signed-CD výpočet.`:'Obě adresy musí být různé.',valid);
- $('meaningTitle').textContent='CO SE PRÁVĚ STALO?';$('meaningText').textContent=`Ze čtyř celých indexů a znaménkové rekurze K${selectedN} vznikla skutečná odpověď. Není to vyhledávání v seznamu ${fmt(Number(ecount(selectedN)))} hran. Pozor: stejnou úsporu má každý jiný implicitní algoritmus, pokud pro svou síť generující pravidlo zná.`;
- setMetrics([['Generace','K'+selectedN,'K=2^k'],['ZD hrany',fmt(Number(ecount(selectedN))),'přesný úplný počet'],['Oracle','O(log N)','výpočet epsilon po zdvojeních'],['Výsledek',z?'NULA':'NON-ZD','W test + skutečný součin']]);pulse=1;
+ setStage(tr('ALGEBRAICKÁ ADRESACE K')+selectedN,tr('Žádná tabulka. Jen adresy a matematika.'),'χ = '+chi,tr('ZD HRANY V K')+selectedN,fmt(Number(ecount(selectedN))),tr('celkový exaktní cenzus, nikoliv počet nakreslených čar'),'ε·ε·ε·ε = '+(valid?(z?'+1':'−1'):'?'));
+ subRows([[tr('První assessor'),`(${p[0]}, ${p[1]})`],[tr('Druhý assessor'),`(${q[0]}, ${q[1]})`],['Plaquette W',valid?(z?tr('+1 · anihilace možná'):tr('−1 · nikoliv')):'—'],[tr('Sonda'),probeNames[selectedProbe]],[tr('Konkrétní výstup'),valid?(selectedProbe<2?(selectedProbe===0?(z?tr('ZD / ano'):tr('ZD / ne')):(z?tr('non-ZD / ne'):tr('non-ZD / ano'))):textVec(probeVal)):'—']]);
+ status(valid?l(`${probeNames[selectedProbe]}: ${selectedProbe<2?read:textVec(probeVal)}. Přímý signed-CD výpočet.`,`${probeNames[selectedProbe]}: ${selectedProbe<2?read:textVec(probeVal)}. Direct signed-CD computation.`):tr('Obě adresy musí být různé.'),valid);
+ $('meaningTitle').textContent=tr('CO SE PRÁVĚ STALO?');$('meaningText').textContent=l(`Ze čtyř celých indexů a znaménkové rekurze K${selectedN} vznikla skutečná odpověď. Není to vyhledávání v seznamu ${fmt(Number(ecount(selectedN)))} hran. Pozor: stejnou úsporu má každý jiný implicitní algoritmus, pokud pro svou síť generující pravidlo zná.`,`The answer is computed from four integer indices and the K${selectedN} sign recursion. No lookup table of ${fmt(Number(ecount(selectedN)))} edges is required. Other implicit algorithms can achieve the same storage benefit when a generating rule is known.`);
+ setMetrics([[tr('Generace'),'K'+selectedN,'K=2^k'],[tr('ZD hrany'),fmt(Number(ecount(selectedN))),tr('přesný úplný počet')],['Oracle','O(log N)',tr('výpočet epsilon po zdvojeních')],[tr('Výsledek'),z?tr('NULA'):'NON-ZD',tr('W test + skutečný součin')]]);pulse=1;
 }
 // Classic erasure code over GF(257). Every 8 surviving samples form invertible Vandermonde rows.
 const MOD=257;let seedData=[84,79,69,90,68,49,54,33];
@@ -123,26 +395,26 @@ function reconstruct(samples){const k=8;if(samples.length<k)return null;let matr
 function runCrash(heal){let failed=Math.round(loss*32/100), alive=Array.from({length:32},(_,i)=>i).filter(i=>((i*17+5)%32)>=failed); // 17 is coprime to 32; permuted deterministic failures
  let samples=alive.map(i=>[i+1,encoded(seedData,i+1)]);const t0=performance.now();let recovered=heal?reconstruct(samples):null,dt=performance.now()-t0;let good=!!recovered&&recovered.every((v,i)=>v===seedData[i]);
  crashResult={failed,alive,samples,heal,good,dt};
- setStage('REÁLNÉ MAZÁNÍ SYMBOLŮ · GF(257)','Ztráta dat není otázka víry, ale ranku.','32 : 8 MDS','ZBYLÉ NEZÁVISLÉ VZORKY',`${alive.length} / 8`,heal?(good?'OBNOVENO BEZE ZTRÁTY':'NEDOSTATEK INFORMACÍ'):'klikni „Rekonstruovat“','RANK P='+Math.min(8,alive.length));
- subRows([['Zničené disky',`${failed} z 32 (${Math.round(failed/32*100)} %)`],['Přeživší disky',alive.length],['Rank pozorování',`${Math.min(8,alive.length)} / 8`],['Data',heal?(good?'8/8 symbolů identických':'rekonstrukce nemožná'):'čekají na rekonstrukci']]);
- status(heal?(good?'PŘESNÁ OBNOVA: 8 původních symbolů se shoduje bit po bitu.':'NEDOSTATEK RANKU: informace nelze dopočítat bez dalších dat.'):'Simulovaný výpadek hotov. Zkus rekonstrukci.',heal?good:true);
- $('meaningTitle').textContent='CO ZNAMENÁ VÝSLEDEK?';$('meaningText').textContent=good?'Rekonstrukce je přesná, protože přežilo alespoň osm nezávislých kódovaných vzorků. Stejně by fungoval vhodný současný MDS/RS systém; ZD zde není zázračný náhradník konsenzu.':heal?'Zbylo méně než osm nezávislých pozorování. Žádná pseudoinverze nezíská chybějící informaci jen z geometrie.':'Zkus 70 % a 85 %: u prvního zůstane dost dat, u druhého už ne. Není to připravená iluze; probíhá skutečné řešení 8×8 rovnic nad GF(257).';
- setMetrics([['Ztráta',`${failed} / 32`,'skutečně simulovaná'],['Pozorovací rank',`${Math.min(8,alive.length)}/8`,'plný rank = obnovitelnost'],['Rekonstrukce',heal?(good?'EXAKTNÍ':'NELZE'):'PŘIPRAVENA','GF(257), 8×8 eliminace'],['Výpočetní čas',heal?dt.toFixed(3)+' ms':'—','jen lokální matematika']]);pulse=1;
+ setStage(tr('REÁLNÉ MAZÁNÍ SYMBOLŮ · GF(257)'),tr('Ztráta dat není otázka víry, ale ranku.'),'32 : 8 MDS',tr('ZBYLÉ NEZÁVISLÉ VZORKY'),`${alive.length} / 8`,heal?(good?tr('OBNOVENO BEZE ZTRÁTY'):tr('NEDOSTATEK INFORMACÍ')):tr('klikni „Rekonstruovat“'),'RANK P='+Math.min(8,alive.length));
+ subRows([[tr('Zničené disky'),l(`${failed} z 32 (${Math.round(failed/32*100)} %)`,`${failed} of 32 (${Math.round(failed/32*100)}%)`)],[tr('Přeživší disky'),alive.length],[tr('Rank pozorování'),`${Math.min(8,alive.length)} / 8`],['Data',heal?(good?tr('8/8 symbolů identických'):tr('rekonstrukce nemožná')):tr('čekají na rekonstrukci')]]);
+ status(heal?(good?tr('PŘESNÁ OBNOVA: 8 původních symbolů se shoduje bit po bitu.'):tr('NEDOSTATEK RANKU: informace nelze dopočítat bez dalších dat.')):tr('Simulovaný výpadek hotov. Zkus rekonstrukci.'),heal?good:true);
+ $('meaningTitle').textContent=tr('CO ZNAMENÁ VÝSLEDEK?');$('meaningText').textContent=good?tr('Rekonstrukce je přesná, protože přežilo alespoň osm nezávislých kódovaných vzorků. Stejně by fungoval vhodný současný MDS/RS systém; ZD zde není zázračný náhradník konsenzu.'):heal?tr('Zbylo méně než osm nezávislých pozorování. Žádná pseudoinverze nezíská chybějící informaci jen z geometrie.'):tr('Zkus 70 % a 85 %: u prvního zůstane dost dat, u druhého už ne. Není to připravená iluze; probíhá skutečné řešení 8×8 rovnic nad GF(257).');
+ setMetrics([[tr('Ztráta'),`${failed} / 32`,tr('skutečně simulovaná')],[tr('Pozorovací rank'),`${Math.min(8,alive.length)}/8`,tr('plný rank = obnovitelnost')],[tr('Rekonstrukce'),heal?(good?tr('EXAKTNÍ'):tr('NELZE')):tr('PŘIPRAVENA'),tr('GF(257), 8×8 eliminace')],[tr('Výpočetní čas'),heal?dt.toFixed(3)+' ms':'—',tr('jen lokální matematika')]]);pulse=1;
 }
 function computeGate(){const data=gateValues(gateKey);$('key1').classList.toggle('active',gateKey===1);$('key8').classList.toggle('active',gateKey===8);
- setStage('NEASOCIATIVNÍ INFORMACE · K16','Dvě stejné nuly. Třetí operace rozhodne.','z = e'+gateKey,'ASOCIÁTOR [X,Z,Y]',textVec(data.assoc),data.assoc.length?'nenulová informace v rozdílu závorkování':'algebraicky přesná nula','(XZ)Y − X(ZY)');
- subRows([['Přímý součin X·Y',textVec(data.xy)],['Opačný Y·X',textVec(data.yx)],['Levá větev (XZ)Y',textVec(prod(data.xz,Y))],['Pravá větev X(ZY)',textVec(prod(X,data.zy))],['Rozdíl větví',textVec(data.assoc)]]);
- status(data.assoc.length?`Přesně ${textVec(data.assoc)}. Nulu párového součinu bylo možné obejít třetí algebraickou operací.`:'Zvolený kontext má přesně nulový asociátor. Změň Z na e₁.');
- $('meaningTitle').textContent='V ČEM JE TEN SKUTEČNÝ TRIK?';$('meaningText').textContent='Stejná X a Y, pořád XY=YX=0. Ale asociátor je funkce celé trojice a uzávorkování. Párový graf tuto hodnotu nemůže rekonstruovat, pokud nezná další pravidla. Není to šifra ani kryptografická autorizace.';
- setMetrics([['Párový X·Y','0','oba vektory nenulové'],['Kontext Z','e'+gateKey,'měníš jediný prvek'],['Výsledek',textVec(data.assoc),'přesný celočíselný vektor'],['Trénování','0','zdrojové ε znaménko']]);pulse=1;
+ setStage(tr('NEASOCIATIVNÍ INFORMACE · K16'),tr('Dvě stejné nuly. Třetí operace rozhodne.'),'z = e'+gateKey,tr('ASOCIÁTOR [X,Z,Y]'),textVec(data.assoc),data.assoc.length?tr('nenulová informace v rozdílu závorkování'):tr('algebraicky přesná nula'),'(XZ)Y − X(ZY)');
+ subRows([[tr('Přímý součin X·Y'),textVec(data.xy)],[tr('Opačný Y·X'),textVec(data.yx)],[tr('Levá větev (XZ)Y'),textVec(prod(data.xz,Y))],[tr('Pravá větev X(ZY)'),textVec(prod(X,data.zy))],[tr('Rozdíl větví'),textVec(data.assoc)]]);
+ status(data.assoc.length?l(`Přesně ${textVec(data.assoc)}. Nulu párového součinu bylo možné obejít třetí algebraickou operací.`,`Exactly ${textVec(data.assoc)}. A third algebraic input reveals information beyond the zero pairwise product.`):tr('Zvolený kontext má přesně nulový asociátor. Změň Z na e₁.'));
+ $('meaningTitle').textContent=tr('V ČEM JE TEN SKUTEČNÝ TRIK?');$('meaningText').textContent=tr('Stejná X a Y, pořád XY=YX=0. Ale asociátor je funkce celé trojice a uzávorkování. Párový graf tuto hodnotu nemůže rekonstruovat, pokud nezná další pravidla. Není to šifra ani kryptografická autorizace.');
+ setMetrics([[tr('Párový X·Y'),'0',tr('oba vektory nenulové')],[tr('Kontext Z'),'e'+gateKey,tr('měníš jediný prvek')],[tr('Výsledek'),textVec(data.assoc),tr('přesný celočíselný vektor')],[tr('Trénování'),'0',tr('zdrojové ε znaménko')]]);pulse=1;
 }
 function computeBirth(){const e=ecount(birthN),prev=birthN>16?ecount(birthN/2):0n,inherited=4n*prev,newEdges=e-inherited;
  $('genSlider').value=Math.log2(birthN);$('genLabel').textContent='K'+birthN;
- setStage('GENEALOGIE CAYLEY–DICKSON · K'+birthN,'Každá generace rodí nové ZD vztahy.','K'+birthN,'NOVĚ NAROZENÉ HRANY',fmt(Number(newEdges)),`ze ${fmt(Number(e))} celkových ZD hran`,'E(N) − 4E(N/2)');
- subRows([['Celý ZD les E(N)',fmt(Number(e))],['Dědictví 4× E(N/2)',fmt(Number(inherited))],['Nové hrany B(N)',fmt(Number(newEdges))],['Podíl nových',`${(100*Number(newEdges)/Number(e)).toFixed(2)} %`]]);
- status(`K${birthN} obsahuje ${fmt(Number(e))} ZD hran. ${fmt(Number(newEdges))} z nich není pouhou kopií staré generace.`);
- $('meaningTitle').textContent='PROČ TO NENÍ OBYČEJNÉ KOPÍROVÁNÍ?';$('meaningText').textContent='Starý graf se ve čtyřech kombinacích dědí, ale v nové Cayley–Dicksonově vrstvě vznikají další typy nulových součinů. Matematické pravidlo je určuje. Právě vznik nových vazeb odlišuje plnou genealogii od zjednodušeného A⊗J benchmarku.';
- setMetrics([['Vnitřní dimenze','K'+birthN,'2^k'],['Celý les',fmt(Number(e)),'ZD hrany'],['Vrozené z minulosti',fmt(Number(inherited)),'4× předchozí E'],['Nově vzniklé',fmt(Number(newEdges)),'B(N) exaktně']]);pulse=1;
+ setStage(tr('GENEALOGIE CAYLEY–DICKSON · K')+birthN,tr('Každá generace rodí nové ZD vztahy.'),'K'+birthN,tr('NOVĚ NAROZENÉ HRANY'),fmt(Number(newEdges)),l(`ze ${fmt(Number(e))} celkových ZD hran`,`out of ${fmt(Number(e))} total ZD edges`),'E(N) − 4E(N/2)');
+ subRows([[tr('Celý ZD les E(N)'),fmt(Number(e))],[tr('Dědictví 4× E(N/2)'),fmt(Number(inherited))],[tr('Nové hrany B(N)'),fmt(Number(newEdges))],[tr('Podíl nových'),`${(100*Number(newEdges)/Number(e)).toFixed(2)} %`]]);
+ status(l(`K${birthN} obsahuje ${fmt(Number(e))} ZD hran. ${fmt(Number(newEdges))} z nich není pouhou kopií staré generace.`,`K${birthN} contains ${fmt(Number(e))} ZD edges. ${fmt(Number(newEdges))} are newborn rather than inherited.`));
+ $('meaningTitle').textContent=tr('PROČ TO NENÍ OBYČEJNÉ KOPÍROVÁNÍ?');$('meaningText').textContent=tr('Starý graf se ve čtyřech kombinacích dědí, ale v nové Cayley–Dicksonově vrstvě vznikají další typy nulových součinů. Matematické pravidlo je určuje. Právě vznik nových vazeb odlišuje plnou genealogii od zjednodušeného A⊗J benchmarku.');
+ setMetrics([[tr('Vnitřní dimenze'),'K'+birthN,'2^k'],[tr('Celý les'),fmt(Number(e)),tr('ZD hrany')],[tr('Vrozené z minulosti'),fmt(Number(inherited)),tr('4× předchozí E')],[tr('Nově vzniklé'),fmt(Number(newEdges)),tr('B(N) exaktně')]]);pulse=1;
 }
 let canvas=$('stage'),ctx=canvas.getContext('2d',{alpha:false}),W=1000,H=540,stars=Array.from({length:210},(_,i)=>({x:Math.sin(i*128.35)*437%1,y:Math.sin(i*37.47)*331%1,r:i%7===0?1.4:.6,a:.15+(i%8)/18}));
 function resize(){const rect=canvas.getBoundingClientRect();W=rect.width;H=rect.height;const dpr=Math.min(2,devicePixelRatio||1);canvas.width=Math.max(1,Math.floor(W*dpr));canvas.height=Math.max(1,Math.floor(H*dpr));ctx.setTransform(dpr,0,0,dpr,0,0)}
@@ -166,23 +438,23 @@ function drawAtlas(t){const cx=W*.5,cy=H*.53,orb=Math.min(W*.35,H*.31),rr=Math.m
   nodes.forEach((p,j)=>{if(j%11===0)glow(...p,8,COLORS[r],.10);dot(...p,selectedN===16?2.9:1.2,COLORS[r],selectedN===16?1:.79)});
   rootNodes.push([px,py]);ctx.textAlign='center';ctx.font='10px ui-monospace,monospace';ctx.fillStyle='#b7d7e6';ctx.fillText('χ '+g.chi,px,py+rr*1.55)}
  for(let r=0;r<7;r++){let A=rootNodes[r],B=rootNodes[(r+2)%7];line(...A,...B,'#66bacc',.10)}
- ring(cx,cy,Math.min(orb*.43,72)+Math.sin(t*1.5)*3,'#5deed3',.20);glow(cx,cy,115,'#4bfde0',.15);ctx.textAlign='center';ctx.font=`800 ${Math.min(23,W*.036)}px system-ui`;ctx.fillStyle='#dcfff5';ctx.fillText('K'+selectedN,cx,cy+5);ctx.font='10px system-ui';ctx.fillStyle='#87a9c0';ctx.fillText('7 χ výřezů · algebraická vzorková síť',cx,cy+22);
+ ring(cx,cy,Math.min(orb*.43,72)+Math.sin(t*1.5)*3,'#5deed3',.20);glow(cx,cy,115,'#4bfde0',.15);ctx.textAlign='center';ctx.font=`800 ${Math.min(23,W*.036)}px system-ui`;ctx.fillStyle='#dcfff5';ctx.fillText('K'+selectedN,cx,cy+5);ctx.font='10px system-ui';ctx.fillStyle='#87a9c0';ctx.fillText(tr('7 χ výřezů · algebraická vzorková síť'),cx,cy+22);
 }
 function drawCrash(t){const aliveSet=new Set(crashResult?.alive||Array.from({length:32},(_,i)=>i));let cols=8,gx=W*.11,gy=H*.3,dx=W*.105,dy=Math.min(84,H*.155);
  for(let i=0;i<32;i++){const col=i%8,row=Math.floor(i/8),x=gx+col*dx,y=gy+row*dy,alive=aliveSet.has(i);ring(x,y,Math.min(21,dx*.27),alive?'#60efd1':'#ff607f',alive?.49:.7);glow(x,y,25,alive?'#42ffc7':'#ff466d',alive?.13:.24);dot(x,y,alive?4.2:3.5,alive?'#a1ffdd':'#fe6e8b');if(!alive){line(x-7,y-7,x+7,y+7,'#ff829d',.86,2);line(x+7,y-7,x-7,y+7,'#ff829d',.86,2)}else if(crashResult?.heal&&crashResult?.good){let yy=H*.73;line(x,y,W*.5,yy,'#55f4dd',.06);const f=(t*.6+i*.15)%1;dot(x+(W*.5-x)*f,y+(yy-y)*f,1.2,'#89fbe7',.52)}ctx.font='10px monospace';ctx.textAlign='center';ctx.fillStyle='#8eacc0';ctx.fillText(String(i+1).padStart(2,'0'),x,y+32)}
- const recovered=crashResult?.heal&&crashResult?.good;glow(W*.5,H*.85,100,recovered?'#3bf9bd':'#e8787b',.14);ctx.textAlign='center';ctx.fillStyle=recovered?'#6ef8d5':'#bdd2e2';ctx.font='bold 17px system-ui';ctx.fillText(recovered?'✓ DATA OBNOVENA':'POZOROVACÍ RANK',W*.5,H*.86);}
+ const recovered=crashResult?.heal&&crashResult?.good;glow(W*.5,H*.85,100,recovered?'#3bf9bd':'#e8787b',.14);ctx.textAlign='center';ctx.fillStyle=recovered?'#6ef8d5':'#bdd2e2';ctx.font='bold 17px system-ui';ctx.fillText(recovered?tr('✓ DATA OBNOVENA'):tr('POZOROVACÍ RANK'),W*.5,H*.86);}
 function drawGate(t){const xx=[W*.2,W*.5,W*.8],yy=[H*.5,H*.36,H*.5], labels=['X','Z','Y'];const open=gateKey===1;const cr=open?'#c89cff':'#74a3b9';let pairs=[[0,1],[1,2],[0,2]];
  for(let [i,j] of pairs){const A=[xx[i],yy[i]],B=[xx[j],yy[j]],direct=i===0&&j===2;line(...A,...B,direct?'#ff637f':cr,direct?.32:.44,direct?2:3);if(!direct){const f=(t*.26+(i===0?.0:.5))%1;dot(A[0]+(B[0]-A[0])*f,A[1]+(B[1]-A[1])*f,4,cr,.85)}}
  for(let i=0;i<3;i++){glow(xx[i],yy[i],62,i===1?cr:'#5cf7dc',.25);ring(xx[i],yy[i],38,i===1?cr:'#68bfc9',.6);dot(xx[i],yy[i],24,'#0a1b2c');ctx.font='800 20px system-ui';ctx.textAlign='center';ctx.fillStyle='#e9fbff';ctx.fillText(labels[i],xx[i],yy[i]+7)}
- const cx=W*.5,cy=H*.75;glow(cx,cy,90,cr,open?.32:.10);ctx.textAlign='center';ctx.font=`850 ${Math.min(24,W*.038)}px ui-monospace,monospace`;ctx.fillStyle=open?'#d8b6ff':'#92b2c4';ctx.fillText(open?'[X,e₁,Y] = −4e₇':'[X,e₈,Y] = 0',cx,cy);ctx.font='12px system-ui';ctx.fillStyle='#88aabc';ctx.fillText('Přímý XY = 0 v obou případech',cx,cy+25)
+ const cx=W*.5,cy=H*.75;glow(cx,cy,90,cr,open?.32:.10);ctx.textAlign='center';ctx.font=`850 ${Math.min(24,W*.038)}px ui-monospace,monospace`;ctx.fillStyle=open?'#d8b6ff':'#92b2c4';ctx.fillText(open?'[X,e₁,Y] = −4e₇':'[X,e₈,Y] = 0',cx,cy);ctx.font='12px system-ui';ctx.fillStyle='#88aabc';ctx.fillText(tr('Přímý XY = 0 v obou případech'),cx,cy+25)
 }
 function drawBirth(t){const gen=Math.log2(birthN)-3,cx=W*.5,cy=H*.54,R=Math.min(W*.34,H*.35);
  for(let r=0;r<=gen;r++){let rad=R*(r+1)/(gen+1),num= Math.min(12*2**r,320),hue=r%7;ring(cx,cy,rad,COLORS[hue],.3);for(let i=0;i<num;i++){let a=i*Math.PI*2/num+t*(.006+(r%3)*.001)*(r%2?-1:1);let x=cx+rad*Math.cos(a),y=cy+rad*Math.sin(a);if(i%Math.max(1,Math.floor(num/50))===0){dot(x,y,1.4+r*.08,r===gen?'#ff8e9d':COLORS[hue],r===gen?.75:.35);if(i%7===0&&r>0){let an=a*2+.8,lineX=cx+(rad-R/(gen+1)) *Math.cos(an),lineY=cy+(rad-R/(gen+1))*Math.sin(an);line(x,y,lineX,lineY,r===gen?'#ff819c':COLORS[hue],.08)}}}}
- glow(cx,cy,110,'#42fbe1',.18);ctx.textAlign='center';ctx.fillStyle='#d9fff7';ctx.font=`850 ${Math.min(27,W*.05)}px system-ui`;ctx.fillText('K'+birthN,cx,cy+8);ctx.font='11px system-ui';ctx.fillStyle='#91b5c7';ctx.fillText('algebra roste · vztahy vznikají',cx,cy+28);}
+ glow(cx,cy,110,'#42fbe1',.18);ctx.textAlign='center';ctx.fillStyle='#d9fff7';ctx.font=`850 ${Math.min(27,W*.05)}px system-ui`;ctx.fillText('K'+birthN,cx,cy+8);ctx.font='11px system-ui';ctx.fillStyle='#91b5c7';ctx.fillText(tr('algebra roste · vztahy vznikají'),cx,cy+28);}
 let last=performance.now();function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;stageTime+=dt;backdrop(stageTime);if(scene==='atlas')drawAtlas(stageTime);else if(scene==='crash')drawCrash(stageTime);else if(scene==='gate')drawGate(stageTime);else drawBirth(stageTime);if(pulse>.01){ring(W*.5,H*.52,(1-pulse)*W*.48,'#57f7d5',pulse*.3);pulse*=.93}requestAnimationFrame(frame)}
-function internalTests(){const T=[];const add=(label,condition)=>T.push([label,!!condition]);add('7 × K₂,₂,₂ a 84 hran',roots.length===7&&roots.reduce((s,r)=>s+r.edges.length,0)===84);add('84 + 21 = 105',roots.reduce((s,r)=>s+r.edges.length,0)===84&&roots.length*3===21);add('K32 1260 a 924 nových',ecount(32)===1260n&&born(32)===924n);add('K2048 = 533208060',ecount(2048)===533208060n);add('XY=YX=0',!gateValues(1).xy.length&&!gateValues(1).yx.length);add('[X,e1,Y] = -4 e7',JSON.stringify(gateValues(1).assoc)===JSON.stringify([[7,-4]]));add('[X,e8,Y] = 0',!gateValues(8).assoc.length);add('P5-like toy: MDS erasure 70%',reconstruct(Array.from({length:10},(_,i)=>[i+1,encoded(seedData,i+1)])).every((v,i)=>v===seedData[i]));add('85 % failure, rank insufficient',reconstruct(Array.from({length:5},(_,i)=>[i+1,encoded(seedData,i+1)]))===null);
- for(const [label,ok] of T)if(!ok)console.error('MATH TEST FAILED: '+label);$('testFlag').textContent=`${T.filter(x=>x[1]).length}/${T.length} algebraických a reprodukčních testů PASS`;return T}
+function internalTests(){const T=[];const add=(label,condition)=>T.push([label,!!condition]);add(tr('7 × K₂,₂,₂ a 84 hran'),roots.length===7&&roots.reduce((s,r)=>s+r.edges.length,0)===84);add('84 + 21 = 105',roots.reduce((s,r)=>s+r.edges.length,0)===84&&roots.length*3===21);add(tr('K32 1260 a 924 nových'),ecount(32)===1260n&&born(32)===924n);add('K2048 = 533208060',ecount(2048)===533208060n);add('XY=YX=0',!gateValues(1).xy.length&&!gateValues(1).yx.length);add('[X,e1,Y] = -4 e7',JSON.stringify(gateValues(1).assoc)===JSON.stringify([[7,-4]]));add('[X,e8,Y] = 0',!gateValues(8).assoc.length);add('P5-like toy: MDS erasure 70%',reconstruct(Array.from({length:10},(_,i)=>[i+1,encoded(seedData,i+1)])).every((v,i)=>v===seedData[i]));add('85 % failure, rank insufficient',reconstruct(Array.from({length:5},(_,i)=>[i+1,encoded(seedData,i+1)]))===null);
+ for(const [label,ok] of T)if(!ok)console.error('MATH TEST FAILED: '+label);$('testFlag').textContent=l(`${T.filter(x=>x[1]).length}/${T.length} algebraických a reprodukčních testů PASS`,`${T.filter(x=>x[1]).length}/${T.length} algebra and recovery checks PASS`);return T}
 document.querySelectorAll('[data-scene]').forEach(b=>b.onclick=()=>applyScene(b.dataset.scene));$('resetAll').onclick=()=>{selectedChi=1025;selectedN=2048;selectedProbe=0;a=2;c=4;gateKey=1;loss=70;birthN=64;seedData=[84,79,69,90,68,49,54,33];applyScene('atlas')};
 // Start in the displayed upper-half XOR family of K2048.
-selectedChi=1025;a=2;c=4;applyScene('atlas');const testResults=internalTests();window.__HYPERION__={tests:testResults,eps,plaq,ecount,born,gateValues,reconstruct,encoded,scene:()=>scene};requestAnimationFrame(frame);
+selectedChi=1025;a=2;c=4;localizeStatic();applyScene('atlas');const testResults=internalTests();window.__HYPERION__={tests:testResults,eps,plaq,ecount,born,gateValues,reconstruct,encoded,scene:()=>scene};document.querySelectorAll('[data-lang]').forEach(button=>button.onclick=()=>setLanguage(button.dataset.lang));window.__HYPERION__.language=()=>lang;requestAnimationFrame(frame);
 </script></body></html>

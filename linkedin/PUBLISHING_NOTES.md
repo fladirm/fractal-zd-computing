@@ -1,5 +1,7 @@
 # LinkedIn publication package
 
+**English** · [Čeština](PUBLISHING_NOTES_CS.md)
+
 Author: **Vladimír Bíža**. Use only the exact personal profile in [PROFILE_TARGET.md](PROFILE_TARGET.md), after verifying the authenticated author.
 
 ## English document post
@@ -8,7 +10,7 @@ Author: **Vladimír Bíža**. Use only the exact personal profile in [PROFILE_TA
 - Single attachment: [LINKEDIN_CAROUSEL_EN.pdf](LINKEDIN_CAROUSEL_EN.pdf).
 - Document title: **533 Million Zero-Product Relations — Fractal ZD Computing**.
 - Audience: **Anyone**.
-- Status: **NOT PUBLISHED** while the authenticated LinkedIn session is unavailable. The exact public permalink must be recorded in `PUBLICATION_RESULTS.md` after publication and verification.
+- Status: **NOT PUBLISHED by Codex**. The author reports having published manually and requested no further LinkedIn changes. The permalink is not supplied or independently verified; [manual instructions](MANUAL_PUBLISHING_EN.md) remain as reference. The exact public permalink must be recorded in `PUBLICATION_RESULTS.md` after publication and verification.
 
 ## Czech follow-up
 

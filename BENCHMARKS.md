@@ -1,5 +1,7 @@
 # Benchmark specification (fair modern baselines)
 
+**English** · [Čeština](BENCHMARKS_CS.md)
+
 **Do not compare only with a dense adjacency matrix.** Report at least these methods for the same exact workload:
 
 - **CSR / GraphBLAS**: build and apply the qualified sparse adjacency, with correct conventions and query semantics.

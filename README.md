@@ -1,5 +1,7 @@
 # Fractal Zero-Divisor Computing
 
+**English · [Čeština](README_CS.md)**
+
 **An addressable, signed information forest from the Cayley–Dickson tower.**  
 **Author: Vladimír Bíža · Independent mathematics and computer science · 2026**
 
@@ -7,11 +9,11 @@
 
 ## Try the demo first
 
-**[Live demo](https://fladirm.github.io/fractal-zd-computing/demo/)** · [Project website](https://fladirm.github.io/fractal-zd-computing/) · [GitHub repository](https://github.com/fladirm/fractal-zd-computing) · [v1.0.0 — four paper PDFs](https://github.com/fladirm/fractal-zd-computing/releases/tag/v1.0.0)
+**[English demo](https://fladirm.github.io/fractal-zd-computing/demo/?lang=en)** · [České demo](https://fladirm.github.io/fractal-zd-computing/demo/?lang=cs) · [Project website](https://fladirm.github.io/fractal-zd-computing/) · [GitHub repository](https://github.com/fladirm/fractal-zd-computing) · [v1.0.0 — four paper PDFs](https://github.com/fladirm/fractal-zd-computing/releases/tag/v1.0.0)
 
-**[Launch HYPERION-ZD (offline, one HTML file)](demo/index.html)** · [Screenshots](assets/demo-desktop.png)
+**[Launch HYPERION-ZD (offline, one HTML file)](demo/index.html)** · [English screenshot](assets/demo-desktop-en.png) · [Český screenshot](assets/demo-desktop-cs.png)
 
-Open `demo/index.html` with any modern Chromium-based browser. No Node, npm, backend, account, server, connection or GPU requirement. The HTML includes the math engine in a single file.
+Open `demo/index.html` with any modern Chromium-based browser. No Node, npm, backend, account, server, connection or GPU requirement. The HTML includes both languages and the math engine in a single file. Use the **EN / CZ** switch; changing language preserves the current scene, inputs and recovery result.
 
 Four interactive demonstrations: (1) choose two pairs of basis addresses and compute exact signed zero-product incidence; (2) a rank-dependent reconstruction test after simulated data loss, including failure when recovery information is absent; (3) an exact nonassociative associator with zero pairwise product; (4) fourfold inherited edges versus genuinely newborn edges across dimension doublings.
 
@@ -50,7 +52,9 @@ The core contribution is **signed algebraic generation + typed higher-order info
 
 ## Publish, cite, reuse
 
+- [English/Czech documentation index](LANGUAGES.md)
 - [Publication and release guide](PUBLISHING.md)
+- [Manual LinkedIn publication steps](linkedin/MANUAL_PUBLISHING_EN.md)
 - [Benchmark methods and limitations](BENCHMARKS.md)
 - [Verified publication preflight](release/PREFLIGHT.md)
 - [Publication results](PUBLICATION_RESULTS.md)

@@ -1,5 +1,7 @@
 # Publication preflight — 25 October 2026
 
+**English** · [Čeština](PREFLIGHT_CS.md)
+
 Author: **Vladimír Bíža**. Manuscript equations, proof structure and attribution are unchanged.
 
 ## Reproduction
@@ -45,3 +47,7 @@ No peer-review status, arbitrary-workload speed superiority, encryption, tenant 
 GitHub Pages at https://fladirm.github.io/fractal-zd-computing/ uses `main` / `docs` and branch publishing. Landing, demo and all 12 paper-format URLs (PDF/HTML/Markdown, EN/CS) returned HTTP 200. Demo and all paper-format responses matched local SHA-256 checksums. The live demo passed the same 24 interactive checks and nine internal checks: [live results](live-demo-checks.json).
 
 Initial GitHub [Python/Rust CI](https://github.com/fladirm/fractal-zd-computing/actions/runs/40158855273) and [Pages deployment](https://github.com/fladirm/fractal-zd-computing/actions/runs/40158863207) succeeded. A harmless request for the account-root favicon returned 404 on the first landing-page load; an inline empty favicon now prevents that request. Final URLs and subsequent deployment status are maintained in `PUBLICATION_RESULTS.md`.
+
+## Bilingual interface update
+
+Both the project website and the single-file offline demo now have an EN/CZ switch. All four scenes, controls, status/error messages, explanatory text, comparisons and canvas labels are translated. The default is English, with explicit `?lang=en` / `?lang=cs` links and a saved preference. Language changes preserve the scene, inputs, selected probe and recovery outcome. Python verification, the educational benchmark and all five Rust tests pass. **62 bilingual browser checks pass**, including mobile layouts, complete English scene text, state preservation and offline navigation. See [bilingual check results](bilingual-demo-checks.json) and the [language index](../LANGUAGES.md).

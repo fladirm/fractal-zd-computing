@@ -1,5 +1,7 @@
 # Fractal Zero-Divisor Computing v1.0.0
 
+**English** · [Čeština](RELEASE_NOTES_CS.md)
+
 Independent mathematics and computer science by **Vladimír Bíža**.
 
 This release contains Paper A (signed Cayley–Dickson information forest and higher-π invariants) and Paper B (generative operators and computing), each in English and Czech. The four original paper PDFs are attached; Markdown, HTML and TeX sources are in the repository.

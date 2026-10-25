@@ -1,5 +1,7 @@
 # Publication workflow
 
+**English** · [Čeština](PUBLISHING_CS.md)
+
 1. `python3 src/python/verify.py`, and `cargo test` under `src/rust/` when Cargo is available.
 2. Inspect four PDF documents (`papers/{cs,en}`), open `demo/index.html` **directly** in Chromium, test each interactive scene, and check `docs/` preview.
 3. Make one public GitHub repository named `fractal-zd-computing`; commit sources, documents, demo and provenance; publish a tagged release `v1.0.0` attaching the paper PDFs.
