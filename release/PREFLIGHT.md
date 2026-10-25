@@ -39,3 +39,9 @@ Pages manuscript copies are identical to the corresponding source documents. Loc
 - The original Czech Paper B describes pre-packaging paths (`code/verify.py`, `code/benchmark.py`, `code/src/main.rs`) and the then-unavailable Rust compiler. Current runnable paths are `src/python/verify.py`, `src/python/benchmark.py` and `src/rust/`; current compilation results are above. This historical packaging prose was retained with the original PDF/Markdown pair.
 
 No peer-review status, arbitrary-workload speed superiority, encryption, tenant isolation or consensus claim is inferred from these checks.
+
+## Public deployment verification
+
+GitHub Pages at https://fladirm.github.io/fractal-zd-computing/ uses `main` / `docs` and branch publishing. Landing, demo and all 12 paper-format URLs (PDF/HTML/Markdown, EN/CS) returned HTTP 200. Demo and all paper-format responses matched local SHA-256 checksums. The live demo passed the same 24 interactive checks and nine internal checks: [live results](live-demo-checks.json).
+
+Initial GitHub [Python/Rust CI](https://github.com/fladirm/fractal-zd-computing/actions/runs/40158855273) and [Pages deployment](https://github.com/fladirm/fractal-zd-computing/actions/runs/40158863207) succeeded. A harmless request for the account-root favicon returned 404 on the first landing-page load; an inline empty favicon now prevents that request. Final URLs and subsequent deployment status are maintained in `PUBLICATION_RESULTS.md`.

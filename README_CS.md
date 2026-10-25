@@ -2,6 +2,8 @@
 
 **Autor: Vladimír Bíža (2026).**
 
+[Živé demo](https://fladirm.github.io/fractal-zd-computing/demo/) · [Web projektu](https://fladirm.github.io/fractal-zd-computing/) · [Výsledky publikace](PUBLICATION_RESULTS.md)
+
 **[Spustit offline HYPERION-ZD](demo/index.html)** — stačí otevřít HTML dvojklikem. Bez serveru, instalace a cloudu.
 
 Tohle není obří uložený graf: jde o **pravidlo, které z adres vypočítá algebraické vazby, jejich znaménka, dědičnost a vznik nových vztahů**. Jediná binární adjacency navíc neobsahuje informace jako asociátory, které lze ze zdrojové algebry přesně dopočítat.

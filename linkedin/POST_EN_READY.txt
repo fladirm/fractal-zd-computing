@@ -1,0 +1,20 @@
+533,208,060 zero-product relations. No 533-million-edge lookup table.
+
+The count refers to the defined two-term assessor atlas in K2048.
+
+I've been working on a computational structure built from the Cayley–Dickson algebras: a signed, recursively addressable forest of zero-divisor relations.
+
+The interesting part isn't just compression. A simple tensor factorization can already make some large graphs cheap to apply. Here the algebra also gives us an exact four-address edge predicate, fourfold genealogical inheritance, newborn edges at every doubling, and higher-order information that a yes/no edge cannot encode.
+
+A concrete example: two nonzero expressions multiply to zero, yet introducing a third factor produces a nonzero associator. This is why an ordinary binary adjacency is an incomplete representation of the algebra.
+
+I packaged the research as two independent computer-science manuscripts, Rust/Python references, and an interactive HTML demonstration that runs offline with a double click.
+
+Try the four scenes: address oracle, controlled failure/recovery, hidden associator channel, and edge birth across algebraic generations.
+
+Source, papers and interactive demo: https://github.com/fladirm/fractal-zd-computing
+Live demo: https://fladirm.github.io/fractal-zd-computing/demo/
+
+I'd be interested in feedback from people working on sparse linear algebra, structured operators, GPU kernels, hypergraphs and data systems. In particular: where does the typed generative algebra beat conventional representations on a fair equal-workload benchmark?
+
+#Rust #Algorithms #ComputerScience #GraphComputing #AppliedMathematics

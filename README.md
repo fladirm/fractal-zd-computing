@@ -7,6 +7,8 @@
 
 ## Try the demo first
 
+**[Live demo](https://fladirm.github.io/fractal-zd-computing/demo/)** · [Project website](https://fladirm.github.io/fractal-zd-computing/) · [GitHub repository](https://github.com/fladirm/fractal-zd-computing)
+
 **[Launch HYPERION-ZD (offline, one HTML file)](demo/index.html)** · [Screenshots](assets/demo-desktop.png)
 
 Open `demo/index.html` with any modern Chromium-based browser. No Node, npm, backend, account, server, connection or GPU requirement. The HTML includes the math engine in a single file.
@@ -50,6 +52,8 @@ The core contribution is **signed algebraic generation + typed higher-order info
 
 - [Publication and release guide](PUBLISHING.md)
 - [Benchmark methods and limitations](BENCHMARKS.md)
+- [Verified publication preflight](release/PREFLIGHT.md)
+- [Publication results](PUBLICATION_RESULTS.md)
 - [Reproducible source](src/)
 - [Suggested citations](CITATION.cff)
 - [Bilingual promotional posts and LinkedIn PDF documents](linkedin/)
