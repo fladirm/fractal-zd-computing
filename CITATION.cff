@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this research, cite the companion papers and the source repository."
+title: "Fractal Zero-Divisor Computing: Signed Cayley-Dickson Information Forest and Generative Operators"
+authors:
+  - family-names: "Bíža"
+    given-names: "Vladimír"
+version: 1.0.0
+date-released: 2026-10-25
+keywords:
+  - cayley-dickson
+  - zero-divisor
+  - signed algebra
+  - information forest
+  - generative computing

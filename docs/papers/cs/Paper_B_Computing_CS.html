@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Paper_B_Computing_CS</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1
+id="fraktální-výpočetní-algebra-dělitelů-nuly-generativní-operátory-paměť-a-paralelní-algoritmy">Fraktální
+výpočetní algebra dělitelů nuly — generativní operátory, paměť a
+paralelní algoritmy</h1>
+<p><strong>Samostatný článek z matematiky a informatiky · 25. října
+2026</strong><br />
+<strong>Autor:</strong> Vladimír Bíža<br />
+<strong>Téma:</strong> Signed algebraické orákulum, implicitní
+operátory, úložiště, CPU/GPU a návrh ověřitelných benchmarků.</p>
+<h2 id="abstrakt">Abstrakt</h2>
+<p>Převádíme exaktní informační struktury Paperu A na návrh runtime, v
+němž jsou genealogická adresa, incidence, fáze a matematické operátory
+rekonstruovatelné bez explicitní materializace celé vyšší algebry.
+Výsledkem není univerzální tvrzení, že zero-divisor algebra zrychlí
+libovolný program: je to konkrétní systém <strong>implicitní dědičnost +
+explicitní novost + operátorově typovaná sémantika</strong>, který může
+přímo sloužit pro adresovatelnou algebraickou paměť, multiresoluční GPU
+výpočty, řídké databáze a originální generativní datové indexy.
+Přikládáme samostatný Rust oracle, regresní testy a benchmarkový
+kontrakt.</p>
+<h2
+id="výpočetní-primitivum-není-uzel-stromu-ale-strukturální-adresa">1.
+Výpočetní primitivum není uzel stromu, ale strukturální adresa</h2>
+<p>Definujme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><msup><mn>2</mn><mi>k</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">a\in[0,2^k)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo>=</mo><mi>a</mi><mo>⊕</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\chi=a\oplus b</annotation></semantics></math>,
+kořen
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>k</mi><mn>0</mn></msub><mo>,</mo><msub><mi>χ</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(k_0,\chi_0)</annotation></semantics></math>,
+ancestry slovo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mrow><mi>k</mi><mo>−</mo><msub><mi>k</mi><mn>0</mn></msub></mrow></msup></mrow><annotation encoding="application/x-tex">u\in\{0,1\}^{k-k_0}</annotation></semantics></math>,
+orientaci a typ operátoru. Čistě algebraický vztah
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>a</mi></msub><msub><mi>e</mi><mi>b</mi></msub><mo>=</mo><mi>ε</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mrow><mi>a</mi><mo>⊕</mo><mi>b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">e_a e_b=\varepsilon(a,b)e_{a\oplus b}</annotation></semantics></math>
+dostaneme přes rekurzi v čase
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math>,
+prostoru
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math>
+(při iterativním bitovém provedení
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math>
+pomocné paměti). Dvojice assessorů má rozhodnutí nulové hrany čtyřmi
+voláními oracle.</p>
+<p><strong>Kanonický klíč:</strong>
+<code>CDAddr { level, a, b, chi, orientation, sign, ancestry, birth_level, relation_kind }</code>.
+<code>chi</code> nikdy nenahrazuje čtyři adresy;
+<code>relation_kind</code> musí rozlišit ZD od non-ZD, comm, assoc, alt,
+shared a birth. Tento klíč je strukturální adresa algebraické identity,
+nikoli automatické uložení jejího sémantického obsahu.</p>
+<h2 id="nulové-matice-neukládat-aplikovat-je">2. Nulové matice
+neukládat; aplikovat je</h2>
+<p>Zděděná incidence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>t</mi></msub><mo>=</mo><msub><mi>A</mi><mn>0</mn></msub><mo>⊗</mo><msub><mi>J</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">A_t=A_0\otimes J_m</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><msup><mn>2</mn><mi>t</mi></msup></mrow><annotation encoding="application/x-tex">m=2^t</annotation></semantics></math>,
+umožňuje aplikaci na rozdělený vektor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>p</mi><mo>,</mo><mi>u</mi></mrow></msub><annotation encoding="application/x-tex">x_{p,u}</annotation></semantics></math>
+bez jediného alokovaného
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mi>m</mi><mo>×</mo><mn>6</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">6m\times6m</annotation></semantics></math>
+bloku:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>q</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>v</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><msub><mi>x</mi><mrow><mi>q</mi><mo>,</mo><mi>v</mi></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>r</mi><mi>p</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>q</mi></munder><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>p</mi><mi>q</mi></mrow></msub><msub><mi>s</mi><mi>q</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>y</mi><mrow><mi>p</mi><mo>,</mo><mi>u</mi></mrow></msub><mo>=</mo><msub><mi>r</mi><mi>p</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+s_q=\sum_{v=1}^{m} x_{q,v},\quad r_p=\sum_q (A_0)_{pq}s_q,\quad y_{p,u}=r_p.
+\tag{1}
+</annotation></semantics></math></p>
+<p><strong>Náklad:</strong> obecná dense aplikace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O((6m)^2)</annotation></semantics></math>,
+generativní aplikace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mi>m</mi><mo>+</mo><msup><mn>6</mn><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(6m+6^2)</annotation></semantics></math>,
+paměť
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mo>+</mo><mi>m</mi><mo>⋅</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(6+m\cdot6)</annotation></semantics></math>
+pro vstup a výstup,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(6)</annotation></semantics></math>
+pracovní sumy. V případě nematerializovaného/streamovaného výstupu lze i
+výstup konstruovat lazy. Pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mn>128</mn></mrow><annotation encoding="application/x-tex">m=128</annotation></semantics></math>
+by měla jedna šestikořenová matice 589824 explicitních prvků;
+generativní operátor uchovává pouze 6×6 kořen a velikost rodiny.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apply_inherited(a0, x):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># x[p][u], p in 0..root-1, u in 0..m-1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    sums <span class="op">=</span> [<span class="bu">sum</span>(block) <span class="cf">for</span> block <span class="kw">in</span> x]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> [<span class="bu">sum</span>(a0[p][q] <span class="op">*</span> sums[q] <span class="cf">for</span> q <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a0)))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>           <span class="cf">for</span> p <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a0))]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [[out[p]] <span class="op">*</span> <span class="bu">len</span>(x[p]) <span class="cf">for</span> p <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a0))]</span></code></pre></div>
+<p>Pozor: jde o adjacency zděděné komponenty, nikoli o celou signed CD
+multiplikaci a nikoli o všechny born komponenty.</p>
+<h2 id="inherited-vs-birth-jak-reprezentovat-skutečnou-novost">3.
+Inherited vs birth: jak reprezentovat skutečnou novost</h2>
+<p>Pro každé zdvojení uložíme: (a) kořenový nebo již známý zděděný
+faktor, (b) volací pravidlo sign rekurze, (c) <strong>birth
+frontier</strong>, který nese jen nově vzniklou kvalifikovanou vazbu, a
+(d) volitelné cached čtení. Kombinatorický budget splňuje
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><mo>=</mo><msub><mi>E</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><mo>−</mo><mn>4</mn><msub><mi>E</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">B_{2N}=E_{2N}-4E_N</annotation></semantics></math>.
+Samotný počet však nevytváří seznam nových adres: generátor musí nové
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>χ</mi><annotation encoding="application/x-tex">\chi</annotation></semantics></math>
+a čtyřadresový oracle skutečně procházet nebo jinak konstruktivně
+enumerovat. Výsledný runtime by měl umět vrátit nejen
+<code>is_zero</code> ale i <code>why</code>: provenience kořene, signed
+predikát, reprezentanta třídy a úroveň narození.</p>
+<h2 id="algebraické-indexy-pro-ai-a-stavové-systémy">4. Algebraické
+indexy pro AI a stavové systémy</h2>
+<p>Genealogii používáme jako strukturovaný <strong>algebraický
+index</strong>, nikoli jako automaticky naučenou reprezentaci reálných
+dat. V AI, distribuovaném zpracování a aplikačních grafech oddělujeme
+matematický klíč, reálně zaznamenaný stav a sémantický obsah. Počty a
+signatury vztahů se dopočítávají algoritmem, skutečné uživatelské
+události a parametry modelu se ukládají.</p>
+<p>Výpočetní pipeline uchovává <code>relation_kind</code> pro
+<code>ZD</code>, <code>non-ZD</code>, <code>comm</code>,
+<code>assoc</code>, <code>alt</code> a <code>birth</code>. Nový vstup
+může upravit existující větev nebo přidat samostatnou <code>birth</code>
+větev; matematické zdvojení samo o sobě nevytváří zkušenost, fakta ani
+naučené váhy. Operátory trojných součinů musí zachovat závorkování. Pro
+pozorovatelnost používáme hodnost Krylovovy matice a požadujeme další
+sondu právě tehdy, když chybí rozměry readoutu.</p>
+<h2 id="paměťová-pyramida-vram-ram-nvme">5. Paměťová pyramida: VRAM /
+RAM / NVMe</h2>
+<ul>
+<li><strong>VRAM:</strong> aktivní amplitudy, hot blocky, GPU batch pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ε</mi><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math>,
+Krylovovy báze, lokální operátory a jejich dočasné projekce.</li>
+<li><strong>RAM:</strong> ancestry index, hot/warm factor cache, recent
+birth frontier a prefetch plány.</li>
+<li><strong>NVMe:</strong> committed stav, provenience, immutable
+kořeny, transakční log, nové sémantické objekty a kvalifikované ZD
+frontier.</li>
+</ul>
+<p>Vrstvy přesouvají <strong>data a aktivní support</strong>, nikoli
+matematickou definici pléna. Čisté <code>K_{2048}</code> neimplikuje
+alokaci
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2048</mn><mn>2</mn></msup><annotation encoding="application/x-tex">2048^2</annotation></semantics></math>
+tabulky. Strukturované operátory mohou být implicitní; samotný živý stav
+však pro hustých 2048 amplitud stále vyžaduje příslušné amplitudy.</p>
+<h2 id="gpu-paralelismus-rozdělovat-podle-algebraické-práce">6. GPU
+paralelismus — rozdělovat podle algebraické práce</h2>
+<p>Efektivní kernelová hranice je typicky
+<code>chi × ancestry-prefix × relation_kind × active-support</code>. Pro
+zděděné segmenty použijeme redukce bloků a broadcast podle (1). Pro born
+segmenty frontier spustí řídký generátor nebo sparse gather. Pro výpočet
+signed násobení je přirozené seskupení XOR a bitové rekurze; paměťový
+layout je <code>struct-of-arrays</code> pro koalescentní GPU fetch.
+Neslučujeme různé vztahové kanály do jediného booleovského grafu.</p>
+<pre class="text"><code>stage A: select active (root, chi, ancestry, relation-kind)
+stage B: classify inherited factor / born frontier
+stage C: batch sign oracle + sparse algebraic operators
+stage D: reduce partial responses deterministically
+stage E: collect closure residual + persist qualified delta</code></pre>
+<p>Synchronizace je nutná tam, kde <code>assoc</code> nebo
+<code>alt</code> propojí odlišné
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>χ</mi><annotation encoding="application/x-tex">\chi</annotation></semantics></math>-bloky.
+Deterministické sloučení musí uchovat orientaci, sign a závorkování.</p>
+<h2 id="databáze-a-obecné-stromy">7. Databáze a obecné stromy</h2>
+<p>Jde o dvě různé úrovně implementace:
+<code>source algebra index</code> pro matematickou sémantiku a
+<code>inspired hierarchical index</code> pro běžná data. U obecného
+dokumentového či aplikačního stromu nepředstíráme, že jeho podniková
+logika vznikla z CD násobení; přebíráme mechanismy strukturálního
+sdílení a delta reprezentace.</p>
+<p><strong>Návrh schématu PostgreSQL:</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> zd_root (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  root_id BIGINT <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">level</span> <span class="dt">INT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  chi BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  scheme_version <span class="dt">INT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  immutable_hash BYTEA <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> zd_delta (</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  root_id BIGINT <span class="kw">REFERENCES</span> zd_root(root_id),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  ancestry BYTEA <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  birth_level <span class="dt">INT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  a BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>, b BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  c BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>, d BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  relation_kind <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  orientation <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  payload_ref BYTEA,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span>(root_id, ancestry, a,b,c,d,relation_kind)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">INDEX</span> zd_delta_birth_idx <span class="kw">ON</span> zd_delta(birth_level, relation_kind);</span></code></pre></div>
+<p>Store only qualified novelty and actual semantic payload; inherited
+mathematically determined structure is calculated on reads. Transakční
+log zaručuje committed stav. Celočíselné adresy nad <code>BIGINT</code>
+vyžadují širší bitset/byte encoding.</p>
+<h2 id="higher-π-jako-výpočetní-orákulum-a-optimalizační-metrika">8.
+Higher-π jako výpočetní orákulum a optimalizační metrika</h2>
+<p>Algebraické invarianty <code>V_N</code>, <code>Phi_N</code>,
+<code>Q_N</code>, <code>Q_phase</code>, <code>C_N</code> poskytují
+přesné jednotkové testy bez Monte Carla. <code>Q_N</code> kvantifikuje
+průměrný čtvercový defekt násobení normovaných zdrojových prvků; je to
+analytická charakteristika jednotlivé CD vrstvy, kterou lze použít pro
+numerické testování signed kernelů, kontrolu implementace a výběr
+reprezentace podle požadované přesnosti.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fractions <span class="im">import</span> Fraction</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> comb</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> edges(n):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span> <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">16</span> <span class="cf">else</span> (n<span class="op">-</span><span class="dv">2</span>)<span class="op">*</span>(n<span class="op">-</span><span class="dv">4</span>)<span class="op">*</span>(n<span class="op">-</span><span class="dv">8</span>)<span class="op">//</span><span class="dv">16</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> q(n):</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Fraction(<span class="dv">32</span><span class="op">*</span>edges(n), n<span class="op">*</span>n<span class="op">*</span>(n<span class="op">+</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> q_phase(n):</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Fraction(<span class="dv">32</span><span class="op">*</span>edges(n), (n<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span><span class="op">*</span>(n<span class="op">+</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compound(n):</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Fraction(comb(n,n<span class="op">//</span><span class="dv">2</span>), <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">1</span><span class="op">+</span>q(n))<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">1</span><span class="op">+</span>q(<span class="dv">2</span><span class="op">*</span>n))</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> q(<span class="dv">16</span>) <span class="op">==</span> Fraction(<span class="dv">7</span>,<span class="dv">216</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> q(<span class="dv">32</span>) <span class="op">==</span> Fraction(<span class="dv">315</span>,<span class="dv">9248</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> compound(<span class="dv">8</span>) <span class="op">==</span> Fraction(<span class="dv">15120</span>,<span class="dv">223</span>)</span></code></pre></div>
+<h2 id="reprodukovatelnost-a-výkonnostní-kontrakt">9. Reprodukovatelnost
+a výkonnostní kontrakt</h2>
+<p><strong>Dodané:</strong> <code>code/src/main.rs</code>: rekurzivní
+signed-CD oracle, signed nulový predikát, explicitní svědek a Rust unit
+testy pro <code>K16</code>, <code>K32</code>, four-lift. Výpočty
+K16/K32/K64 a svědka byly nezávisle numericky ověřeny Python
+ekvivalentem. Rust kompilátor nebyl v tvorbě balíku dostupný; zdroj je
+připraven ke spuštění příkazy <code>cargo test</code> a
+<code>cargo run --release -- 32</code>.</p>
+<p><strong>Benchmark vůči CSR:</strong> pro stejné úlohy změřit (i)
+generování
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>N</mi></msub><annotation encoding="application/x-tex">E_N</annotation></semantics></math>,
+(ii) <code>apply(A,x)</code>, (iii) random ancestor lookup, (iv)
+born-frontier inkrement, (v) persist+reload, (vi) Krylov probes, (vii)
+celé end-to-end task. Uvádět peak RSS/VRAM, propustnost, p50/p99,
+přesnost a bajty na kvalifikovanou vazbu. Faktorované zděděné bloky mají
+algoritmickou výhodu; celkové produkční zrychlení se musí spočítat na
+konkrétní pracovní zátěži.</p>
+<h2 id="první-výpočetní-syntéza">10. První výpočetní syntéza</h2>
+<p>ZD genealogie přináší výpočetní princip, ve kterém je
+<strong>matematicky vynucený vztah algoritmem, nikoli položkou
+databáze</strong>. Higher-π poskytuje přesné kontrolní invarianty téhož
+algebraického zdroje; born-frontier zachovává skutečnou novost a
+multiplex udržuje nonalternativní informaci. Výsledkem je uskutečnitelný
+základ pro rozlehlé implicitní paměťové a výpočetní světy, včetně
+stavové a AI systémy — ne přilepený ZD graf, ale řízená generativní
+operátorová topologie.</p>
+<h2 id="úplný-typovaný-kontrakt-a-algebraické-invarianty">11. Úplný
+typovaný kontrakt a algebraické invarianty</h2>
+<p>Dělíme identitu algebraického objektu, jeho sémantický stav a
+fyzickou adresu uložení. <code>AlgebraKey</code> obsahuje
+<code>tower_version</code>, <code>level</code>, XOR barvu, dvě
+kanonizované dvojice bázových adres, relativní sign a
+<code>relation_kind</code>; <code>StorageKey</code> navíc kóduje
+<code>root_id</code>, ancestry, epochu a verzi schématu.
+<code>SemanticPayload</code> je nezávislá content-addressed data
+struktura. Signed oracle nikdy nevytváří historickou zkušenost
+uživatele, pouze ověřuje algebraickou povolenost vazby.</p>
+<p>Závorkování není metadata na okraji: strom výrazu
+<code>Mul(Mul(x,y),z)</code> se musí rozlišovat od
+<code>Mul(x,Mul(y,z))</code>. Při přesunu mezi CUDA a CPU musí
+referenční exact oracle ověřit znak, podporu výsledku i
+asociátor/alternátor. Pro floating-point amplitudy testujeme zvlášť
+numerickou odchylku; algebraický index sám čísla nezaokrouhluje.</p>
+<h2 id="výpočetní-jádra-a-nákladový-model">12. Výpočetní jádra a
+nákladový model</h2>
+<p>Nechť root incidence má
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+uzlů,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+nenulových hran a rodina má
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><msup><mn>2</mn><mi>t</mi></msup></mrow><annotation encoding="application/x-tex">m=2^t</annotation></semantics></math>
+následníků na root. Plný explicitní blok obsahuje
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>r</mi><mn>2</mn></msup><msup><mi>m</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">r^2m^2</annotation></semantics></math>
+prvků. Generativní <code>apply</code> má cenu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mi>m</mi><mo>+</mo><mi>e</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Theta(rm+e)</annotation></semantics></math>
+pro redukci vstupu, sparse root aplikaci a materializaci výstupu;
+pracovní paměť kromě vstupu/výstupu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(r)</annotation></semantics></math>.
+Pro náhodné čtení jednotlivé hrany stačí klasifikace root dvojice a
+ancestry, bez alokace celé matice.</p>
+<p>Algoritmus pro řídký birthday frontier odděluje tři kroky:
+deterministickou enumeraci kandidátních assessorů, rozhodnutí
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">W=+1</annotation></semantics></math>
+a deduplikaci výsledných klíčů. <code>birth_count</code> samotný
+nenahrazuje konstruktivní enumerátor. Při paměťové kompresi
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>m</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>Θ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Theta(m^2)\to\Theta(1)</annotation></semantics></math>
+jde o <strong>reprezentaci jedné pravidelné komponenty</strong>, nikoli
+o univerzální kompresní poměr všech dat či libovolného grafu.</p>
+<h2 id="paralelní-determinismus-a-persistence">13. Paralelní
+determinismus a persistence</h2>
+<p>Work units seskupujeme podle
+<code>(level, chi, root, ancestry_prefix, channel)</code> a přidělujeme
+jim monotonický <code>epoch</code>. Každá vrstva produkuje immutable
+<code>Delta{epoch, source_hash, op, payload_hash}</code>. Redukce musí
+mít jednoznačné pořadí při floating-point aritmetice; integer/symbolic
+výsledky mohou používat komutativní agregaci jen tam, kde to dovoluje
+algebraická operace. <code>commit</code> probíhá až po validaci všech
+rodičovských adres, externí sémantické payloady zůstávají obsahově
+adresované.</p>
+<p>PostgreSQL transakčně ukládá <em>zápisy</em>, nikoli generativní
+pravidla přepočítávaná jako data. NVMe snapshot obsahuje epochu, verzi
+sign rekurze a root hash; cold reload provede recalculation oracle a
+ověří kontrolní součty. Multiplexní dotaz vrací <code>ZD</code>,
+<code>non-ZD</code>, <code>comm</code>, <code>assoc</code>,
+<code>alt</code>, <code>birth</code> odděleně, a pokud sondy neobsáhnou
+celý Krylovův prostor, uvádí přesný rozměr nepozorovatelného
+komplementu.</p>
+<h2 id="výpočetní-experiment-a-regresní-protokol">14. Výpočetní
+experiment a regresní protokol</h2>
+<p>Dodané <code>code/benchmark.py</code> provádí přesně stejný
+<code>apply</code> s explicitní referenční maticí a faktorizovaným
+blokem. Výstupy se kontrolují na rovnost a ukládají se jako CSV s typem
+experimentu, rozměrem, dobou a odhadovaným objemem materializovaných
+dat. Nepoužíváme naměřené doby jedné konkrétní platformy jako
+univerzální hardwarový závěr. <code>code/verify.py</code> certifikuje
+základní číselné identity; <code>code/src/main.rs</code> reprodukuje
+signed oracle nezávislou jazykovou implementací.</p>
+<p>Učení a změnu kompetencí systému vyhodnocujeme třemi nezávislými
+testy: (a) zachování exaktní algebraické identity po refinementu, (b)
+správnost persistovaných pracovních a trvalých stavů, (c) změna
+skutečných kognitivních kompetencí v teacher-removed testu. Pouhé
+snížení VRAM není doklad učení a úspěšné algebraické testy nejsou
+dokladem obecné inteligence.</p>
+<h2 id="závěr">15. Závěr</h2>
+<p>Jednotný přínos je konkrétní: signed CD definice vytváří
+adresovatelné vztahy, genealogie umožňuje faktorizované implicitní
+výpočty, birth frontier zachycuje nové členy a normově-momentové
+invarianty jsou přesnými regresními kontrolami. Tento návrh je
+realizovatelný bez materializace celé CD tabulky; strukturální úspory
+jsou vyjádřeny algoritmickými náklady a doprovodným benchmarkem.</p>
+<h2 id="literatura">Literatura</h2>
+<p>[1] V. Bíža, <em>Fraktální výpočetní algebra dělitelů nuly — signed
+Cayley–Dicksonův informační les a vyšší π</em>, doprovodný Paper
+A.<br />
+[2] G. Moreno, <em>Constructing zero divisors in the higher dimensional
+Cayley–Dickson algebras</em>, arXiv:math/0512517.<br />
+[3] T. A. Davis, <em>Algorithm 1000: SuiteSparse:GraphBLAS</em>, ACM
+Transactions on Mathematical Software.</p>
+</body>
+</html>

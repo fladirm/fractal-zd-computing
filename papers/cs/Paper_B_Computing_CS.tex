@@ -1,0 +1,456 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{DejaVu Serif}
+  \setmonofont[]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=19mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\section{Fraktální výpočetní algebra dělitelů nuly --- generativní
+operátory, paměť a paralelní
+algoritmy}\label{fraktuxe1lnuxed-vuxfdpoux10detnuxed-algebra-dux11blitelux16f-nuly-generativnuxed-operuxe1tory-pamux11bux165-a-paralelnuxed-algoritmy}
+
+\textbf{Samostatný článek z matematiky a informatiky · 25. října 2026}\\
+\textbf{Autor:} Vladimír Bíža\\
+\textbf{Téma:} Signed algebraické orákulum, implicitní operátory,
+úložiště, CPU/GPU a návrh ověřitelných benchmarků.
+
+\subsection{Abstrakt}\label{abstrakt}
+
+Převádíme exaktní informační struktury Paperu A na návrh runtime, v němž
+jsou genealogická adresa, incidence, fáze a matematické operátory
+rekonstruovatelné bez explicitní materializace celé vyšší algebry.
+Výsledkem není univerzální tvrzení, že zero-divisor algebra zrychlí
+libovolný program: je to konkrétní systém \textbf{implicitní dědičnost +
+explicitní novost + operátorově typovaná sémantika}, který může přímo
+sloužit pro adresovatelnou algebraickou paměť, multiresoluční GPU
+výpočty, řídké databáze a originální generativní datové indexy.
+Přikládáme samostatný Rust oracle, regresní testy a benchmarkový
+kontrakt.
+
+\subsection{1. Výpočetní primitivum není uzel stromu, ale strukturální
+adresa}\label{vuxfdpoux10detnuxed-primitivum-nenuxed-uzel-stromu-ale-strukturuxe1lnuxed-adresa}
+
+Definujme \(a\in[0,2^k)\), \(\chi=a\oplus b\), kořen \((k_0,\chi_0)\),
+ancestry slovo \(u\in\{0,1\}^{k-k_0}\), orientaci a typ operátoru. Čistě
+algebraický vztah \(e_a e_b=\varepsilon(a,b)e_{a\oplus b}\) dostaneme
+přes rekurzi v čase \(O(k)\), prostoru \(O(k)\) (při iterativním bitovém
+provedení \(O(1)\) pomocné paměti). Dvojice assessorů má rozhodnutí
+nulové hrany čtyřmi voláními oracle.
+
+\textbf{Kanonický klíč:}
+\texttt{CDAddr\ \{\ level,\ a,\ b,\ chi,\ orientation,\ sign,\ ancestry,\ birth\_level,\ relation\_kind\ \}}.
+\texttt{chi} nikdy nenahrazuje čtyři adresy; \texttt{relation\_kind}
+musí rozlišit ZD od non-ZD, comm, assoc, alt, shared a birth. Tento klíč
+je strukturální adresa algebraické identity, nikoli automatické uložení
+jejího sémantického obsahu.
+
+\subsection{2. Nulové matice neukládat; aplikovat
+je}\label{nulovuxe9-matice-neukluxe1dat-aplikovat-je}
+
+Zděděná incidence \(A_t=A_0\otimes J_m\), \(m=2^t\), umožňuje aplikaci
+na rozdělený vektor \(x_{p,u}\) bez jediného alokovaného \(6m\times6m\)
+bloku:
+
+\[
+s_q=\sum_{v=1}^{m} x_{q,v},\quad r_p=\sum_q (A_0)_{pq}s_q,\quad y_{p,u}=r_p.
+\tag{1}
+\]
+
+\textbf{Náklad:} obecná dense aplikace \(O((6m)^2)\), generativní
+aplikace \(O(6m+6^2)\), paměť \(O(6+m\cdot6)\) pro vstup a výstup,
+\(O(6)\) pracovní sumy. V případě nematerializovaného/streamovaného
+výstupu lze i výstup konstruovat lazy. Pro \(m=128\) by měla jedna
+šestikořenová matice 589824 explicitních prvků; generativní operátor
+uchovává pouze 6×6 kořen a velikost rodiny.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ apply\_inherited(a0, x):}
+    \CommentTok{\# x[p][u], p in 0..root{-}1, u in 0..m{-}1}
+\NormalTok{    sums }\OperatorTok{=}\NormalTok{ [}\BuiltInTok{sum}\NormalTok{(block) }\ControlFlowTok{for}\NormalTok{ block }\KeywordTok{in}\NormalTok{ x]}
+\NormalTok{    out }\OperatorTok{=}\NormalTok{ [}\BuiltInTok{sum}\NormalTok{(a0[p][q] }\OperatorTok{*}\NormalTok{ sums[q] }\ControlFlowTok{for}\NormalTok{ q }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(a0)))}
+           \ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(a0))]}
+    \ControlFlowTok{return}\NormalTok{ [[out[p]] }\OperatorTok{*} \BuiltInTok{len}\NormalTok{(x[p]) }\ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(a0))]}
+\end{Highlighting}
+\end{Shaded}
+
+Pozor: jde o adjacency zděděné komponenty, nikoli o celou signed CD
+multiplikaci a nikoli o všechny born komponenty.
+
+\subsection{3. Inherited vs birth: jak reprezentovat skutečnou
+novost}\label{inherited-vs-birth-jak-reprezentovat-skuteux10dnou-novost}
+
+Pro každé zdvojení uložíme: (a) kořenový nebo již známý zděděný faktor,
+(b) volací pravidlo sign rekurze, (c) \textbf{birth frontier}, který
+nese jen nově vzniklou kvalifikovanou vazbu, a (d) volitelné cached
+čtení. Kombinatorický budget splňuje \(B_{2N}=E_{2N}-4E_N\). Samotný
+počet však nevytváří seznam nových adres: generátor musí nové \(\chi\) a
+čtyřadresový oracle skutečně procházet nebo jinak konstruktivně
+enumerovat. Výsledný runtime by měl umět vrátit nejen \texttt{is\_zero}
+ale i \texttt{why}: provenience kořene, signed predikát, reprezentanta
+třídy a úroveň narození.
+
+\subsection{4. Algebraické indexy pro AI a stavové
+systémy}\label{algebraickuxe9-indexy-pro-ai-a-stavovuxe9-systuxe9my}
+
+Genealogii používáme jako strukturovaný \textbf{algebraický index},
+nikoli jako automaticky naučenou reprezentaci reálných dat. V AI,
+distribuovaném zpracování a aplikačních grafech oddělujeme matematický
+klíč, reálně zaznamenaný stav a sémantický obsah. Počty a signatury
+vztahů se dopočítávají algoritmem, skutečné uživatelské události a
+parametry modelu se ukládají.
+
+Výpočetní pipeline uchovává \texttt{relation\_kind} pro \texttt{ZD},
+\texttt{non-ZD}, \texttt{comm}, \texttt{assoc}, \texttt{alt} a
+\texttt{birth}. Nový vstup může upravit existující větev nebo přidat
+samostatnou \texttt{birth} větev; matematické zdvojení samo o sobě
+nevytváří zkušenost, fakta ani naučené váhy. Operátory trojných součinů
+musí zachovat závorkování. Pro pozorovatelnost používáme hodnost
+Krylovovy matice a požadujeme další sondu právě tehdy, když chybí
+rozměry readoutu.
+
+\subsection{5. Paměťová pyramida: VRAM / RAM /
+NVMe}\label{pamux11bux165ovuxe1-pyramida-vram-ram-nvme}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{VRAM:} aktivní amplitudy, hot blocky, GPU batch pro
+  \(\varepsilon\), Krylovovy báze, lokální operátory a jejich dočasné
+  projekce.
+\item
+  \textbf{RAM:} ancestry index, hot/warm factor cache, recent birth
+  frontier a prefetch plány.
+\item
+  \textbf{NVMe:} committed stav, provenience, immutable kořeny,
+  transakční log, nové sémantické objekty a kvalifikované ZD frontier.
+\end{itemize}
+
+Vrstvy přesouvají \textbf{data a aktivní support}, nikoli matematickou
+definici pléna. Čisté \texttt{K\_\{2048\}} neimplikuje alokaci
+\(2048^2\) tabulky. Strukturované operátory mohou být implicitní;
+samotný živý stav však pro hustých 2048 amplitud stále vyžaduje
+příslušné amplitudy.
+
+\subsection{6. GPU paralelismus --- rozdělovat podle algebraické
+práce}\label{gpu-paralelismus-rozdux11blovat-podle-algebraickuxe9-pruxe1ce}
+
+Efektivní kernelová hranice je typicky
+\texttt{chi\ ×\ ancestry-prefix\ ×\ relation\_kind\ ×\ active-support}.
+Pro zděděné segmenty použijeme redukce bloků a broadcast podle (1). Pro
+born segmenty frontier spustí řídký generátor nebo sparse gather. Pro
+výpočet signed násobení je přirozené seskupení XOR a bitové rekurze;
+paměťový layout je \texttt{struct-of-arrays} pro koalescentní GPU fetch.
+Neslučujeme různé vztahové kanály do jediného booleovského grafu.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stage A: select active (root, chi, ancestry, relation{-}kind)}
+\NormalTok{stage B: classify inherited factor / born frontier}
+\NormalTok{stage C: batch sign oracle + sparse algebraic operators}
+\NormalTok{stage D: reduce partial responses deterministically}
+\NormalTok{stage E: collect closure residual + persist qualified delta}
+\end{Highlighting}
+\end{Shaded}
+
+Synchronizace je nutná tam, kde \texttt{assoc} nebo \texttt{alt} propojí
+odlišné \(\chi\)-bloky. Deterministické sloučení musí uchovat orientaci,
+sign a závorkování.
+
+\subsection{7. Databáze a obecné
+stromy}\label{databuxe1ze-a-obecnuxe9-stromy}
+
+Jde o dvě různé úrovně implementace: \texttt{source\ algebra\ index} pro
+matematickou sémantiku a \texttt{inspired\ hierarchical\ index} pro
+běžná data. U obecného dokumentového či aplikačního stromu
+nepředstíráme, že jeho podniková logika vznikla z CD násobení; přebíráme
+mechanismy strukturálního sdílení a delta reprezentace.
+
+\textbf{Návrh schématu PostgreSQL:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ zd\_root (}
+\NormalTok{  root\_id BIGINT }\KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{,}
+  \KeywordTok{level} \DataTypeTok{INT} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  chi BIGINT }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  scheme\_version }\DataTypeTok{INT} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  immutable\_hash BYTEA }\KeywordTok{NOT} \KeywordTok{NULL}
+\NormalTok{);}
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ zd\_delta (}
+\NormalTok{  root\_id BIGINT }\KeywordTok{REFERENCES}\NormalTok{ zd\_root(root\_id),}
+\NormalTok{  ancestry BYTEA }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  birth\_level }\DataTypeTok{INT} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  a BIGINT }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{, b BIGINT }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  c BIGINT }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{, d BIGINT }\KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  relation\_kind }\DataTypeTok{SMALLINT} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  orientation }\DataTypeTok{SMALLINT} \KeywordTok{NOT} \KeywordTok{NULL}\NormalTok{,}
+\NormalTok{  payload\_ref BYTEA,}
+  \KeywordTok{PRIMARY} \KeywordTok{KEY}\NormalTok{(root\_id, ancestry, a,b,c,d,relation\_kind)}
+\NormalTok{);}
+\KeywordTok{CREATE} \KeywordTok{INDEX}\NormalTok{ zd\_delta\_birth\_idx }\KeywordTok{ON}\NormalTok{ zd\_delta(birth\_level, relation\_kind);}
+\end{Highlighting}
+\end{Shaded}
+
+Store only qualified novelty and actual semantic payload; inherited
+mathematically determined structure is calculated on reads. Transakční
+log zaručuje committed stav. Celočíselné adresy nad \texttt{BIGINT}
+vyžadují širší bitset/byte encoding.
+
+\subsection{8. Higher-π jako výpočetní orákulum a optimalizační
+metrika}\label{higher-ux3c0-jako-vuxfdpoux10detnuxed-oruxe1kulum-a-optimalizaux10dnuxed-metrika}
+
+Algebraické invarianty \texttt{V\_N}, \texttt{Phi\_N}, \texttt{Q\_N},
+\texttt{Q\_phase}, \texttt{C\_N} poskytují přesné jednotkové testy bez
+Monte Carla. \texttt{Q\_N} kvantifikuje průměrný čtvercový defekt
+násobení normovaných zdrojových prvků; je to analytická charakteristika
+jednotlivé CD vrstvy, kterou lze použít pro numerické testování signed
+kernelů, kontrolu implementace a výběr reprezentace podle požadované
+přesnosti.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ fractions }\ImportTok{import}\NormalTok{ Fraction}
+\ImportTok{from}\NormalTok{ math }\ImportTok{import}\NormalTok{ comb}
+
+\KeywordTok{def}\NormalTok{ edges(n):}
+    \ControlFlowTok{return} \DecValTok{0} \ControlFlowTok{if}\NormalTok{ n }\OperatorTok{\textless{}} \DecValTok{16} \ControlFlowTok{else}\NormalTok{ (n}\OperatorTok{{-}}\DecValTok{2}\NormalTok{)}\OperatorTok{*}\NormalTok{(n}\OperatorTok{{-}}\DecValTok{4}\NormalTok{)}\OperatorTok{*}\NormalTok{(n}\OperatorTok{{-}}\DecValTok{8}\NormalTok{)}\OperatorTok{//}\DecValTok{16}
+
+\KeywordTok{def}\NormalTok{ q(n):}
+    \ControlFlowTok{return}\NormalTok{ Fraction(}\DecValTok{32}\OperatorTok{*}\NormalTok{edges(n), n}\OperatorTok{*}\NormalTok{n}\OperatorTok{*}\NormalTok{(n}\OperatorTok{+}\DecValTok{2}\NormalTok{)}\OperatorTok{**}\DecValTok{2}\NormalTok{)}
+
+\KeywordTok{def}\NormalTok{ q\_phase(n):}
+    \ControlFlowTok{return}\NormalTok{ Fraction(}\DecValTok{32}\OperatorTok{*}\NormalTok{edges(n), (n}\OperatorTok{{-}}\DecValTok{1}\NormalTok{)}\OperatorTok{**}\DecValTok{2}\OperatorTok{*}\NormalTok{(n}\OperatorTok{+}\DecValTok{1}\NormalTok{)}\OperatorTok{**}\DecValTok{2}\NormalTok{)}
+
+\KeywordTok{def}\NormalTok{ compound(n):}
+    \ControlFlowTok{return}\NormalTok{ Fraction(comb(n,n}\OperatorTok{//}\DecValTok{2}\NormalTok{), }\DecValTok{1}\NormalTok{) }\OperatorTok{*}\NormalTok{ (}\DecValTok{1}\OperatorTok{+}\NormalTok{q(n))}\OperatorTok{**}\DecValTok{2} \OperatorTok{/}\NormalTok{ (}\DecValTok{1}\OperatorTok{+}\NormalTok{q(}\DecValTok{2}\OperatorTok{*}\NormalTok{n))}
+
+\ControlFlowTok{assert}\NormalTok{ q(}\DecValTok{16}\NormalTok{) }\OperatorTok{==}\NormalTok{ Fraction(}\DecValTok{7}\NormalTok{,}\DecValTok{216}\NormalTok{)}
+\ControlFlowTok{assert}\NormalTok{ q(}\DecValTok{32}\NormalTok{) }\OperatorTok{==}\NormalTok{ Fraction(}\DecValTok{315}\NormalTok{,}\DecValTok{9248}\NormalTok{)}
+\ControlFlowTok{assert}\NormalTok{ compound(}\DecValTok{8}\NormalTok{) }\OperatorTok{==}\NormalTok{ Fraction(}\DecValTok{15120}\NormalTok{,}\DecValTok{223}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{9. Reprodukovatelnost a výkonnostní
+kontrakt}\label{reprodukovatelnost-a-vuxfdkonnostnuxed-kontrakt}
+
+\textbf{Dodané:} \texttt{code/src/main.rs}: rekurzivní signed-CD oracle,
+signed nulový predikát, explicitní svědek a Rust unit testy pro
+\texttt{K16}, \texttt{K32}, four-lift. Výpočty K16/K32/K64 a svědka byly
+nezávisle numericky ověřeny Python ekvivalentem. Rust kompilátor nebyl v
+tvorbě balíku dostupný; zdroj je připraven ke spuštění příkazy
+\texttt{cargo\ test} a \texttt{cargo\ run\ -\/-release\ -\/-\ 32}.
+
+\textbf{Benchmark vůči CSR:} pro stejné úlohy změřit (i) generování
+\(E_N\), (ii) \texttt{apply(A,x)}, (iii) random ancestor lookup, (iv)
+born-frontier inkrement, (v) persist+reload, (vi) Krylov probes, (vii)
+celé end-to-end task. Uvádět peak RSS/VRAM, propustnost, p50/p99,
+přesnost a bajty na kvalifikovanou vazbu. Faktorované zděděné bloky mají
+algoritmickou výhodu; celkové produkční zrychlení se musí spočítat na
+konkrétní pracovní zátěži.
+
+\subsection{10. První výpočetní
+syntéza}\label{prvnuxed-vuxfdpoux10detnuxed-syntuxe9za}
+
+ZD genealogie přináší výpočetní princip, ve kterém je
+\textbf{matematicky vynucený vztah algoritmem, nikoli položkou
+databáze}. Higher-π poskytuje přesné kontrolní invarianty téhož
+algebraického zdroje; born-frontier zachovává skutečnou novost a
+multiplex udržuje nonalternativní informaci. Výsledkem je uskutečnitelný
+základ pro rozlehlé implicitní paměťové a výpočetní světy, včetně
+stavové a AI systémy --- ne přilepený ZD graf, ale řízená generativní
+operátorová topologie.
+
+\subsection{11. Úplný typovaný kontrakt a algebraické
+invarianty}\label{uxfaplnuxfd-typovanuxfd-kontrakt-a-algebraickuxe9-invarianty}
+
+Dělíme identitu algebraického objektu, jeho sémantický stav a fyzickou
+adresu uložení. \texttt{AlgebraKey} obsahuje \texttt{tower\_version},
+\texttt{level}, XOR barvu, dvě kanonizované dvojice bázových adres,
+relativní sign a \texttt{relation\_kind}; \texttt{StorageKey} navíc
+kóduje \texttt{root\_id}, ancestry, epochu a verzi schématu.
+\texttt{SemanticPayload} je nezávislá content-addressed data struktura.
+Signed oracle nikdy nevytváří historickou zkušenost uživatele, pouze
+ověřuje algebraickou povolenost vazby.
+
+Závorkování není metadata na okraji: strom výrazu
+\texttt{Mul(Mul(x,y),z)} se musí rozlišovat od \texttt{Mul(x,Mul(y,z))}.
+Při přesunu mezi CUDA a CPU musí referenční exact oracle ověřit znak,
+podporu výsledku i asociátor/alternátor. Pro floating-point amplitudy
+testujeme zvlášť numerickou odchylku; algebraický index sám čísla
+nezaokrouhluje.
+
+\subsection{12. Výpočetní jádra a nákladový
+model}\label{vuxfdpoux10detnuxed-juxe1dra-a-nuxe1kladovuxfd-model}
+
+Nechť root incidence má \(r\) uzlů, \(e\) nenulových hran a rodina má
+\(m=2^t\) následníků na root. Plný explicitní blok obsahuje \(r^2m^2\)
+prvků. Generativní \texttt{apply} má cenu \(\Theta(rm+e)\) pro redukci
+vstupu, sparse root aplikaci a materializaci výstupu; pracovní paměť
+kromě vstupu/výstupu \(O(r)\). Pro náhodné čtení jednotlivé hrany stačí
+klasifikace root dvojice a ancestry, bez alokace celé matice.
+
+Algoritmus pro řídký birthday frontier odděluje tři kroky:
+deterministickou enumeraci kandidátních assessorů, rozhodnutí \(W=+1\) a
+deduplikaci výsledných klíčů. \texttt{birth\_count} samotný nenahrazuje
+konstruktivní enumerátor. Při paměťové kompresi
+\(\Theta(m^2)\to\Theta(1)\) jde o \textbf{reprezentaci jedné pravidelné
+komponenty}, nikoli o univerzální kompresní poměr všech dat či
+libovolného grafu.
+
+\subsection{13. Paralelní determinismus a
+persistence}\label{paralelnuxed-determinismus-a-persistence}
+
+Work units seskupujeme podle
+\texttt{(level,\ chi,\ root,\ ancestry\_prefix,\ channel)} a přidělujeme
+jim monotonický \texttt{epoch}. Každá vrstva produkuje immutable
+\texttt{Delta\{epoch,\ source\_hash,\ op,\ payload\_hash\}}. Redukce
+musí mít jednoznačné pořadí při floating-point aritmetice;
+integer/symbolic výsledky mohou používat komutativní agregaci jen tam,
+kde to dovoluje algebraická operace. \texttt{commit} probíhá až po
+validaci všech rodičovských adres, externí sémantické payloady zůstávají
+obsahově adresované.
+
+PostgreSQL transakčně ukládá \emph{zápisy}, nikoli generativní pravidla
+přepočítávaná jako data. NVMe snapshot obsahuje epochu, verzi sign
+rekurze a root hash; cold reload provede recalculation oracle a ověří
+kontrolní součty. Multiplexní dotaz vrací \texttt{ZD}, \texttt{non-ZD},
+\texttt{comm}, \texttt{assoc}, \texttt{alt}, \texttt{birth} odděleně, a
+pokud sondy neobsáhnou celý Krylovův prostor, uvádí přesný rozměr
+nepozorovatelného komplementu.
+
+\subsection{14. Výpočetní experiment a regresní
+protokol}\label{vuxfdpoux10detnuxed-experiment-a-regresnuxed-protokol}
+
+Dodané \texttt{code/benchmark.py} provádí přesně stejný \texttt{apply} s
+explicitní referenční maticí a faktorizovaným blokem. Výstupy se
+kontrolují na rovnost a ukládají se jako CSV s typem experimentu,
+rozměrem, dobou a odhadovaným objemem materializovaných dat. Nepoužíváme
+naměřené doby jedné konkrétní platformy jako univerzální hardwarový
+závěr. \texttt{code/verify.py} certifikuje základní číselné identity;
+\texttt{code/src/main.rs} reprodukuje signed oracle nezávislou jazykovou
+implementací.
+
+Učení a změnu kompetencí systému vyhodnocujeme třemi nezávislými testy:
+(a) zachování exaktní algebraické identity po refinementu, (b) správnost
+persistovaných pracovních a trvalých stavů, (c) změna skutečných
+kognitivních kompetencí v teacher-removed testu. Pouhé snížení VRAM není
+doklad učení a úspěšné algebraické testy nejsou dokladem obecné
+inteligence.
+
+\subsection{15. Závěr}\label{zuxe1vux11br}
+
+Jednotný přínos je konkrétní: signed CD definice vytváří adresovatelné
+vztahy, genealogie umožňuje faktorizované implicitní výpočty, birth
+frontier zachycuje nové členy a normově-momentové invarianty jsou
+přesnými regresními kontrolami. Tento návrh je realizovatelný bez
+materializace celé CD tabulky; strukturální úspory jsou vyjádřeny
+algoritmickými náklady a doprovodným benchmarkem.
+
+\subsection{Literatura}\label{literatura}
+
+{[}1{]} V. Bíža, \emph{Fraktální výpočetní algebra dělitelů nuly ---
+signed Cayley--Dicksonův informační les a vyšší π}, doprovodný Paper
+A.\\
+{[}2{]} G. Moreno, \emph{Constructing zero divisors in the higher
+dimensional Cayley--Dickson algebras}, arXiv:math/0512517.\\
+{[}3{]} T. A. Davis, \emph{Algorithm 1000: SuiteSparse:GraphBLAS}, ACM
+Transactions on Mathematical Software.
+
+\end{document}

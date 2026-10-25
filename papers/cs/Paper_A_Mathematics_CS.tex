@@ -1,0 +1,616 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{DejaVu Serif}
+  \setmonofont[]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=19mm]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\section{Fraktální výpočetní algebra dělitelů nuly --- signed
+Cayley--Dicksonův informační les a vyšší
+π}\label{fraktuxe1lnuxed-vuxfdpoux10detnuxed-algebra-dux11blitelux16f-nuly-signed-cayleydicksonux16fv-informaux10dnuxed-les-a-vyux161ux161uxed-ux3c0}
+
+\textbf{Samostatný článek z matematiky a informatiky · 25. října 2026}\\
+\textbf{Autor:} Vladimír Bíža\\
+\textbf{Téma:} Algebra Cayley--Dicksonových dělitelů nuly, genealogické
+grafy, vyšší π a reprodukovatelné invarianty.
+
+\subsection{Abstrakt}\label{abstrakt}
+
+Konstruujeme exaktní, adresovatelný a neomezeně rekurzivní informační
+les standardních real Cayley--Dicksonových algeber \(K_{2^k}\) od
+\(k=4\). Jeho dvoučlenné nulové vazby lze rozhodnout znaménkovým
+čtyřbodovým predikátem nad XOR adresami; každá rodičovská vazba vytváří
+úplnou hierarchii vzájemně anihilujících podprostorů, jejíž konečné
+adjacency mají Kroneckerův tvar a analytickou graphon limitu. Celý les
+se zároveň nevyčerpává děděním: při každém zdvojení vzniká přesně daný
+počet nových vazeb, jejichž podíl konverguje k jedné polovině. Následně
+odvozujeme společnou \(\pi\)-periodu imaginárních fázových rovin,
+objemy, celočíselné fúzní koeficienty, přesné momenty selhání normové
+multiplikativity a racionální složeniny vyššího \(\pi\). Tyto objekty
+tvoří jeden generativní matematický atlas, nikoli volně vybranou kolekci
+konstant.
+
+\textbf{Klíčová slova:} Cayley--Dickson; zero divisors; signed XOR
+incidence; genealogie; normový defekt; graphon; projektivní variety;
+vyšší π; implicitní výpočet.
+
+\subsection{1. Kanonický algebraický
+kořen}\label{kanonickuxfd-algebraickuxfd-koux159en}
+
+Zaveďme \(K_1=\mathbb R\), \(K_{2N}=K_N\oplus K_N\), konjugaci
+\(\overline{(a,b)}=(\bar a,-b)\) a násobení
+
+\[
+(a,b)(c,d)=(ac-\bar d b,\;da+b\bar c).
+\tag{1}
+\]
+
+Pro kanonické jednotky \(e_a\), \(a\in[0,N)\), je
+
+\[
+e_a e_b=\varepsilon_k(a,b)e_{a\oplus b},\qquad \varepsilon_k(a,b)\in\{-1,1\}.
+\tag{2}
+\]
+
+Pro \(a,b<N\), \(\eta(0)=1,\;\eta(b>0)=-1\), rekurze na \(K_{2N}\) zní
+
+\[
+\begin{aligned}
+\varepsilon_{k+1}(a,b)&=\varepsilon_k(a,b),\\
+\varepsilon_{k+1}(a,N+b)&=\varepsilon_k(b,a),\\
+\varepsilon_{k+1}(N+a,b)&=\eta(b)\varepsilon_k(a,b),\\
+\varepsilon_{k+1}(N+a,N+b)&=-\eta(b)\varepsilon_k(b,a).
+\end{aligned}\tag{3}
+\]
+
+Toto je celý deterministický oracle znamének; po bitech vyžaduje pouze
+\(O(k)\) kroků a nevyžaduje multiplikační tabulku \(N^2\). Pracujeme se
+standardní nesplitovou pozitivní kvadratickou normou
+\(\lVert x\rVert^2=\sum_a x_a^2\). Algebra je obecně od \(K_8\)
+neasociativní, od \(K_{16}\) též nonalternativní a s nenulovými nulovými
+děliteli.
+
+\subsection{2. Čtyřadresový nulový
+predikát}\label{ux10dtyux159adresovuxfd-nulovuxfd-predikuxe1t}
+
+Definujme \emph{assessor} \((a,b)\), kde \(0<a<b<N\),
+\(\chi=a\oplus b\), a čistě imaginární směry \(x=e_a+\sigma e_b\),
+\(y=e_c+\tau e_d\) s \(\sigma,\tau\in\{\pm1\}\). Čtyři odlišné adresy se
+v součinu mohou vyrušit pouze při \(a\oplus b=c\oplus d=\chi\). Potom
+
+\[
+xy=(\varepsilon_{ac}+\sigma\tau\varepsilon_{bd})e_{a\oplus c}+(\tau\varepsilon_{ad}+\sigma\varepsilon_{bc})e_{a\oplus d}.
+\tag{4}
+\]
+
+Definujme signed plaquette
+
+\[
+W(a,b;c,d)=\varepsilon_{ac}\varepsilon_{bd}\varepsilon_{ad}\varepsilon_{bc}.
+\tag{5}
+\]
+
+\textbf{Věta 1 (úplnost predikátu).} Pro disjunktní assessory se
+společnou XOR barvou existují nenulové relativně podepsané směry s
+\(xy=0\) právě tehdy, když \(W=+1\). Přípustná znaménka splňují
+\(\sigma\tau=-\varepsilon_{ac}\varepsilon_{bd}\). \emph{Důkaz.} Oba
+koeficienty v (4) musí současně vymizet. Vynásobení dvou znaménkových
+podmínek dává (5), zpětným dosazením získáme předepsaný součin znamének.
+\(\square\)
+
+Čtyři adresy, jejich orientace a relativní znaménka jsou nezastupitelná
+data: samotný počet ZD hran, jejich \(\chi\) nebo adjacency je
+nezachytí.
+
+\subsection{3. Kořen K16, jeho spektrum a úplný
+komplement}\label{koux159en-k16-jeho-spektrum-a-uxfaplnuxfd-komplement}
+
+V \(K_{16}\) vzniká sedm aktivních komponent \(\chi=9,\ldots,15\). Každá
+má šest nepodepsaných assessorů a adjacency kompletního tripartitního
+grafu \(K_{2,2,2}\). Tedy
+
+\[
+|V|=6,\quad |E|=12,\quad\operatorname{spec}(A)=\{4,-2,-2,0,0,0\}.
+\tag{6}
+\]
+
+Na barvu \(\chi\) existuje \(\binom72=21\) dvojic disjunktních
+assessorů; přes patnáct barev celkem 315 kandidátních dvojic. V nulových
+větvích leží přesně \(7\cdot12=84\) hran, ve zbývajícím nenulovém
+komplementu 231. Toto \textbf{není} počet veškerých nulových dělitelů:
+spojitých anulujících směrů je nekonečně mnoho.
+
+Konkrétním svědkem je
+
+\[
+(e_2+e_{11})(e_4-e_{13})=0=(e_4-e_{13})(e_2+e_{11}).
+\tag{7}
+\]
+
+\subsection{4. Dědičná čtyřnásobná věta a anulující
+podprostory}\label{dux11bdiux10dnuxe1-ux10dtyux159nuxe1sobnuxe1-vux11bta-a-anulujuxedcuxed-podprostory}
+
+\textbf{Věta 2 (four-lift).} Jsou-li \(x,y\in K_N\) ortogonální čistě
+imaginární nulové dělitele se \(xy=yx=0\), položme v \(K_{2N}\)
+
+\[
+x_0=(x,0),\quad x_1=(0,x),\quad y_0=(y,0),\quad y_1=(0,y).
+\]
+
+Potom \(x_i y_j=y_j x_i=0\) pro \(i,j\in\{0,1\}\). \emph{Důkaz.} Čtyři
+substituce do (1); smíšené produkty se redukují na \(xy\), \(yx\) nebo
+jejich konjugáty, které všechny vymizí. \(\square\)
+
+Indukcí po \(t\) krocích vzniknou \(2^t\) nezávislé kopie každého
+koncového směru. Bilinearita dává mnohem více než \(4^t\) diskrétních
+vazeb:
+
+\[
+V_x^{(t)}V_y^{(t)}=V_y^{(t)}V_x^{(t)}=\{0\},\quad
+\dim V_x^{(t)}=\dim V_y^{(t)}=2^t.
+\tag{8}
+\]
+
+Po projektivizaci získáváme explicitní plochu
+
+\[
+\mathbb{RP}^{2^t-1}\times\mathbb{RP}^{2^t-1}\subseteq\mathscr Z_{k+t}^{\mathrm{proj}}.
+\tag{9}
+\]
+
+Pro \(K_{16}\to K_{2048}\) je \(t=7\): dvě 128rozměrné navzájem
+anihilující podprostory a 16384 elementárních dvojic (32768 při kontrole
+obou pořadí). Oproti explicitnímu seznamu je lze popsat kořenem, \(t\) a
+bitovou adresou.
+
+\subsection{5. Faktorizované spektrum a fraktální
+hranice}\label{faktorizovanuxe9-spektrum-a-fraktuxe1lnuxed-hranice}
+
+\textbf{Věta 3 (zděděná komponenta).} Pro pevnou starou barvu \(\chi\),
+která se při CD zdvojení nepředefinuje, platí
+
+\[
+A_{\chi,k+t}=A_{\chi,k}\otimes J_{2^t},\qquad J_m=\mathbf1_m\mathbf1_m^T.
+\tag{10}
+\]
+
+\emph{Důkaz.} Věta 2 mění každou existující hranu v úplný bipartitní
+\(K_{2,2}\) a žádnou nehranu dané zděděné komponenty v hranu. Iterace
+odpovídá Kroneckerovu součinu. \(\square\)
+
+Pro kořenový oktaedr z (6):
+
+\[
+\operatorname{spec}(A_t)=\{4\cdot 2^t,-2\cdot2^t,-2\cdot2^t,0^{\times(6\cdot2^t-3)}\}.
+\tag{11}
+\]
+
+Normalizovaná nenulová spektra jsou ve všech generacích
+\(\{2/3,-1/3,-1/3\}\). Projektivní/genealogická hranice se při
+Bernoulliho míře ancestry kóduje tripartitním graphonem nad třemi
+třídami × Cantorovou hranicí. Je to exaktní limita \textbf{zděděné
+komponenty}, nikoli celého nově se rodícího lesa.
+
+\subsection{6. Novorozené vazby: les není recyklovaná kopie sebe
+sama}\label{novorozenuxe9-vazby-les-nenuxed-recyklovanuxe1-kopie-sebe-sama}
+
+Počet nepodepsaných nulových \emph{assessor edges} na vrstvě \(N=2^k\)
+je
+
+\[
+E_N=\frac{(N-2)(N-4)(N-8)}{16},\quad N\ge16.
+\tag{12}
+\]
+
+Tento globální počet je přesná enumerační věta pro nepodepsané
+dvoučlenné assessory se společnou XOR barvou. Jeho rozsah je výslovně
+omezen na tento atlas; nezahrnuje všechny kontinuální nulové dělitele.
+Odvození vychází z rozdělení barev, disjunktních assessorů a
+znaménkového predikátu (5), nikoli z hypotézy o externích aplikačních
+entitách.
+
+\textbf{Věta 4 (birth budget).} Při zdvojení \(N\to2N\) se z dědičných
+větví získá \(4E_N\) hran; ostatních
+
+\[
+B_{2N}=E_{2N}-4E_N=\frac{(N-2)(N-4)(N+6)}4
+\tag{13}
+\]
+
+vzniká nově. Po dělení \(E_{2N}\) dostáváme
+
+\[
+\frac{B_{2N}}{E_{2N}}=\frac{N+6}{2(N-1)}=\frac12+\frac7{2(N-1)}\longrightarrow\frac12.
+\tag{14}
+\]
+
+Důkaz je přesné algebraické odečtení (12) v rozměrech \(N,2N\) s
+následným krácením. Polovina nových nulových hran tedy asymptoticky
+pochází z nezděděných sektorů; informační atlas nemůže být uložen jako
+jedna nafouknutá kořenová matice.
+
+\begin{longtable}[]{@{}rrr@{}}
+\toprule\noalign{}
+N & \(E_N\) & \(B_N\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+16 & 84 & 84 \\
+32 & 1260 & 924 \\
+64 & 13020 & 7980 \\
+128 & 117180 & 65100 \\
+256 & 992124 & 523404 \\
+512 & 8161020 & 4192524 \\
+\end{longtable}
+
+\subsection{7. Vícenásobná informační
+barva}\label{vuxedcenuxe1sobnuxe1-informaux10dnuxed-barva}
+
+Definujme pro každý relevantní adresový tuple alespoň kanály
+\(\mathsf{ZD}\), \(\mathsf{NZD}\), \(\mathsf{shared}\),
+\(\mathsf{comm}\), \(\mathsf{assoc}\), \(\mathsf{alt}\),
+\(\mathsf{birth}\). Nulový součin není informační prázdno: pro vhodné
+\(x,y,z\in K_{16}\) existuje \(xy=0\) při nenulovém asociátoru
+\([x,z,y]\). Explicitní algebraický svědek je
+\(x=e_2+e_{11}, y=e_4-e_{13}, z=e_1\), \([x,z,y]=-4e_7\), i nenulovou
+alternátorovou složku. Výrok \(xy=0\) proto nesmí být zaměněn za
+\(\mathsf{no\ relation}\).
+
+Pozorovací sondy a jejich Krylovova dosažitelnost kontrolují, které
+části celé incidence lze rekonstruovat ze zvoleného výřezu. Z exaktní
+algebraické novosti nelze automaticky odvodit aplikační význam; ten musí
+určit explicitní sémantické mapování a validační test.
+
+\subsection{8. Vyšší π: algebraická perioda před geometrickými
+objemy}\label{vyux161ux161uxed-ux3c0-algebraickuxe1-perioda-pux159ed-geometrickuxfdmi-objemy}
+
+\subsubsection{8.1 Zdrojová konstrukce periody bez předpokládaného
+π}\label{zdrojovuxe1-konstrukce-periody-bez-pux159edpokluxe1danuxe9ho-ux3c0}
+
+Předchozí ZD genealogie vyrůstá ze signed-Cayley--Dicksonovy rekurze.
+Tentýž řetězec obsahuje první orientovanou skalární fázi již v
+podalgebře \(K_2=\operatorname{span}_{\mathbb R}\{1,Y\}\), kde
+\(Y^2=-1\), \(\bar Y=-Y\) a \((a+bY)(a-bY)=a^2+b^2\). Tento fázový kanál
+se jako podalgebra dědí v každém \(K_{2^k}\), přestože vyšší celá
+algebra ztrácí asociativitu a alternativitu.
+
+Pro celočíselnou unimodulární Leechovu mříž \(\Lambda_{24}\) položme
+\(G_{3^r}=\Lambda_{24}/3^r\Lambda_{24}\). Skalární charaktery \(G_3\)
+potřebují netriviální kořen řádu tři. Ten neexistuje mezi jednotkami
+\(K_1=\mathbb R\), ale v \(K_2\) se konstruuje algebraicky:
+
+\[
+\omega=\frac{-1+\sqrt3Y}{2},\qquad \omega^3=1,\qquad 1+\omega+\omega^2=0,\qquad \chi_y(x)=\omega^{\langle x,y\rangle\bmod3}.
+\tag{15a}
+\]
+
+To je původ fázového kanálu, nikoli vložená trigonometrická konstanta.
+Jeho koherentní refinement lze definovat pouze algebraickými kořeny:
+\(c_0=-1/2\), pro \(r\ge0\) vezměme jediný kořen \(c_{r+1}\in(1/2,1)\)
+rovnice \(4c_{r+1}^3-3c_{r+1}=c_r\), a položme \(N_r=3^{r+1}\),
+\(\lambda_r=2(1-c_r)\), \(u_r=c_r+Y\sqrt{1-c_r^2}\). Pak \(u_0=\omega\),
+\(u_{r+1}^3=u_r\) a řád jednotkového prvku \(u_r\) je \(N_r\).
+
+Dva algebraické výrazy, počítatelné bez zadání hodnoty π, jsou
+
+\[
+\Pi_r^-=\frac{N_r}{2}\sqrt{\lambda_r},\qquad
+\Pi_r^+=\frac{N_r\sqrt{\lambda_r}}{2\sqrt{1-\lambda_r/4}},\qquad
+\boxed{\Pi_{\mathrm{src}}:=\lim_{r\to\infty}\Pi_r^-}.\tag{15b}
+\]
+
+\textbf{Věta 8.1 (rekonstrukce zdrojové periody).} Posloupnosti
+\(\Pi_r^-\) a \(\Pi_r^+\) se sbíhají ke stejné konečné hodnotě;
+\(0<\Pi_r^+-\Pi_r^-=O(3^{-2r})\). Tato hodnota se rovná klasické
+konstantě \(\pi\), která tedy není numerickým vstupem do zdrojového
+operátoru.
+
+\emph{Důkaz.} Rovnice pro \(c_r\) je algebraická trojnásobná skládací
+identita v asociativní \(K_2\) a zajišťuje \(u_{r+1}^3=u_r\). Číslo
+\(\sqrt{\lambda_r}=|1-u_r|\) je tětiva pravidelného \(N_r\)-cyklu na
+jednotkové fázové rovině. Vepsané a tečné polygonální obvody mají
+poloviny rovné \(\Pi_r^-\) a \(\Pi_r^+\); jejich rozdíl je
+\(O(N_r^{-2})\), protože \(\lambda_r=O(N_r^{-2})\). Obě meze tudíž
+rekonstruují polovinu obvodu jednotkové kružnice, totiž \(\pi\).
+Geometrická definice se používá až k \emph{identifikaci} předem
+algebraicky definované limity. \(\square\)
+
+Ekvivalentní nezávislé spektrální ověření využívá celočíselnou cyklickou
+permutaci \(S_N\) a Laplacián \(L_N=2I-S_N-S_N^\top\). Pro Fibonacciho
+délky \(N=F_n\to\infty\) platí
+
+\[
+\boxed{\lim_{n\to\infty}\frac{F_n}{2}\sqrt{\lambda_+(L_{F_n})}=\Pi_{\mathrm{src}}=\pi},\tag{15c}
+\]
+
+protože jeho nejmenší nenulové vlastní číslo je \(4\sin^2(\pi/N)\).
+Matice \(L_N\) mají výhradně celočíselné vstupy a identifikace spektra
+používá trigonometrický zápis pouze v důkazu. Toto je druhá výpočetní
+cesta, nikoli druhá definice vstupního π. Zdrojová fáze tedy předchází
+níže uvedeným objemům, sférám i vyšším momentům; jejich
+\(\Pi_{\mathrm{src}}\) se vypočítá touto limitou.
+
+\subsubsection{8.2 Vyšší fázové variety a objemové
+invarianty}\label{vyux161ux161uxed-fuxe1zovuxe9-variety-a-objemovuxe9-invarianty}
+
+Pro každé normované \(u\in\operatorname{Im}K_N\) je \(\bar u=-u\),
+\(u\bar u=\|u\|^2=1\), tedy \(u^2=-1\). Generuje asociativní podalgebru
+\(\operatorname{span}\{1,u\}\cong\mathbb C\) i uvnitř nonalternativního
+\(K_{16+}\). Z právě odvozené zdrojové periody
+\(\Pi_{\mathrm{src}}=\pi\) plyne
+
+\[
+\Pi_u=\Pi_{\mathrm{src}},\qquad\mathfrak F_N=S^{N-2}/\{u\sim-u\}\cong\mathbb{RP}^{N-2}.
+\tag{15}
+\]
+
+Fázová \(\pi\) se s dimenzí nepředefinuje; mění se geometrie prostorů
+fází a normový defekt jejich kompozice.
+
+Z Gaussova integrálu v souřadnicových kanálech a radiální integrace
+vyplývají objemy jednotkových koulí a neorientovaných fázových rovin:
+
+\[
+V_N=\frac{\Pi_{\mathrm{src}}^{N/2}}{\Gamma(N/2+1)},\qquad
+\Phi_N=\frac{\Pi_{\mathrm{src}}^{(N-1)/2}}{\Gamma((N-1)/2)}.
+\tag{16}
+\]
+
+Zrušení společné \(\pi\)-mocniny při skládání objemů poskytuje
+celočíselnou identitu
+
+\[
+\frac{V_N V_M}{V_{N+M}}=\binom{(N+M)/2}{N/2},\qquad
+\mathcal B_N=\frac{V_N^2}{V_{2N}}=\binom N{N/2}.
+\tag{17}
+\]
+
+Pro \(N=2,4,8,16,32\) vycházejí \(2,6,70,12870,601080390\). Toto jsou
+kompoziční konstanty objemů, nikoli libovolně další transcendence.
+
+\subsection{9. Normový defekt z přesně stejných ZD
+hran}\label{normovuxfd-defekt-z-pux159esnux11b-stejnuxfdch-zd-hran}
+
+Pro levé násobení \(L_i y=e_i y\) položme
+
+\[
+B_{ij}=\frac12(L_i^TL_j+L_j^TL_i),\quad i<j.
+\tag{18}
+\]
+
+\(B_{ij}\) jsou symetrické matice; pro disjunktní assessory jejich
+nenulové vstupy odpovídají právě kladné plaquette (5). Po rozepsání
+součinu znaménkových permutačních matic z (2) se nenulové příspěvky
+párují právě po disjunktních XOR plaquettes s W=+1; jejich čtyři
+orientace mají jednotkový součet ve Frobeniově kontrakci, a proto
+
+\[
+\sum_{i<j}\operatorname{tr}(B_{ij}^2)=4E_N.
+\tag{19}
+\]
+
+Linearizovaný alternativní defekt
+\(T_{abc}=[e_a,e_b,e_c]+[e_b,e_a,e_c]=2B_{ab}e_c\) tudíž splňuje
+
+\[
+\sum_{a,b,c}\|T_{abc}\|^2=32E_N.
+\tag{20}
+\]
+
+Nyní vezměme nezávislé jednotkové \(x,y\) rovnoměrné na \(S^{N-1}\).
+Využití sférických kontrakcí čtvrtého momentu
+
+\[
+\mathbb E[x_ix_jx_ax_b]=\frac{\delta_{ij}\delta_{ab}+\delta_{ia}\delta_{jb}+\delta_{ib}\delta_{ja}}{N(N+2)}
+\]
+
+společně s (19) dává \textbf{bez jakékoli kalibrace}
+
+\[
+Q_N=\mathbb E(\|xy\|^2-1)^2
+=\frac{32E_N}{N^2(N+2)^2}
+=\frac{2(N-2)(N-4)(N-8)}{N^2(N+2)^2}.
+\tag{21}
+\]
+
+Pro dvě imaginární jednotkové fáze \(u,v\in S^{N-2}\) analogicky
+
+\[
+Q_N^{\mathrm{phase}}=\frac{32E_N}{(N-1)^2(N+1)^2}.
+\tag{22}
+\]
+
+Oba momenty jsou nulové pro \(K_2,K_4,K_8\), od \(K_{16}\) kladné a
+asymptoticky \(\sim 2/N\). Pro \(K_{16}\) dostáváme \(Q_{16}=7/216\),
+\(Q_{16}^{\mathrm{phase}}=896/21675\); pro \(K_{32}\)
+\(Q_{32}=315/9248\), \(Q_{32}^{\mathrm{phase}}=4480/116281\).
+
+Definujme čtvrtomomentový objem \(\mathcal P_N=V_N(1+Q_N)\). Jeho CD
+fúze je exaktně
+
+\[
+\mathcal C_N=\frac{\mathcal P_N^2}{\mathcal P_{2N}}=\binom N{N/2}\frac{(1+Q_N)^2}{1+Q_{2N}},
+\tag{23}
+\]
+
+tedy \(\mathcal C_8=15120/223\) a
+\(\mathcal C_{16}=10275751915/774603\). Tady se poprvé v jediné přesné
+racionální skladbě potkávají zdrojové fázové objemy a nativní ZD-normový
+defekt.
+
+\subsection{10. Algebraický závěr}\label{algebraickuxfd-zuxe1vux11br}
+
+Základní objekt není statický graf ani seznam pěkných konstant. Jde o
+\textbf{nekonečný, lokálně přesně rekonstruovatelný, signed vícetypový
+informační les}, který zároveň (i) dědí plné anihilační podprostory,
+(ii) produkuje asymptoticky polovinu nových hran, (iii) má
+kontrolovatelné konečné spektrum i limitní geometrie a (iv) určuje vyšší
+fázové a normově-kompoziční invarianty. Adresový oracle a jeho přesná
+aritmetika otevírají výpočetní aplikace v doprovodném Paperu B.
+
+\subsection{11. Přesné hranice objektu a inverzní
+adresace}\label{pux159esnuxe9-hranice-objektu-a-inverznuxed-adresace}
+
+Zde rozlišujeme čtyři různé nosiče, které nelze identifikovat: (i)
+množinu kanonických bázových adres \(\{0,\dots,N-1\}\), (ii) assessory
+\((a,b)\) a jejich podepsané diagonály, (iii) nepodepsaný graf vybraných
+nulových součinů, (iv) celé spojité algebraické variety nulových
+dělitelů. Věty o počtech hran platí pro (iii), věta o anulujících
+podprostorech produkuje podmnožiny (iv). Jediný dvojčlenný root tedy
+není bijektivní parametrizací všech nulových dělitelů.
+
+Adresový tuple pro podepsanou hranu je \[
+\mathsf Z=(k,\chi,\{a,b\},\{c,d\},\sigma,\tau,\text{orientation},\text{ancestry}),\quad a\oplus b=c\oplus d=\chi.
+\] Kanonizujeme \(a<b\), \(c<d\) a lexikografické pořadí obou assessorů;
+orientaci a relativní znaménka uchováváme odděleně. Identita řeší
+deterministickou deduplikaci; není to nové algebraické axiomové
+pravidlo. Algebraické násobení vyžaduje explicitní závorkování v každém
+produktu délky alespoň tři.
+
+\textbf{Propozice 5 (adresace v rodině).} Pro fixovaný root, výšku \(t\)
+a dvojici bitových slov \(u,v\in\{0,1\}^t\) existuje jednoznačná dvojice
+zděděných kopií \(x_u,y_v\) generovaná opakovaným vnořením
+\(z\mapsto(z,0),(0,z)\); součin v obou pořadích je nulový. \emph{Důkaz.}
+Indukce z věty 2; slovo určuje posloupnost vnoření. \(\square\)
+
+Jednoznačnost adresy pro pevně zvolený root neznamená, že různé rooty
+nemohou vyprodukovat shodný geometrický směr. Pro globální identitu je
+třeba kanonizovat vektor a řešit ekvivalenci podprostorů.
+
+\subsection{12. Matematická mechanika vyšších π --- úplná řada
+přechodů}\label{matematickuxe1-mechanika-vyux161ux161uxedch-ux3c0-uxfaplnuxe1-ux159ada-pux159echodux16f}
+
+Je-li \(n=N/2\), \(m=M/2\), přímou integrací Gaussovy hustoty dostáváme
+\[
+\int_{\mathbb R^N}e^{-\|x\|^2}\,dx=\Pi_{\mathrm{src}}^{N/2}
+=\operatorname{area}(S^{N-1})\,\frac{\Gamma(N/2)}2.
+\] Odtud plyne
+\(\operatorname{area}(S^{N-1})=2\Pi_{\mathrm{src}}^{N/2}/\Gamma(N/2)\),
+a po vydělení \(N\) přesně objem \(V_N\) z (16). Projektivní fáze
+identifikuje antipody, takže
+\(\Phi_N=\tfrac12\operatorname{area}(S^{N-2})\), opět (16). Z
+\(\Gamma(n+1)=n!\) následně \[
+\frac{V_NV_M}{V_{N+M}}=\frac{(n+m)!}{n!m!},\qquad
+\mathcal B_N=\frac{N!}{((N/2)!)^2}.
+\] Tyto identity oddělují univerzální periodu na každé komplexní fázové
+rovině od růstu objemových a normových invariantů ve vyšších CD
+vrstvách. Ze stejného \(E_N\) pak podle (19)--(23) vzniká přesná
+posloupnost \(Q_N\) a \(\mathcal C_N\). Přitom \(\mathcal P_N\) je
+\emph{definovaný normově vážený objem}, nikoli tvrzení, že běžný
+eukleidovský objem koule mění hodnotu.
+
+\textbf{Propozice 6 (asymptotika normového defektu).} Pro
+\(N\to\infty\), \(N=2^k\), platí \[
+Q_N=\frac2N-\frac{36}{N^2}+O(N^{-3}),\qquad
+Q_N^{\mathrm{phase}}=\frac2N+O(N^{-2}).
+\] První koeficient získáme z rozvoje \(2(N-2)(N-4)(N-8)/(N^2(N+2)^2)\):
+čitatel \(2N^3-28N^2+\cdots\), jmenovatel \(N^4+4N^3+\cdots\), takže
+koeficient \(N^{-2}\) je \(-28-8=-36\), \textbf{tedy správně} \[
+\boxed{Q_N=\frac2N-\frac{36}{N^2}+O(N^{-3})}.
+\] Předchozí mezivýraz není samostatná věta; rozhodující je finální
+přesný rozvoj. V tištěné verzi používáme pouze finální podobu.
+
+\subsection{13. Reprodukční
+specifikace}\label{reprodukux10dnuxed-specifikace}
+
+Referenční implementace musí splnit: \(\varepsilon(a,b)\in\{\pm1\}\);
+\(e_a e_b=\varepsilon(a,b)e_{a\oplus b}\); \(e_i^2=-1\) pro \(i>0\);
+nulový svědek (7); kontrolu 84/315 v K16 a přesných \(E_N\) v K32 a K64;
+identitu zděděného operátoru \(A_0\otimes J_m\) na nezávislých
+vektorech; exaktní racionální testy (21)--(23). Pro násobení mimo bázové
+prvky musí test zahrnout všechna rozdělení součtu na dvě složky. Python
+referenční program, strojově čitelný soubor certifikátů a testovací
+generátor jsou součástí doprovodného balíku.
+
+\subsection{14. Závěrečná matematická
+věta}\label{zuxe1vux11breux10dnuxe1-matematickuxe1-vux11bta}
+
+Pro všechny úrovně \(k\ge4\) standardní nesplitové CD věže existuje
+uniformní signed adresový oracle. Výběrový dvoučlenný ZD atlas má
+přesnou kombinatoriku, dědičné anulující podprostory a oddělený rozpočet
+nově vznikajících vazeb. Sférické normové momenty a jejich vyšší-π
+složeniny jsou určeny týmž algebraickým nosičem. Nekonečná konstrukce je
+dána kompatibilní sekvencí konečných úrovní; nejde o požadavek uložit
+nekonečnou matici.
+
+\subsection{Literatura}\label{literatura}
+
+{[}1{]} G. Moreno, \emph{The zero divisors of the Cayley--Dickson
+algebras over the real numbers}, arXiv:q-alg/9710013.\\
+{[}2{]} R. P. C. de Marrais, \emph{The 42 Assessors and the Box-Kites
+they fly}, arXiv:math/0011260.\\
+{[}3{]} R. P. C. de Marrais, \emph{Flying Higher Than a Box-Kite},
+arXiv:math/0207003.\\
+{[}4{]} G. Moreno, \emph{Constructing zero divisors in the higher
+dimensional Cayley--Dickson algebras}, arXiv:math/0512517.
+
+\end{document}

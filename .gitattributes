@@ -1,0 +1,5 @@
+*.pdf binary
+*.png binary
+# Preserve Markdown hard line breaks and the original CSV line endings.
+*.md whitespace=-blank-at-eol
+*.csv whitespace=cr-at-eol

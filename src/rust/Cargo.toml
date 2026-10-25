@@ -1,0 +1,15 @@
+[package]
+name = "fractal-zd-computing"
+version = "1.0.0"
+edition = "2021"
+authors = ["Vladimír Bíža"]
+publish = false
+description = "Signed Cayley-Dickson K16 root and factorized five-probe apply tutorial"
+
+[lib]
+name = "zd_dev_lab"
+path = "src/lib.rs"
+
+[[bin]]
+name = "zd-demo"
+path = "src/main.rs"

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Paper_A_Mathematics_CS</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1
+id="fraktální-výpočetní-algebra-dělitelů-nuly-signed-cayleydicksonův-informační-les-a-vyšší-π">Fraktální
+výpočetní algebra dělitelů nuly — signed Cayley–Dicksonův informační les
+a vyšší π</h1>
+<p><strong>Samostatný článek z matematiky a informatiky · 25. října
+2026</strong><br />
+<strong>Autor:</strong> Vladimír Bíža<br />
+<strong>Téma:</strong> Algebra Cayley–Dicksonových dělitelů nuly,
+genealogické grafy, vyšší π a reprodukovatelné invarianty.</p>
+<h2 id="abstrakt">Abstrakt</h2>
+<p>Konstruujeme exaktní, adresovatelný a neomezeně rekurzivní informační
+les standardních real Cayley–Dicksonových algeber
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><msup><mn>2</mn><mi>k</mi></msup></msub><annotation encoding="application/x-tex">K_{2^k}</annotation></semantics></math>
+od
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">k=4</annotation></semantics></math>.
+Jeho dvoučlenné nulové vazby lze rozhodnout znaménkovým čtyřbodovým
+predikátem nad XOR adresami; každá rodičovská vazba vytváří úplnou
+hierarchii vzájemně anihilujících podprostorů, jejíž konečné adjacency
+mají Kroneckerův tvar a analytickou graphon limitu. Celý les se zároveň
+nevyčerpává děděním: při každém zdvojení vzniká přesně daný počet nových
+vazeb, jejichž podíl konverguje k jedné polovině. Následně odvozujeme
+společnou
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>-periodu
+imaginárních fázových rovin, objemy, celočíselné fúzní koeficienty,
+přesné momenty selhání normové multiplikativity a racionální složeniny
+vyššího
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>.
+Tyto objekty tvoří jeden generativní matematický atlas, nikoli volně
+vybranou kolekci konstant.</p>
+<p><strong>Klíčová slova:</strong> Cayley–Dickson; zero divisors; signed
+XOR incidence; genealogie; normový defekt; graphon; projektivní variety;
+vyšší π; implicitní výpočet.</p>
+<h2 id="kanonický-algebraický-kořen">1. Kanonický algebraický kořen</h2>
+<p>Zaveďme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>1</mn></msub><mo>=</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">K_1=\mathbb R</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><mo>=</mo><msub><mi>K</mi><mi>N</mi></msub><mo>⊕</mo><msub><mi>K</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">K_{2N}=K_N\oplus K_N</annotation></semantics></math>,
+konjugaci
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>a</mi><mo accent="true">‾</mo></mover><mo>,</mo><mi>−</mi><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\overline{(a,b)}=(\bar a,-b)</annotation></semantics></math>
+a násobení</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mi>c</mi><mo>−</mo><mover><mi>d</mi><mo accent="true">‾</mo></mover><mi>b</mi><mo>,</mo><mspace width="0.278em"></mspace><mi>d</mi><mi>a</mi><mo>+</mo><mi>b</mi><mover><mi>c</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(a,b)(c,d)=(ac-\bar d b,\;da+b\bar c).
+\tag{1}
+</annotation></semantics></math></p>
+<p>Pro kanonické jednotky
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mi>a</mi></msub><annotation encoding="application/x-tex">e_a</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>N</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">a\in[0,N)</annotation></semantics></math>,
+je</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>a</mi></msub><msub><mi>e</mi><mi>b</mi></msub><mo>=</mo><msub><mi>ε</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mrow><mi>a</mi><mo>⊕</mo><mi>b</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ε</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+e_a e_b=\varepsilon_k(a,b)e_{a\oplus b},\qquad \varepsilon_k(a,b)\in\{-1,1\}.
+\tag{2}
+</annotation></semantics></math></p>
+<p>Pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a,b&lt;N</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="0.278em"></mspace><mi>η</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>&gt;</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">\eta(0)=1,\;\eta(b&gt;0)=-1</annotation></semantics></math>,
+rekurze na
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><annotation encoding="application/x-tex">K_{2N}</annotation></semantics></math>
+zní</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>ε</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>ε</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>ε</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>N</mi><mo>+</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>ε</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>ε</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>η</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>ε</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msub><mi>ε</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mi>a</mi><mo>,</mo><mi>N</mi><mo>+</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>−</mi><mi>η</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>ε</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\varepsilon_{k+1}(a,b)&amp;=\varepsilon_k(a,b),\\
+\varepsilon_{k+1}(a,N+b)&amp;=\varepsilon_k(b,a),\\
+\varepsilon_{k+1}(N+a,b)&amp;=\eta(b)\varepsilon_k(a,b),\\
+\varepsilon_{k+1}(N+a,N+b)&amp;=-\eta(b)\varepsilon_k(b,a).
+\end{aligned}\tag{3}
+</annotation></semantics></math></p>
+<p>Toto je celý deterministický oracle znamének; po bitech vyžaduje
+pouze
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math>
+kroků a nevyžaduje multiplikační tabulku
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mn>2</mn></msup><annotation encoding="application/x-tex">N^2</annotation></semantics></math>.
+Pracujeme se standardní nesplitovou pozitivní kvadratickou normou
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">∥</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>=</mo><msub><mo>∑</mo><mi>a</mi></msub><msubsup><mi>x</mi><mi>a</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\lVert x\rVert^2=\sum_a x_a^2</annotation></semantics></math>.
+Algebra je obecně od
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>8</mn></msub><annotation encoding="application/x-tex">K_8</annotation></semantics></math>
+neasociativní, od
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>16</mn></msub><annotation encoding="application/x-tex">K_{16}</annotation></semantics></math>
+též nonalternativní a s nenulovými nulovými děliteli.</p>
+<h2 id="čtyřadresový-nulový-predikát">2. Čtyřadresový nulový
+predikát</h2>
+<p>Definujme <em>assessor</em>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>,
+kde
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo>&lt;</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">0&lt;a&lt;b&lt;N</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo>=</mo><mi>a</mi><mo>⊕</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\chi=a\oplus b</annotation></semantics></math>,
+a čistě imaginární směry
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>e</mi><mi>a</mi></msub><mo>+</mo><mi>σ</mi><msub><mi>e</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">x=e_a+\sigma e_b</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>e</mi><mi>c</mi></msub><mo>+</mo><mi>τ</mi><msub><mi>e</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">y=e_c+\tau e_d</annotation></semantics></math>
+s
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>,</mo><mi>τ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>±</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\sigma,\tau\in\{\pm1\}</annotation></semantics></math>.
+Čtyři odlišné adresy se v součinu mohou vyrušit pouze při
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>⊕</mo><mi>b</mi><mo>=</mo><mi>c</mi><mo>⊕</mo><mi>d</mi><mo>=</mo><mi>χ</mi></mrow><annotation encoding="application/x-tex">a\oplus b=c\oplus d=\chi</annotation></semantics></math>.
+Potom</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>ε</mi><mrow><mi>a</mi><mi>c</mi></mrow></msub><mo>+</mo><mi>σ</mi><mi>τ</mi><msub><mi>ε</mi><mrow><mi>b</mi><mi>d</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mrow><mi>a</mi><mo>⊕</mo><mi>c</mi></mrow></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>τ</mi><msub><mi>ε</mi><mrow><mi>a</mi><mi>d</mi></mrow></msub><mo>+</mo><mi>σ</mi><msub><mi>ε</mi><mrow><mi>b</mi><mi>c</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mrow><mi>a</mi><mo>⊕</mo><mi>d</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+xy=(\varepsilon_{ac}+\sigma\tau\varepsilon_{bd})e_{a\oplus c}+(\tau\varepsilon_{ad}+\sigma\varepsilon_{bc})e_{a\oplus d}.
+\tag{4}
+</annotation></semantics></math></p>
+<p>Definujme signed plaquette</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>;</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>ε</mi><mrow><mi>a</mi><mi>c</mi></mrow></msub><msub><mi>ε</mi><mrow><mi>b</mi><mi>d</mi></mrow></msub><msub><mi>ε</mi><mrow><mi>a</mi><mi>d</mi></mrow></msub><msub><mi>ε</mi><mrow><mi>b</mi><mi>c</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+W(a,b;c,d)=\varepsilon_{ac}\varepsilon_{bd}\varepsilon_{ad}\varepsilon_{bc}.
+\tag{5}
+</annotation></semantics></math></p>
+<p><strong>Věta 1 (úplnost predikátu).</strong> Pro disjunktní assessory
+se společnou XOR barvou existují nenulové relativně podepsané směry s
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">xy=0</annotation></semantics></math>
+právě tehdy, když
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>=</mo><mi>+</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">W=+1</annotation></semantics></math>.
+Přípustná znaménka splňují
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mi>τ</mi><mo>=</mo><mi>−</mi><msub><mi>ε</mi><mrow><mi>a</mi><mi>c</mi></mrow></msub><msub><mi>ε</mi><mrow><mi>b</mi><mi>d</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\sigma\tau=-\varepsilon_{ac}\varepsilon_{bd}</annotation></semantics></math>.
+<em>Důkaz.</em> Oba koeficienty v (4) musí současně vymizet. Vynásobení
+dvou znaménkových podmínek dává (5), zpětným dosazením získáme
+předepsaný součin znamének.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Čtyři adresy, jejich orientace a relativní znaménka jsou
+nezastupitelná data: samotný počet ZD hran, jejich
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>χ</mi><annotation encoding="application/x-tex">\chi</annotation></semantics></math>
+nebo adjacency je nezachytí.</p>
+<h2 id="kořen-k16-jeho-spektrum-a-úplný-komplement">3. Kořen K16, jeho
+spektrum a úplný komplement</h2>
+<p>V
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>16</mn></msub><annotation encoding="application/x-tex">K_{16}</annotation></semantics></math>
+vzniká sedm aktivních komponent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>χ</mi><mo>=</mo><mn>9</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>15</mn></mrow><annotation encoding="application/x-tex">\chi=9,\ldots,15</annotation></semantics></math>.
+Každá má šest nepodepsaných assessorů a adjacency kompletního
+tripartitního grafu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>2</mn></mrow></msub><annotation encoding="application/x-tex">K_{2,2,2}</annotation></semantics></math>.
+Tedy</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>6</mn><mo>,</mo><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>12</mn><mo>,</mo><mspace width="1.0em"></mspace><mo>spec</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>4</mn><mo>,</mo><mi>−</mi><mn>2</mn><mo>,</mo><mi>−</mi><mn>2</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+|V|=6,\quad |E|=12,\quad\operatorname{spec}(A)=\{4,-2,-2,0,0,0\}.
+\tag{6}
+</annotation></semantics></math></p>
+<p>Na barvu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>χ</mi><annotation encoding="application/x-tex">\chi</annotation></semantics></math>
+existuje
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mn>7</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>21</mn></mrow><annotation encoding="application/x-tex">\binom72=21</annotation></semantics></math>
+dvojic disjunktních assessorů; přes patnáct barev celkem 315
+kandidátních dvojic. V nulových větvích leží přesně
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>⋅</mo><mn>12</mn><mo>=</mo><mn>84</mn></mrow><annotation encoding="application/x-tex">7\cdot12=84</annotation></semantics></math>
+hran, ve zbývajícím nenulovém komplementu 231. Toto
+<strong>není</strong> počet veškerých nulových dělitelů: spojitých
+anulujících směrů je nekonečně mnoho.</p>
+<p>Konkrétním svědkem je</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mn>2</mn></msub><mo>+</mo><msub><mi>e</mi><mn>11</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mn>4</mn></msub><mo>−</mo><msub><mi>e</mi><mn>13</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mn>4</mn></msub><mo>−</mo><msub><mi>e</mi><mn>13</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mn>2</mn></msub><mo>+</mo><msub><mi>e</mi><mn>11</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(e_2+e_{11})(e_4-e_{13})=0=(e_4-e_{13})(e_2+e_{11}).
+\tag{7}
+</annotation></semantics></math></p>
+<h2 id="dědičná-čtyřnásobná-věta-a-anulující-podprostory">4. Dědičná
+čtyřnásobná věta a anulující podprostory</h2>
+<p><strong>Věta 2 (four-lift).</strong> Jsou-li
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>∈</mo><msub><mi>K</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">x,y\in K_N</annotation></semantics></math>
+ortogonální čistě imaginární nulové dělitele se
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi><mo>=</mo><mi>y</mi><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">xy=yx=0</annotation></semantics></math>,
+položme v
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><annotation encoding="application/x-tex">K_{2N}</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>y</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+x_0=(x,0),\quad x_1=(0,x),\quad y_0=(y,0),\quad y_1=(0,y).
+</annotation></semantics></math></p>
+<p>Potom
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><msub><mi>y</mi><mi>j</mi></msub><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_i y_j=y_j x_i=0</annotation></semantics></math>
+pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>,</mo><mi>j</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">i,j\in\{0,1\}</annotation></semantics></math>.
+<em>Důkaz.</em> Čtyři substituce do (1); smíšené produkty se redukují na
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">yx</annotation></semantics></math>
+nebo jejich konjugáty, které všechny vymizí.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Indukcí po
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+krocích vzniknou
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>t</mi></msup><annotation encoding="application/x-tex">2^t</annotation></semantics></math>
+nezávislé kopie každého koncového směru. Bilinearita dává mnohem více
+než
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>4</mn><mi>t</mi></msup><annotation encoding="application/x-tex">4^t</annotation></semantics></math>
+diskrétních vazeb:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>V</mi><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><msubsup><mi>V</mi><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mo>=</mo><msubsup><mi>V</mi><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><msubsup><mi>V</mi><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="1.0em"></mspace><mo>dim</mo><msubsup><mi>V</mi><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mo>=</mo><mo>dim</mo><msubsup><mi>V</mi><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mo>=</mo><msup><mn>2</mn><mi>t</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+V_x^{(t)}V_y^{(t)}=V_y^{(t)}V_x^{(t)}=\{0\},\quad
+\dim V_x^{(t)}=\dim V_y^{(t)}=2^t.
+\tag{8}
+</annotation></semantics></math></p>
+<p>Po projektivizaci získáváme explicitní plochu</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mi>ℝ</mi><mi>ℙ</mi></mrow><mrow><msup><mn>2</mn><mi>t</mi></msup><mo>−</mo><mn>1</mn></mrow></msup><mo>×</mo><msup><mrow><mi>ℝ</mi><mi>ℙ</mi></mrow><mrow><msup><mn>2</mn><mi>t</mi></msup><mo>−</mo><mn>1</mn></mrow></msup><mo>⊆</mo><msubsup><mi>𝒵</mi><mrow><mi>k</mi><mo>+</mo><mi>t</mi></mrow><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">j</mi></mrow></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathbb{RP}^{2^t-1}\times\mathbb{RP}^{2^t-1}\subseteq\mathscr Z_{k+t}^{\mathrm{proj}}.
+\tag{9}
+</annotation></semantics></math></p>
+<p>Pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>16</mn></msub><mo>→</mo><msub><mi>K</mi><mn>2048</mn></msub></mrow><annotation encoding="application/x-tex">K_{16}\to K_{2048}</annotation></semantics></math>
+je
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">t=7</annotation></semantics></math>:
+dvě 128rozměrné navzájem anihilující podprostory a 16384 elementárních
+dvojic (32768 při kontrole obou pořadí). Oproti explicitnímu seznamu je
+lze popsat kořenem,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+a bitovou adresou.</p>
+<h2 id="faktorizované-spektrum-a-fraktální-hranice">5. Faktorizované
+spektrum a fraktální hranice</h2>
+<p><strong>Věta 3 (zděděná komponenta).</strong> Pro pevnou starou barvu
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>χ</mi><annotation encoding="application/x-tex">\chi</annotation></semantics></math>,
+která se při CD zdvojení nepředefinuje, platí</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>χ</mi><mo>,</mo><mi>k</mi><mo>+</mo><mi>t</mi></mrow></msub><mo>=</mo><msub><mi>A</mi><mrow><mi>χ</mi><mo>,</mo><mi>k</mi></mrow></msub><mo>⊗</mo><msub><mi>J</mi><msup><mn>2</mn><mi>t</mi></msup></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>J</mi><mi>m</mi></msub><mo>=</mo><msub><mn>𝟏</mn><mi>m</mi></msub><msubsup><mn>𝟏</mn><mi>m</mi><mi>T</mi></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A_{\chi,k+t}=A_{\chi,k}\otimes J_{2^t},\qquad J_m=\mathbf1_m\mathbf1_m^T.
+\tag{10}
+</annotation></semantics></math></p>
+<p><em>Důkaz.</em> Věta 2 mění každou existující hranu v úplný
+bipartitní
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>2</mn><mo>,</mo><mn>2</mn></mrow></msub><annotation encoding="application/x-tex">K_{2,2}</annotation></semantics></math>
+a žádnou nehranu dané zděděné komponenty v hranu. Iterace odpovídá
+Kroneckerovu součinu.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Pro kořenový oktaedr z (6):</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>spec</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mi>t</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>4</mn><mo>⋅</mo><msup><mn>2</mn><mi>t</mi></msup><mo>,</mo><mi>−</mi><mn>2</mn><mo>⋅</mo><msup><mn>2</mn><mi>t</mi></msup><mo>,</mo><mi>−</mi><mn>2</mn><mo>⋅</mo><msup><mn>2</mn><mi>t</mi></msup><mo>,</mo><msup><mn>0</mn><mrow><mi>×</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>6</mn><mo>⋅</mo><msup><mn>2</mn><mi>t</mi></msup><mo>−</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{spec}(A_t)=\{4\cdot 2^t,-2\cdot2^t,-2\cdot2^t,0^{\times(6\cdot2^t-3)}\}.
+\tag{11}
+</annotation></semantics></math></p>
+<p>Normalizovaná nenulová spektra jsou ve všech generacích
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>2</mn><mi>/</mi><mn>3</mn><mo>,</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>3</mn><mo>,</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>3</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{2/3,-1/3,-1/3\}</annotation></semantics></math>.
+Projektivní/genealogická hranice se při Bernoulliho míře ancestry kóduje
+tripartitním graphonem nad třemi třídami × Cantorovou hranicí. Je to
+exaktní limita <strong>zděděné komponenty</strong>, nikoli celého nově
+se rodícího lesa.</p>
+<h2 id="novorozené-vazby-les-není-recyklovaná-kopie-sebe-sama">6.
+Novorozené vazby: les není recyklovaná kopie sebe sama</h2>
+<p>Počet nepodepsaných nulových <em>assessor edges</em> na vrstvě
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">N=2^k</annotation></semantics></math>
+je</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>N</mi></msub><mo>=</mo><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>16</mn></mfrac><mo>,</mo><mspace width="1.0em"></mspace><mi>N</mi><mo>≥</mo><mn>16</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+E_N=\frac{(N-2)(N-4)(N-8)}{16},\quad N\ge16.
+\tag{12}
+</annotation></semantics></math></p>
+<p>Tento globální počet je přesná enumerační věta pro nepodepsané
+dvoučlenné assessory se společnou XOR barvou. Jeho rozsah je výslovně
+omezen na tento atlas; nezahrnuje všechny kontinuální nulové dělitele.
+Odvození vychází z rozdělení barev, disjunktních assessorů a
+znaménkového predikátu (5), nikoli z hypotézy o externích aplikačních
+entitách.</p>
+<p><strong>Věta 4 (birth budget).</strong> Při zdvojení
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mn>2</mn><mi>N</mi></mrow><annotation encoding="application/x-tex">N\to2N</annotation></semantics></math>
+se z dědičných větví získá
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msub><mi>E</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">4E_N</annotation></semantics></math>
+hran; ostatních</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><mo>=</mo><msub><mi>E</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><mo>−</mo><mn>4</mn><msub><mi>E</mi><mi>N</mi></msub><mo>=</mo><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">
+B_{2N}=E_{2N}-4E_N=\frac{(N-2)(N-4)(N+6)}4
+\tag{13}
+</annotation></semantics></math></p>
+<p>vzniká nově. Po dělení
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><annotation encoding="application/x-tex">E_{2N}</annotation></semantics></math>
+dostáváme</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msub><mi>B</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub><msub><mi>E</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub></mfrac><mo>=</mo><mfrac><mrow><mi>N</mi><mo>+</mo><mn>6</mn></mrow><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>7</mn><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>→</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac{B_{2N}}{E_{2N}}=\frac{N+6}{2(N-1)}=\frac12+\frac7{2(N-1)}\longrightarrow\frac12.
+\tag{14}
+</annotation></semantics></math></p>
+<p>Důkaz je přesné algebraické odečtení (12) v rozměrech
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>,</mo><mn>2</mn><mi>N</mi></mrow><annotation encoding="application/x-tex">N,2N</annotation></semantics></math>
+s následným krácením. Polovina nových nulových hran tedy asymptoticky
+pochází z nezděděných sektorů; informační atlas nemůže být uložen jako
+jedna nafouknutá kořenová matice.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">N</th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>N</mi></msub><annotation encoding="application/x-tex">E_N</annotation></semantics></math></th>
+<th
+style="text-align: right;"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mi>N</mi></msub><annotation encoding="application/x-tex">B_N</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">1260</td>
+<td style="text-align: right;">924</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">13020</td>
+<td style="text-align: right;">7980</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">117180</td>
+<td style="text-align: right;">65100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">256</td>
+<td style="text-align: right;">992124</td>
+<td style="text-align: right;">523404</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">512</td>
+<td style="text-align: right;">8161020</td>
+<td style="text-align: right;">4192524</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vícenásobná-informační-barva">7. Vícenásobná informační
+barva</h2>
+<p>Definujme pro každý relevantní adresový tuple alespoň kanály
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝖹</mi><mi>𝖣</mi></mrow><annotation encoding="application/x-tex">\mathsf{ZD}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝖭</mi><mi>𝖹</mi><mi>𝖣</mi></mrow><annotation encoding="application/x-tex">\mathsf{NZD}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝗌</mi><mi>𝗁</mi><mi>𝖺</mi><mi>𝗋</mi><mi>𝖾</mi><mi>𝖽</mi></mrow><annotation encoding="application/x-tex">\mathsf{shared}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝖼</mi><mi>𝗈</mi><mi>𝗆</mi><mi>𝗆</mi></mrow><annotation encoding="application/x-tex">\mathsf{comm}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝖺</mi><mi>𝗌</mi><mi>𝗌</mi><mi>𝗈</mi><mi>𝖼</mi></mrow><annotation encoding="application/x-tex">\mathsf{assoc}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝖺</mi><mi>𝗅</mi><mi>𝗍</mi></mrow><annotation encoding="application/x-tex">\mathsf{alt}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝖻</mi><mi>𝗂</mi><mi>𝗋</mi><mi>𝗍</mi><mi>𝗁</mi></mrow><annotation encoding="application/x-tex">\mathsf{birth}</annotation></semantics></math>.
+Nulový součin není informační prázdno: pro vhodné
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>∈</mo><msub><mi>K</mi><mn>16</mn></msub></mrow><annotation encoding="application/x-tex">x,y,z\in K_{16}</annotation></semantics></math>
+existuje
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">xy=0</annotation></semantics></math>
+při nenulovém asociátoru
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[x,z,y]</annotation></semantics></math>.
+Explicitní algebraický svědek je
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>e</mi><mn>2</mn></msub><mo>+</mo><msub><mi>e</mi><mn>11</mn></msub><mo>,</mo><mi>y</mi><mo>=</mo><msub><mi>e</mi><mn>4</mn></msub><mo>−</mo><msub><mi>e</mi><mn>13</mn></msub><mo>,</mo><mi>z</mi><mo>=</mo><msub><mi>e</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x=e_2+e_{11}, y=e_4-e_{13}, z=e_1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mi>−</mi><mn>4</mn><msub><mi>e</mi><mn>7</mn></msub></mrow><annotation encoding="application/x-tex">[x,z,y]=-4e_7</annotation></semantics></math>,
+i nenulovou alternátorovou složku. Výrok
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">xy=0</annotation></semantics></math>
+proto nesmí být zaměněn za
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝗇</mi><mi>𝗈</mi><mspace width="0.222em"></mspace><mi>𝗋</mi><mi>𝖾</mi><mi>𝗅</mi><mi>𝖺</mi><mi>𝗍</mi><mi>𝗂</mi><mi>𝗈</mi><mi>𝗇</mi></mrow><annotation encoding="application/x-tex">\mathsf{no\ relation}</annotation></semantics></math>.</p>
+<p>Pozorovací sondy a jejich Krylovova dosažitelnost kontrolují, které
+části celé incidence lze rekonstruovat ze zvoleného výřezu. Z exaktní
+algebraické novosti nelze automaticky odvodit aplikační význam; ten musí
+určit explicitní sémantické mapování a validační test.</p>
+<h2 id="vyšší-π-algebraická-perioda-před-geometrickými-objemy">8. Vyšší
+π: algebraická perioda před geometrickými objemy</h2>
+<h3 id="zdrojová-konstrukce-periody-bez-předpokládaného-π">8.1 Zdrojová
+konstrukce periody bez předpokládaného π</h3>
+<p>Předchozí ZD genealogie vyrůstá ze signed-Cayley–Dicksonovy rekurze.
+Tentýž řetězec obsahuje první orientovanou skalární fázi již v
+podalgebře
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>2</mn></msub><mo>=</mo><msub><mo>span</mo><mi>ℝ</mi></msub><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>Y</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">K_2=\operatorname{span}_{\mathbb R}\{1,Y\}</annotation></semantics></math>,
+kde
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Y</mi><mn>2</mn></msup><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">Y^2=-1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>Y</mi><mo accent="true">‾</mo></mover><mo>=</mo><mi>−</mi><mi>Y</mi></mrow><annotation encoding="application/x-tex">\bar Y=-Y</annotation></semantics></math>
+a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(a+bY)(a-bY)=a^2+b^2</annotation></semantics></math>.
+Tento fázový kanál se jako podalgebra dědí v každém
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><msup><mn>2</mn><mi>k</mi></msup></msub><annotation encoding="application/x-tex">K_{2^k}</annotation></semantics></math>,
+přestože vyšší celá algebra ztrácí asociativitu a alternativitu.</p>
+<p>Pro celočíselnou unimodulární Leechovu mříž
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Λ</mi><mn>24</mn></msub><annotation encoding="application/x-tex">\Lambda_{24}</annotation></semantics></math>
+položme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><msup><mn>3</mn><mi>r</mi></msup></msub><mo>=</mo><msub><mi>Λ</mi><mn>24</mn></msub><mi>/</mi><msup><mn>3</mn><mi>r</mi></msup><msub><mi>Λ</mi><mn>24</mn></msub></mrow><annotation encoding="application/x-tex">G_{3^r}=\Lambda_{24}/3^r\Lambda_{24}</annotation></semantics></math>.
+Skalární charaktery
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>G</mi><mn>3</mn></msub><annotation encoding="application/x-tex">G_3</annotation></semantics></math>
+potřebují netriviální kořen řádu tři. Ten neexistuje mezi jednotkami
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>1</mn></msub><mo>=</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">K_1=\mathbb R</annotation></semantics></math>,
+ale v
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>2</mn></msub><annotation encoding="application/x-tex">K_2</annotation></semantics></math>
+se konstruuje algebraicky:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mn>1</mn><mo>+</mo><msqrt><mn>3</mn></msqrt><mi>Y</mi></mrow><mn>2</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>ω</mi><mn>3</mn></msup><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>1</mn><mo>+</mo><mi>ω</mi><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>χ</mi><mi>y</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>ω</mi><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">⟩</mo><mrow><mspace width="0.222em"></mspace><mo>mod</mo><mspace width="0.222em"></mspace><mn>3</mn></mrow></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\omega=\frac{-1+\sqrt3Y}{2},\qquad \omega^3=1,\qquad 1+\omega+\omega^2=0,\qquad \chi_y(x)=\omega^{\langle x,y\rangle\bmod3}.
+\tag{15a}
+</annotation></semantics></math></p>
+<p>To je původ fázového kanálu, nikoli vložená trigonometrická
+konstanta. Jeho koherentní refinement lze definovat pouze algebraickými
+kořeny:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>0</mn></msub><mo>=</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">c_0=-1/2</annotation></semantics></math>,
+pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r\ge0</annotation></semantics></math>
+vezměme jediný kořen
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">c_{r+1}\in(1/2,1)</annotation></semantics></math>
+rovnice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msubsup><mi>c</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow><mn>3</mn></msubsup><mo>−</mo><mn>3</mn><msub><mi>c</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>c</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">4c_{r+1}^3-3c_{r+1}=c_r</annotation></semantics></math>,
+a položme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>r</mi></msub><mo>=</mo><msup><mn>3</mn><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">N_r=3^{r+1}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>r</mi></msub><mo>=</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>c</mi><mi>r</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\lambda_r=2(1-c_r)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mi>r</mi></msub><mo>=</mo><msub><mi>c</mi><mi>r</mi></msub><mo>+</mo><mi>Y</mi><msqrt><mrow><mn>1</mn><mo>−</mo><msubsup><mi>c</mi><mi>r</mi><mn>2</mn></msubsup></mrow></msqrt></mrow><annotation encoding="application/x-tex">u_r=c_r+Y\sqrt{1-c_r^2}</annotation></semantics></math>.
+Pak
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>=</mo><mi>ω</mi></mrow><annotation encoding="application/x-tex">u_0=\omega</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>u</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow><mn>3</mn></msubsup><mo>=</mo><msub><mi>u</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">u_{r+1}^3=u_r</annotation></semantics></math>
+a řád jednotkového prvku
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>u</mi><mi>r</mi></msub><annotation encoding="application/x-tex">u_r</annotation></semantics></math>
+je
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>r</mi></msub><annotation encoding="application/x-tex">N_r</annotation></semantics></math>.</p>
+<p>Dva algebraické výrazy, počítatelné bez zadání hodnoty π, jsou</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>Π</mi><mi>r</mi><mo>−</mo></msubsup><mo>=</mo><mfrac><msub><mi>N</mi><mi>r</mi></msub><mn>2</mn></mfrac><msqrt><msub><mi>λ</mi><mi>r</mi></msub></msqrt><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>Π</mi><mi>r</mi><mo>+</mo></msubsup><mo>=</mo><mfrac><mrow><msub><mi>N</mi><mi>r</mi></msub><msqrt><msub><mi>λ</mi><mi>r</mi></msub></msqrt></mrow><mrow><mn>2</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msub><mi>λ</mi><mi>r</mi></msub><mi>/</mi><mn>4</mn></mrow></msqrt></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><menclose notation="box"><mrow><msub><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>:=</mo><munder><mo>lim</mo><mrow><mi>r</mi><mo>→</mo><mi>∞</mi></mrow></munder><msubsup><mi>Π</mi><mi>r</mi><mo>−</mo></msubsup></mrow></menclose><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Pi_r^-=\frac{N_r}{2}\sqrt{\lambda_r},\qquad
+\Pi_r^+=\frac{N_r\sqrt{\lambda_r}}{2\sqrt{1-\lambda_r/4}},\qquad
+\boxed{\Pi_{\mathrm{src}}:=\lim_{r\to\infty}\Pi_r^-}.\tag{15b}
+</annotation></semantics></math></p>
+<p><strong>Věta 8.1 (rekonstrukce zdrojové periody).</strong>
+Posloupnosti
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>Π</mi><mi>r</mi><mo>−</mo></msubsup><annotation encoding="application/x-tex">\Pi_r^-</annotation></semantics></math>
+a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>Π</mi><mi>r</mi><mo>+</mo></msubsup><annotation encoding="application/x-tex">\Pi_r^+</annotation></semantics></math>
+se sbíhají ke stejné konečné hodnotě;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><msubsup><mi>Π</mi><mi>r</mi><mo>+</mo></msubsup><mo>−</mo><msubsup><mi>Π</mi><mi>r</mi><mo>−</mo></msubsup><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mn>3</mn><mrow><mi>−</mi><mn>2</mn><mi>r</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">0&lt;\Pi_r^+-\Pi_r^-=O(3^{-2r})</annotation></semantics></math>.
+Tato hodnota se rovná klasické konstantě
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>,
+která tedy není numerickým vstupem do zdrojového operátoru.</p>
+<p><em>Důkaz.</em> Rovnice pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>r</mi></msub><annotation encoding="application/x-tex">c_r</annotation></semantics></math>
+je algebraická trojnásobná skládací identita v asociativní
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>2</mn></msub><annotation encoding="application/x-tex">K_2</annotation></semantics></math>
+a zajišťuje
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>u</mi><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow><mn>3</mn></msubsup><mo>=</mo><msub><mi>u</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">u_{r+1}^3=u_r</annotation></semantics></math>.
+Číslo
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><msub><mi>λ</mi><mi>r</mi></msub></msqrt><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mn>1</mn><mo>−</mo><msub><mi>u</mi><mi>r</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">\sqrt{\lambda_r}=|1-u_r|</annotation></semantics></math>
+je tětiva pravidelného
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>r</mi></msub><annotation encoding="application/x-tex">N_r</annotation></semantics></math>-cyklu
+na jednotkové fázové rovině. Vepsané a tečné polygonální obvody mají
+poloviny rovné
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>Π</mi><mi>r</mi><mo>−</mo></msubsup><annotation encoding="application/x-tex">\Pi_r^-</annotation></semantics></math>
+a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>Π</mi><mi>r</mi><mo>+</mo></msubsup><annotation encoding="application/x-tex">\Pi_r^+</annotation></semantics></math>;
+jejich rozdíl je
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>N</mi><mi>r</mi><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(N_r^{-2})</annotation></semantics></math>,
+protože
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>r</mi></msub><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>N</mi><mi>r</mi><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\lambda_r=O(N_r^{-2})</annotation></semantics></math>.
+Obě meze tudíž rekonstruují polovinu obvodu jednotkové kružnice, totiž
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>.
+Geometrická definice se používá až k <em>identifikaci</em> předem
+algebraicky definované limity.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Ekvivalentní nezávislé spektrální ověření využívá celočíselnou
+cyklickou permutaci
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>S</mi><mi>N</mi></msub><annotation encoding="application/x-tex">S_N</annotation></semantics></math>
+a Laplacián
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>N</mi></msub><mo>=</mo><mn>2</mn><mi>I</mi><mo>−</mo><msub><mi>S</mi><mi>N</mi></msub><mo>−</mo><msubsup><mi>S</mi><mi>N</mi><mi>⊤</mi></msubsup></mrow><annotation encoding="application/x-tex">L_N=2I-S_N-S_N^\top</annotation></semantics></math>.
+Pro Fibonacciho délky
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><msub><mi>F</mi><mi>n</mi></msub><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">N=F_n\to\infty</annotation></semantics></math>
+platí</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><menclose notation="box"><mrow><munder><mo>lim</mo><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow></munder><mfrac><msub><mi>F</mi><mi>n</mi></msub><mn>2</mn></mfrac><msqrt><mrow><msub><mi>λ</mi><mo>+</mo></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>L</mi><msub><mi>F</mi><mi>n</mi></msub></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt><mo>=</mo><msub><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mi>π</mi></mrow></menclose><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\boxed{\lim_{n\to\infty}\frac{F_n}{2}\sqrt{\lambda_+(L_{F_n})}=\Pi_{\mathrm{src}}=\pi},\tag{15c}
+</annotation></semantics></math></p>
+<p>protože jeho nejmenší nenulové vlastní číslo je
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msup><mo>sin</mo><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mi>/</mi><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">4\sin^2(\pi/N)</annotation></semantics></math>.
+Matice
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>N</mi></msub><annotation encoding="application/x-tex">L_N</annotation></semantics></math>
+mají výhradně celočíselné vstupy a identifikace spektra používá
+trigonometrický zápis pouze v důkazu. Toto je druhá výpočetní cesta,
+nikoli druhá definice vstupního π. Zdrojová fáze tedy předchází níže
+uvedeným objemům, sférám i vyšším momentům; jejich
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub><annotation encoding="application/x-tex">\Pi_{\mathrm{src}}</annotation></semantics></math>
+se vypočítá touto limitou.</p>
+<h3 id="vyšší-fázové-variety-a-objemové-invarianty">8.2 Vyšší fázové
+variety a objemové invarianty</h3>
+<p>Pro každé normované
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>∈</mo><mo>Im</mo><msub><mi>K</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">u\in\operatorname{Im}K_N</annotation></semantics></math>
+je
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>=</mo><mi>−</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">\bar u=-u</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mover><mi>u</mi><mo accent="true">‾</mo></mover><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>u</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u\bar u=\|u\|^2=1</annotation></semantics></math>,
+tedy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">u^2=-1</annotation></semantics></math>.
+Generuje asociativní podalgebru
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>span</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>u</mi><mo stretchy="false" form="postfix">}</mo><mo>≅</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">\operatorname{span}\{1,u\}\cong\mathbb C</annotation></semantics></math>
+i uvnitř nonalternativního
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mrow><mn>16</mn><mo>+</mo></mrow></msub><annotation encoding="application/x-tex">K_{16+}</annotation></semantics></math>.
+Z právě odvozené zdrojové periody
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\Pi_{\mathrm{src}}=\pi</annotation></semantics></math>
+plyne</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Π</mi><mi>u</mi></msub><mo>=</mo><msub><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>𝔉</mi><mi>N</mi></msub><mo>=</mo><msup><mi>S</mi><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mi>/</mi><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>∼</mo><mi>−</mi><mi>u</mi><mo stretchy="false" form="postfix">}</mo><mo>≅</mo><msup><mrow><mi>ℝ</mi><mi>ℙ</mi></mrow><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Pi_u=\Pi_{\mathrm{src}},\qquad\mathfrak F_N=S^{N-2}/\{u\sim-u\}\cong\mathbb{RP}^{N-2}.
+\tag{15}
+</annotation></semantics></math></p>
+<p>Fázová
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>
+se s dimenzí nepředefinuje; mění se geometrie prostorů fází a normový
+defekt jejich kompozice.</p>
+<p>Z Gaussova integrálu v souřadnicových kanálech a radiální integrace
+vyplývají objemy jednotkových koulí a neorientovaných fázových
+rovin:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>N</mi></msub><mo>=</mo><mfrac><msubsup><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow><mrow><mi>N</mi><mi>/</mi><mn>2</mn></mrow></msubsup><mrow><mi>Γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>Φ</mi><mi>N</mi></msub><mo>=</mo><mfrac><msubsup><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow></msubsup><mrow><mi>Γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+V_N=\frac{\Pi_{\mathrm{src}}^{N/2}}{\Gamma(N/2+1)},\qquad
+\Phi_N=\frac{\Pi_{\mathrm{src}}^{(N-1)/2}}{\Gamma((N-1)/2)}.
+\tag{16}
+</annotation></semantics></math></p>
+<p>Zrušení společné
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>-mocniny
+při skládání objemů poskytuje celočíselnou identitu</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msub><mi>V</mi><mi>N</mi></msub><msub><mi>V</mi><mi>M</mi></msub></mrow><msub><mi>V</mi><mrow><mi>N</mi><mo>+</mo><mi>M</mi></mrow></msub></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><mrow><mi>N</mi><mi>/</mi><mn>2</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ℬ</mi><mi>N</mi></msub><mo>=</mo><mfrac><msubsup><mi>V</mi><mi>N</mi><mn>2</mn></msubsup><msub><mi>V</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>N</mi><mrow><mi>N</mi><mi>/</mi><mn>2</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac{V_N V_M}{V_{N+M}}=\binom{(N+M)/2}{N/2},\qquad
+\mathcal B_N=\frac{V_N^2}{V_{2N}}=\binom N{N/2}.
+\tag{17}
+</annotation></semantics></math></p>
+<p>Pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>16</mn><mo>,</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">N=2,4,8,16,32</annotation></semantics></math>
+vycházejí
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>70</mn><mo>,</mo><mn>12870</mn><mo>,</mo><mn>601080390</mn></mrow><annotation encoding="application/x-tex">2,6,70,12870,601080390</annotation></semantics></math>.
+Toto jsou kompoziční konstanty objemů, nikoli libovolně další
+transcendence.</p>
+<h2 id="normový-defekt-z-přesně-stejných-zd-hran">9. Normový defekt z
+přesně stejných ZD hran</h2>
+<p>Pro levé násobení
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>i</mi></msub><mi>y</mi><mo>=</mo><msub><mi>e</mi><mi>i</mi></msub><mi>y</mi></mrow><annotation encoding="application/x-tex">L_i y=e_i y</annotation></semantics></math>
+položme</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>L</mi><mi>i</mi><mi>T</mi></msubsup><msub><mi>L</mi><mi>j</mi></msub><mo>+</mo><msubsup><mi>L</mi><mi>j</mi><mi>T</mi></msubsup><msub><mi>L</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mi>i</mi><mo>&lt;</mo><mi>j</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B_{ij}=\frac12(L_i^TL_j+L_j^TL_i),\quad i&lt;j.
+\tag{18}
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>B</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">B_{ij}</annotation></semantics></math>
+jsou symetrické matice; pro disjunktní assessory jejich nenulové vstupy
+odpovídají právě kladné plaquette (5). Po rozepsání součinu znaménkových
+permutačních matic z (2) se nenulové příspěvky párují právě po
+disjunktních XOR plaquettes s W=+1; jejich čtyři orientace mají
+jednotkový součet ve Frobeniově kontrakci, a proto</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow></munder><mo>tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>B</mi><mrow><mi>i</mi><mi>j</mi></mrow><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>4</mn><msub><mi>E</mi><mi>N</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sum_{i&lt;j}\operatorname{tr}(B_{ij}^2)=4E_N.
+\tag{19}
+</annotation></semantics></math></p>
+<p>Linearizovaný alternativní defekt
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mrow><mi>a</mi><mi>b</mi><mi>c</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>e</mi><mi>a</mi></msub><mo>,</mo><msub><mi>e</mi><mi>b</mi></msub><mo>,</mo><msub><mi>e</mi><mi>c</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>e</mi><mi>b</mi></msub><mo>,</mo><msub><mi>e</mi><mi>a</mi></msub><mo>,</mo><msub><mi>e</mi><mi>c</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mn>2</mn><msub><mi>B</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><msub><mi>e</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T_{abc}=[e_a,e_b,e_c]+[e_b,e_a,e_c]=2B_{ab}e_c</annotation></semantics></math>
+tudíž splňuje</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow></munder><mo stretchy="false" form="postfix">∥</mo><msub><mi>T</mi><mrow><mi>a</mi><mi>b</mi><mi>c</mi></mrow></msub><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>=</mo><mn>32</mn><msub><mi>E</mi><mi>N</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sum_{a,b,c}\|T_{abc}\|^2=32E_N.
+\tag{20}
+</annotation></semantics></math></p>
+<p>Nyní vezměme nezávislé jednotkové
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math>
+rovnoměrné na
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>S</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">S^{N-1}</annotation></semantics></math>.
+Využití sférických kontrakcí čtvrtého momentu</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mi>i</mi></msub><msub><mi>x</mi><mi>j</mi></msub><msub><mi>x</mi><mi>a</mi></msub><msub><mi>x</mi><mi>b</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mfrac><mrow><msub><mi>δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>δ</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>+</mo><msub><mi>δ</mi><mrow><mi>i</mi><mi>a</mi></mrow></msub><msub><mi>δ</mi><mrow><mi>j</mi><mi>b</mi></mrow></msub><mo>+</mo><msub><mi>δ</mi><mrow><mi>i</mi><mi>b</mi></mrow></msub><msub><mi>δ</mi><mrow><mi>j</mi><mi>a</mi></mrow></msub></mrow><mrow><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\mathbb E[x_ix_jx_ax_b]=\frac{\delta_{ij}\delta_{ab}+\delta_{ia}\delta_{jb}+\delta_{ib}\delta_{ja}}{N(N+2)}
+</annotation></semantics></math></p>
+<p>společně s (19) dává <strong>bez jakékoli kalibrace</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>N</mi></msub><mo>=</mo><mi>𝔼</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mi>y</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mn>32</mn><msub><mi>E</mi><mi>N</mi></msub></mrow><mrow><msup><mi>N</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><msup><mi>N</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Q_N=\mathbb E(\|xy\|^2-1)^2
+=\frac{32E_N}{N^2(N+2)^2}
+=\frac{2(N-2)(N-4)(N-8)}{N^2(N+2)^2}.
+\tag{21}
+</annotation></semantics></math></p>
+<p>Pro dvě imaginární jednotkové fáze
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>∈</mo><msup><mi>S</mi><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">u,v\in S^{N-2}</annotation></semantics></math>
+analogicky</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>Q</mi><mi>N</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mo>=</mo><mfrac><mrow><mn>32</mn><msub><mi>E</mi><mi>N</mi></msub></mrow><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Q_N^{\mathrm{phase}}=\frac{32E_N}{(N-1)^2(N+1)^2}.
+\tag{22}
+</annotation></semantics></math></p>
+<p>Oba momenty jsou nulové pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mn>2</mn></msub><mo>,</mo><msub><mi>K</mi><mn>4</mn></msub><mo>,</mo><msub><mi>K</mi><mn>8</mn></msub></mrow><annotation encoding="application/x-tex">K_2,K_4,K_8</annotation></semantics></math>,
+od
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>16</mn></msub><annotation encoding="application/x-tex">K_{16}</annotation></semantics></math>
+kladné a asymptoticky
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∼</mo><mn>2</mn><mi>/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\sim 2/N</annotation></semantics></math>.
+Pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>16</mn></msub><annotation encoding="application/x-tex">K_{16}</annotation></semantics></math>
+dostáváme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>16</mn></msub><mo>=</mo><mn>7</mn><mi>/</mi><mn>216</mn></mrow><annotation encoding="application/x-tex">Q_{16}=7/216</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>Q</mi><mn>16</mn><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mo>=</mo><mn>896</mn><mi>/</mi><mn>21675</mn></mrow><annotation encoding="application/x-tex">Q_{16}^{\mathrm{phase}}=896/21675</annotation></semantics></math>;
+pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>K</mi><mn>32</mn></msub><annotation encoding="application/x-tex">K_{32}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>32</mn></msub><mo>=</mo><mn>315</mn><mi>/</mi><mn>9248</mn></mrow><annotation encoding="application/x-tex">Q_{32}=315/9248</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>Q</mi><mn>32</mn><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mo>=</mo><mn>4480</mn><mi>/</mi><mn>116281</mn></mrow><annotation encoding="application/x-tex">Q_{32}^{\mathrm{phase}}=4480/116281</annotation></semantics></math>.</p>
+<p>Definujme čtvrtomomentový objem
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒫</mi><mi>N</mi></msub><mo>=</mo><msub><mi>V</mi><mi>N</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>Q</mi><mi>N</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal P_N=V_N(1+Q_N)</annotation></semantics></math>.
+Jeho CD fúze je exaktně</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒞</mi><mi>N</mi></msub><mo>=</mo><mfrac><msubsup><mi>𝒫</mi><mi>N</mi><mn>2</mn></msubsup><msub><mi>𝒫</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>N</mi><mrow><mi>N</mi><mi>/</mi><mn>2</mn></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>Q</mi><mi>N</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mn>1</mn><mo>+</mo><msub><mi>Q</mi><mrow><mn>2</mn><mi>N</mi></mrow></msub></mrow></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\mathcal C_N=\frac{\mathcal P_N^2}{\mathcal P_{2N}}=\binom N{N/2}\frac{(1+Q_N)^2}{1+Q_{2N}},
+\tag{23}
+</annotation></semantics></math></p>
+<p>tedy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒞</mi><mn>8</mn></msub><mo>=</mo><mn>15120</mn><mi>/</mi><mn>223</mn></mrow><annotation encoding="application/x-tex">\mathcal C_8=15120/223</annotation></semantics></math>
+a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒞</mi><mn>16</mn></msub><mo>=</mo><mn>10275751915</mn><mi>/</mi><mn>774603</mn></mrow><annotation encoding="application/x-tex">\mathcal C_{16}=10275751915/774603</annotation></semantics></math>.
+Tady se poprvé v jediné přesné racionální skladbě potkávají zdrojové
+fázové objemy a nativní ZD-normový defekt.</p>
+<h2 id="algebraický-závěr">10. Algebraický závěr</h2>
+<p>Základní objekt není statický graf ani seznam pěkných konstant. Jde o
+<strong>nekonečný, lokálně přesně rekonstruovatelný, signed vícetypový
+informační les</strong>, který zároveň (i) dědí plné anihilační
+podprostory, (ii) produkuje asymptoticky polovinu nových hran, (iii) má
+kontrolovatelné konečné spektrum i limitní geometrie a (iv) určuje vyšší
+fázové a normově-kompoziční invarianty. Adresový oracle a jeho přesná
+aritmetika otevírají výpočetní aplikace v doprovodném Paperu B.</p>
+<h2 id="přesné-hranice-objektu-a-inverzní-adresace">11. Přesné hranice
+objektu a inverzní adresace</h2>
+<p>Zde rozlišujeme čtyři různé nosiče, které nelze identifikovat: (i)
+množinu kanonických bázových adres
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,\dots,N-1\}</annotation></semantics></math>,
+(ii) assessory
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a,b)</annotation></semantics></math>
+a jejich podepsané diagonály, (iii) nepodepsaný graf vybraných nulových
+součinů, (iv) celé spojité algebraické variety nulových dělitelů. Věty o
+počtech hran platí pro (iii), věta o anulujících podprostorech produkuje
+podmnožiny (iv). Jediný dvojčlenný root tedy není bijektivní
+parametrizací všech nulových dělitelů.</p>
+<p>Adresový tuple pro podepsanou hranu je
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝖹</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>,</mo><mi>χ</mi><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mo stretchy="false" form="prefix">{</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mi>σ</mi><mo>,</mo><mi>τ</mi><mo>,</mo><mtext mathvariant="normal">orientation</mtext><mo>,</mo><mtext mathvariant="normal">ancestry</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mi>a</mi><mo>⊕</mo><mi>b</mi><mo>=</mo><mi>c</mi><mo>⊕</mo><mi>d</mi><mo>=</mo><mi>χ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathsf Z=(k,\chi,\{a,b\},\{c,d\},\sigma,\tau,\text{orientation},\text{ancestry}),\quad a\oplus b=c\oplus d=\chi.
+</annotation></semantics></math> Kanonizujeme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;b</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&lt;</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">c&lt;d</annotation></semantics></math>
+a lexikografické pořadí obou assessorů; orientaci a relativní znaménka
+uchováváme odděleně. Identita řeší deterministickou deduplikaci; není to
+nové algebraické axiomové pravidlo. Algebraické násobení vyžaduje
+explicitní závorkování v každém produktu délky alespoň tři.</p>
+<p><strong>Propozice 5 (adresace v rodině).</strong> Pro fixovaný root,
+výšku
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+a dvojici bitových slov
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>t</mi></msup></mrow><annotation encoding="application/x-tex">u,v\in\{0,1\}^t</annotation></semantics></math>
+existuje jednoznačná dvojice zděděných kopií
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>u</mi></msub><mo>,</mo><msub><mi>y</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">x_u,y_v</annotation></semantics></math>
+generovaná opakovaným vnořením
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>↦</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z\mapsto(z,0),(0,z)</annotation></semantics></math>;
+součin v obou pořadích je nulový. <em>Důkaz.</em> Indukce z věty 2;
+slovo určuje posloupnost vnoření.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>Jednoznačnost adresy pro pevně zvolený root neznamená, že různé rooty
+nemohou vyprodukovat shodný geometrický směr. Pro globální identitu je
+třeba kanonizovat vektor a řešit ekvivalenci podprostorů.</p>
+<h2 id="matematická-mechanika-vyšších-π-úplná-řada-přechodů">12.
+Matematická mechanika vyšších π — úplná řada přechodů</h2>
+<p>Je-li
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mi>N</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n=N/2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>M</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">m=M/2</annotation></semantics></math>,
+přímou integrací Gaussovy hustoty dostáváme
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><msup><mi>ℝ</mi><mi>N</mi></msup></msub><msup><mi>e</mi><mrow><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msup></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><msubsup><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow><mrow><mi>N</mi><mi>/</mi><mn>2</mn></mrow></msubsup><mo>=</mo><mo>area</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>S</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mfrac><mrow><mi>Γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\int_{\mathbb R^N}e^{-\|x\|^2}\,dx=\Pi_{\mathrm{src}}^{N/2}
+=\operatorname{area}(S^{N-1})\,\frac{\Gamma(N/2)}2.
+</annotation></semantics></math> Odtud plyne
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>area</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>S</mi><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><msubsup><mi>Π</mi><mrow><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">c</mi></mrow><mrow><mi>N</mi><mi>/</mi><mn>2</mn></mrow></msubsup><mi>/</mi><mi>Γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{area}(S^{N-1})=2\Pi_{\mathrm{src}}^{N/2}/\Gamma(N/2)</annotation></semantics></math>,
+a po vydělení
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+přesně objem
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mi>N</mi></msub><annotation encoding="application/x-tex">V_N</annotation></semantics></math>
+z (16). Projektivní fáze identifikuje antipody, takže
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Φ</mi><mi>N</mi></msub><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mo>area</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>S</mi><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\Phi_N=\tfrac12\operatorname{area}(S^{N-2})</annotation></semantics></math>,
+opět (16). Z
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>n</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">\Gamma(n+1)=n!</annotation></semantics></math>
+následně
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msub><mi>V</mi><mi>N</mi></msub><msub><mi>V</mi><mi>M</mi></msub></mrow><msub><mi>V</mi><mrow><mi>N</mi><mo>+</mo><mi>M</mi></mrow></msub></mfrac><mo>=</mo><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow><mrow><mi>n</mi><mi>!</mi><mi>m</mi><mi>!</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ℬ</mi><mi>N</mi></msub><mo>=</mo><mfrac><mrow><mi>N</mi><mi>!</mi></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac{V_NV_M}{V_{N+M}}=\frac{(n+m)!}{n!m!},\qquad
+\mathcal B_N=\frac{N!}{((N/2)!)^2}.
+</annotation></semantics></math> Tyto identity oddělují univerzální
+periodu na každé komplexní fázové rovině od růstu objemových a normových
+invariantů ve vyšších CD vrstvách. Ze stejného
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>N</mi></msub><annotation encoding="application/x-tex">E_N</annotation></semantics></math>
+pak podle (19)–(23) vzniká přesná posloupnost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>N</mi></msub><annotation encoding="application/x-tex">Q_N</annotation></semantics></math>
+a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝒞</mi><mi>N</mi></msub><annotation encoding="application/x-tex">\mathcal C_N</annotation></semantics></math>.
+Přitom
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝒫</mi><mi>N</mi></msub><annotation encoding="application/x-tex">\mathcal P_N</annotation></semantics></math>
+je <em>definovaný normově vážený objem</em>, nikoli tvrzení, že běžný
+eukleidovský objem koule mění hodnotu.</p>
+<p><strong>Propozice 6 (asymptotika normového defektu).</strong> Pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">N\to\infty</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">N=2^k</annotation></semantics></math>,
+platí
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>N</mi></msub><mo>=</mo><mfrac><mn>2</mn><mi>N</mi></mfrac><mo>−</mo><mfrac><mn>36</mn><msup><mi>N</mi><mn>2</mn></msup></mfrac><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msubsup><mi>Q</mi><mi>N</mi><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">e</mi></mrow></msubsup><mo>=</mo><mfrac><mn>2</mn><mi>N</mi></mfrac><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Q_N=\frac2N-\frac{36}{N^2}+O(N^{-3}),\qquad
+Q_N^{\mathrm{phase}}=\frac2N+O(N^{-2}).
+</annotation></semantics></math> První koeficient získáme z rozvoje
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>N</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">2(N-2)(N-4)(N-8)/(N^2(N+2)^2)</annotation></semantics></math>:
+čitatel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mi>N</mi><mn>3</mn></msup><mo>−</mo><mn>28</mn><msup><mi>N</mi><mn>2</mn></msup><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">2N^3-28N^2+\cdots</annotation></semantics></math>,
+jmenovatel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>N</mi><mn>4</mn></msup><mo>+</mo><mn>4</mn><msup><mi>N</mi><mn>3</mn></msup><mo>+</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">N^4+4N^3+\cdots</annotation></semantics></math>,
+takže koeficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>N</mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">N^{-2}</annotation></semantics></math>
+je
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>28</mn><mo>−</mo><mn>8</mn><mo>=</mo><mi>−</mi><mn>36</mn></mrow><annotation encoding="application/x-tex">-28-8=-36</annotation></semantics></math>,
+<strong>tedy správně</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><menclose notation="box"><mrow><msub><mi>Q</mi><mi>N</mi></msub><mo>=</mo><mfrac><mn>2</mn><mi>N</mi></mfrac><mo>−</mo><mfrac><mn>36</mn><msup><mi>N</mi><mn>2</mn></msup></mfrac><mo>+</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>N</mi><mrow><mi>−</mi><mn>3</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow></menclose><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\boxed{Q_N=\frac2N-\frac{36}{N^2}+O(N^{-3})}.
+</annotation></semantics></math> Předchozí mezivýraz není samostatná
+věta; rozhodující je finální přesný rozvoj. V tištěné verzi používáme
+pouze finální podobu.</p>
+<h2 id="reprodukční-specifikace">13. Reprodukční specifikace</h2>
+<p>Referenční implementace musí splnit:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>±</mi><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\varepsilon(a,b)\in\{\pm1\}</annotation></semantics></math>;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>a</mi></msub><msub><mi>e</mi><mi>b</mi></msub><mo>=</mo><mi>ε</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>e</mi><mrow><mi>a</mi><mo>⊕</mo><mi>b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">e_a e_b=\varepsilon(a,b)e_{a\oplus b}</annotation></semantics></math>;
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>e</mi><mi>i</mi><mn>2</mn></msubsup><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">e_i^2=-1</annotation></semantics></math>
+pro
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">i&gt;0</annotation></semantics></math>;
+nulový svědek (7); kontrolu 84/315 v K16 a přesných
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mi>N</mi></msub><annotation encoding="application/x-tex">E_N</annotation></semantics></math>
+v K32 a K64; identitu zděděného operátoru
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>0</mn></msub><mo>⊗</mo><msub><mi>J</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">A_0\otimes J_m</annotation></semantics></math>
+na nezávislých vektorech; exaktní racionální testy (21)–(23). Pro
+násobení mimo bázové prvky musí test zahrnout všechna rozdělení součtu
+na dvě složky. Python referenční program, strojově čitelný soubor
+certifikátů a testovací generátor jsou součástí doprovodného balíku.</p>
+<h2 id="závěrečná-matematická-věta">14. Závěrečná matematická věta</h2>
+<p>Pro všechny úrovně
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">k\ge4</annotation></semantics></math>
+standardní nesplitové CD věže existuje uniformní signed adresový oracle.
+Výběrový dvoučlenný ZD atlas má přesnou kombinatoriku, dědičné anulující
+podprostory a oddělený rozpočet nově vznikajících vazeb. Sférické
+normové momenty a jejich vyšší-π složeniny jsou určeny týmž algebraickým
+nosičem. Nekonečná konstrukce je dána kompatibilní sekvencí konečných
+úrovní; nejde o požadavek uložit nekonečnou matici.</p>
+<h2 id="literatura">Literatura</h2>
+<p>[1] G. Moreno, <em>The zero divisors of the Cayley–Dickson algebras
+over the real numbers</em>, arXiv:q-alg/9710013.<br />
+[2] R. P. C. de Marrais, <em>The 42 Assessors and the Box-Kites they
+fly</em>, arXiv:math/0011260.<br />
+[3] R. P. C. de Marrais, <em>Flying Higher Than a Box-Kite</em>,
+arXiv:math/0207003.<br />
+[4] G. Moreno, <em>Constructing zero divisors in the higher dimensional
+Cayley–Dickson algebras</em>, arXiv:math/0512517.</p>
+</body>
+</html>

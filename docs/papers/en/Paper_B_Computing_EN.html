@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Paper_B_Computing_EN</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1
+id="fractal-zero-divisor-computing-b-generative-operators-and-parallel-computing">Fractal
+Zero-Divisor Computing — B: Generative Operators and Parallel
+Computing</h1>
+<p><strong>Author:</strong> Vladimír Bíža<br />
+<strong>Research manuscript · English technical edition · 25 October
+2026</strong><br />
+<strong>Scope:</strong> Mathematics and computer science; independent of
+any physical theory.</p>
+<h2 id="abstract">Abstract</h2>
+<p>We translate a signed Cayley–Dickson information forest into a
+practical algorithmic design: compute algebraically determined
+relationships at query time, represent inherited adjacency as a
+matrix-free operator, track new qualified relations in a separate
+frontier, and preserve noncommutative, nonassociative and nonalternative
+information as typed channels. We provide a resource model, PostgreSQL
+storage design, GPU execution plan and reproducible Python/Rust
+reference workflow. The design is intended for compatible computational
+structures, not as a universal replacement for sparse algebra, databases
+or consensus.</p>
+<h2 id="the-computational-primitive-is-a-structural-address">1. The
+computational primitive is a structural address</h2>
+<p>Use a typed structural key rather than allocating an object for every
+implied graph edge. An address includes its Cayley–Dickson level, basis
+indices, XOR color, orientation, relative sign, ancestry word, birth
+level, and relation type. A sign oracle evaluates a basis product using
+O(log N) stages and constant auxiliary storage in an iterative
+implementation.</p>
+<p>The XOR color never replaces all four indices of a plaquette. A
+relation type distinguishes ZD, NZD, commutator, associator, alternator,
+shared incidence and birth. A mathematical key specifies algebraic
+structure but does not itself store arbitrary application data.</p>
+<h2 id="do-not-store-annihilating-matrices-apply-their-operators">2. Do
+not store annihilating matrices; apply their operators</h2>
+<p>For an inherited component, the adjacency is A₀⊗J_m. Matrix–vector
+multiplication can be performed by reducing each ancestry block to a
+scalar, multiplying the root vector by the small sparse root adjacency,
+and broadcasting each root response to descendants. This has work
+Θ(rm+e) for r root vertices and e root edges instead of Θ(r²m²) dense
+work, excluding input/output storage.</p>
+<p>The Python reference below shows the exact transformation. Crucially,
+it models the inherited component only; the complete zero-divisor forest
+also has newly born components. The speedup here is a property of matrix
+factorization, shared with general implicit linear operators, not an
+automatic breakthrough of zero-divisor algebra over all structured
+solvers.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>q</mi></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>v</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><msub><mi>x</mi><mrow><mi>q</mi><mo>,</mo><mi>v</mi></mrow></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>r</mi><mi>p</mi></msub><mo>=</mo><munder><mo>∑</mo><mi>q</mi></munder><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>p</mi><mi>q</mi></mrow></msub><msub><mi>s</mi><mi>q</mi></msub><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>y</mi><mrow><mi>p</mi><mo>,</mo><mi>u</mi></mrow></msub><mo>=</mo><msub><mi>r</mi><mi>p</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+s_q=\sum_{v=1}^{m} x_{q,v},\quad r_p=\sum_q (A_0)_{pq}s_q,\quad y_{p,u}=r_p.
+\tag{1}
+</annotation></semantics></math></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apply_inherited(a0, x):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># x[p][u], p in 0..root-1, u in 0..m-1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    sums <span class="op">=</span> [<span class="bu">sum</span>(block) <span class="cf">for</span> block <span class="kw">in</span> x]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    out <span class="op">=</span> [<span class="bu">sum</span>(a0[p][q] <span class="op">*</span> sums[q] <span class="cf">for</span> q <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a0)))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>           <span class="cf">for</span> p <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a0))]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [[out[p]] <span class="op">*</span> <span class="bu">len</span>(x[p]) <span class="cf">for</span> p <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a0))]</span></code></pre></div>
+<h2 id="inherited-structure-versus-born-frontier">3. Inherited structure
+versus born frontier</h2>
+<p>At each doubling we distinguish (a) an immutable root or known
+inherited factor, (b) the signed recursion, (c) a frontier describing
+newly qualified edges, and (d) optional caches. The number of newborn
+edges is exactly E_{2N}−4E_N, but a count is not a constructive
+enumerator. To materialize the frontier one must actually generate
+candidate address tuples or use an equivalent constructive classifier
+and confirm them with the plaquette predicate.</p>
+<p>A useful API reports not just a boolean zero-product decision but
+provenance: which root generated the relation, its sign, its generation
+and the check that certified it.</p>
+<h2 id="applications-to-ai-and-stateful-systems">4. Applications to AI
+and stateful systems</h2>
+<p>The algebraic forest is a structural index, not a pretrained
+cognitive model. In AI and graph-like application state we distinguish
+an algebraic key, recorded mutable state, and semantic payload. Only
+mathematically implied incidences are recomputed; actual learned
+parameters, observations and commitments must be persisted.</p>
+<p>Triples preserve explicit parentheses. An associative reduction or a
+careless GPU kernel can destroy the information carried by
+nonassociativity. Krylov observability permits an exact test for which
+operator dimensions are absent from a selected readout. These are
+potential components of AI infrastructure and query planning, not
+evidence that the algebra alone learns tasks.</p>
+<h2 id="memory-hierarchy-vram-ram-and-nvme">5. Memory hierarchy: VRAM,
+RAM and NVMe</h2>
+<p>Keep active sparse amplitudes, GPU batches and Krylov workspaces in
+VRAM; ancestry indexes, caches and the current birth frontier in RAM;
+and immutable roots, committed application deltas and provenance on
+NVMe. Avoid storing a full Cayley–Dickson multiplication table if only a
+small signed support is active. The memory required for actual dense
+state vectors still scales with the amount of state; an address oracle
+does not compress arbitrary user data.</p>
+<h2 id="gpu-parallelism-and-deterministic-execution">6. GPU parallelism
+and deterministic execution</h2>
+<p>Partition kernels by XOR color, ancestry prefix, relation kind and
+active support. For inherited blocks perform reduction and root
+aggregation, then broadcast. For born blocks use filtered enumeration
+and sparse gathers. Signed basis multiplication groups naturally by XOR
+and the recursive sign bit; struct-of-arrays layouts permit coalesced
+loads. Synchronization remains necessary wherever associators or other
+probes couple otherwise independent blocks.</p>
+<p>A safe deterministic pipeline preserves orientation, relative sign,
+provenance, and complete parenthesization. The steps below are an
+implementation contract rather than an empirical performance claim.</p>
+<pre class="text"><code>stage A: select active (root, chi, ancestry, relation-kind)
+stage B: classify inherited factor / born frontier
+stage C: batch sign oracle + sparse algebraic operators
+stage D: reduce partial responses deterministically
+stage E: collect closure residual + persist qualified delta</code></pre>
+<h2 id="databases-and-generic-trees">7. Databases and generic trees</h2>
+<p>Two separate concepts should not be conflated: a source-algebra index
+with fully determined signed identities, and a generic hierarchical
+business-data index inspired by algebraic structural sharing. An
+arbitrary customer relationship cannot be reconstructed from XOR bits
+unless explicitly mapped and qualified.</p>
+<p>The PostgreSQL example separates immutable algebraic roots from
+persistent delta records. Real semantic payloads are content addressed
+and stored transactionally. Binary canonical address keys should use
+byte encoding when fixed-width integer types are insufficient.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> zd_root (</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  root_id BIGINT <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">level</span> <span class="dt">INT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  chi BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  scheme_version <span class="dt">INT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  immutable_hash BYTEA <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> zd_delta (</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  root_id BIGINT <span class="kw">REFERENCES</span> zd_root(root_id),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  ancestry BYTEA <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  birth_level <span class="dt">INT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  a BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>, b BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  c BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>, d BIGINT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  relation_kind <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  orientation <span class="dt">SMALLINT</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  payload_ref BYTEA,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">PRIMARY</span> <span class="kw">KEY</span>(root_id, ancestry, a,b,c,d,relation_kind)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">INDEX</span> zd_delta_birth_idx <span class="kw">ON</span> zd_delta(birth_level, relation_kind);</span></code></pre></div>
+<h2 id="higher-π-invariants-as-exact-test-oracles">8. Higher-π
+invariants as exact test oracles</h2>
+<p>The mathematics companion supplies exact quantities such as V_N, Φ_N,
+Q_N, phase-restricted Q_N and the norm-weighted compound C_N. Q_N is a
+mean squared norm-multiplicativity defect of independent unit source
+vectors and serves as a deterministic analytical target for validating a
+signed kernel. It is not a free performance multiplier or a proxy for
+intelligence.</p>
+<p>The Fraction-based Python reference avoids Monte Carlo as a
+correctness oracle. A runtime may optionally collect sampled numerical
+estimates, but must compare those against the exact rational formula
+under well-defined tolerances.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fractions <span class="im">import</span> Fraction</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> comb</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> edges(n):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span> <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">16</span> <span class="cf">else</span> (n<span class="op">-</span><span class="dv">2</span>)<span class="op">*</span>(n<span class="op">-</span><span class="dv">4</span>)<span class="op">*</span>(n<span class="op">-</span><span class="dv">8</span>)<span class="op">//</span><span class="dv">16</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> q(n):</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Fraction(<span class="dv">32</span><span class="op">*</span>edges(n), n<span class="op">*</span>n<span class="op">*</span>(n<span class="op">+</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> q_phase(n):</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Fraction(<span class="dv">32</span><span class="op">*</span>edges(n), (n<span class="op">-</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span><span class="op">*</span>(n<span class="op">+</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compound(n):</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Fraction(comb(n,n<span class="op">//</span><span class="dv">2</span>), <span class="dv">1</span>) <span class="op">*</span> (<span class="dv">1</span><span class="op">+</span>q(n))<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">1</span><span class="op">+</span>q(<span class="dv">2</span><span class="op">*</span>n))</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> q(<span class="dv">16</span>) <span class="op">==</span> Fraction(<span class="dv">7</span>,<span class="dv">216</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> q(<span class="dv">32</span>) <span class="op">==</span> Fraction(<span class="dv">315</span>,<span class="dv">9248</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> compound(<span class="dv">8</span>) <span class="op">==</span> Fraction(<span class="dv">15120</span>,<span class="dv">223</span>)</span></code></pre></div>
+<h2 id="reproducibility-and-benchmarking-contract">9. Reproducibility
+and benchmarking contract</h2>
+<p>The supplied Python scripts check the canonical zero-divisor counts
+and moment identities. A Rust reference implements the signed oracle and
+should be compiled and tested on the target machine before claims about
+native speed are made. Compare implementations on matching workloads and
+record RSS, GPU memory, p50/p99 latency, throughput, and
+correctness.</p>
+<p>Fair baselines include explicit sparse representations such as
+CSR/GraphBLAS and optimized matrix-free/Kronecker operators. The latter
+can match the factorized application cost; the distinct contribution of
+the zero-divisor atlas is the signed generative incidence,
+multi-operator typing and newborn-edge genealogy.</p>
+<h2 id="first-computing-synthesis">10. First computing synthesis</h2>
+<p>The key engineering principle is to store qualified novelty and
+application payload while deriving every mathematical relation that the
+algebra can reconstruct. This is useful when the application has a
+compatible structure, not as a universal replacement for databases,
+consensus or access control. A zero product is not a confidentiality
+primitive, and rank-based recovery requires adequate independent
+surviving information.</p>
+<h2 id="complete-typed-contract-and-invariants">11. Complete typed
+contract and invariants</h2>
+<p>Separate AlgebraKey, StorageKey and SemanticPayload. The algebraic
+key records convention and tower version, full signed address, root and
+operator type. The storage key additionally records epoch and
+persistence identity; payload is an independent content-addressed datum.
+Nothing in the signed recursion recreates an unrecorded user event.</p>
+<p>A compiler must distinguish Mul(Mul(x,y),z) from Mul(x,Mul(y,z)).
+Cross-device tests validate exact signs, supports and associators
+separately from floating-point tolerances.</p>
+<h2 id="compute-kernels-and-cost-model">12. Compute kernels and cost
+model</h2>
+<p>Let the root have r nodes and e edges, with m=2^t descendants per
+root. An explicit dense adjacency stores r²m² entries. The factorized
+inherited matvec uses Θ(rm+e) operations and O(r) scratch beyond
+input/output, with no need for r²m² temporary storage. A random edge
+query needs the root addresses, signed predicate and ancestry; no full
+matrix allocation.</p>
+<p>Newborn-edge enumeration is separate. It performs deterministic
+candidate generation, W=+1 classification and deduplication of signed
+keys. Replacing the old matrix with only a Kronecker factor computes
+only an inherited subgraph, not the entire source forest.</p>
+<h2 id="parallel-determinism-and-persistence">13. Parallel determinism
+and persistence</h2>
+<p>Partition work units by level, XOR color, root, ancestry prefix and
+channel and assign a monotonic epoch. Each unit produces an immutable
+delta with its source hash, operator and payload hash. Floating-point
+reductions need a prescribed merge order; symbolic operations may be
+reordered only when the particular algebraic operation permits it.
+Persist application events transactionally and reconstruct inherited
+mathematics on demand.</p>
+<p>A cold restart validates tower-sign convention, root fingerprints and
+persisted provenance. Multi-channel probes preserve zero/nonzero,
+commutator, associator, alternator and birth responses as separate
+outputs; incomplete Krylov rank is reported as an unobservable
+complement.</p>
+<h2 id="regression-and-experimental-protocol">14. Regression and
+experimental protocol</h2>
+<p>The explicit and factorized matvec references must produce identical
+outputs on identical inputs at small dimensions before benchmark curves
+are reported. Record algorithm name, dimension, elapsed time, memory
+estimate and correctness status. Do not extrapolate one device’s
+measured latency into a universal hardware theorem.</p>
+<p>Any learning-oriented application needs independent tests for
+structural correctness, persistence correctness and actual competence
+changes, preferably with the teaching oracle removed during evaluation.
+Memory compression is not by itself evidence of learning.</p>
+<h2 id="conclusion">15. Conclusion</h2>
+<p>The signed Cayley–Dickson convention gives an addressable algebraic
+oracle; the inherited genealogy gives fast implicit operators; the birth
+frontier preserves genuine new edges; and higher-order probes retain
+information absent from a pairwise adjacency. The construction provides
+a concrete, testable software architecture for compatible mathematical
+state spaces. Its algorithms and their limitations are explicit,
+enabling fair reproducible comparison against contemporary sparse and
+structured operators.</p>
+<h2 id="references">References</h2>
+<p>[1] V. Bíža, <em>Fractal Zero-Divisor Computing — A</em>, companion
+mathematical paper.</p>
+<p>[2] G. Moreno, <em>Constructing zero divisors in the higher
+dimensional Cayley–Dickson algebras</em>, arXiv:math/0512517.</p>
+<p>[3] T. A. Davis, <em>Algorithm 1000: SuiteSparse:GraphBLAS</em>, ACM
+Transactions on Mathematical Software.</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "protocol": "file:",
+  "passed": 24,
+  "checks": [
+    "reset uses K2048 chi=1025",
+    "9 internal algebra/recovery checks",
+    "K2048 census",
+    "atlas initial exact zero",
+    "atlas probe 1 · ZD / anihilace",
+    "atlas probe 2 · non-ZD / součin",
+    "atlas probe 3 · komutátor",
+    "atlas probe 4 · asociátor",
+    "atlas probe 5 · alternátor",
+    "atlas rejects equal addresses",
+    "atlas random addresses valid",
+    "atlas real query benchmark",
+    "70 percent loss reconstructs exactly (10/8 observations)",
+    "85 percent loss fails honestly (5/8 observations)",
+    "75 percent loss is exact recovery boundary",
+    "80 percent loss lacks rank",
+    "new payload also reconstructs",
+    "e1 associator minus four e7",
+    "e8 zero associator",
+    "birth K16 84",
+    "birth K32 1260 total and 924 new",
+    "birth K2048 census",
+    "mobile no horizontal overflow",
+    "no page errors"
+  ],
+  "errors": [],
+  "resources": []
+}

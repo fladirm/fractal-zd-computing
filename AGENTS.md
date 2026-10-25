@@ -1,0 +1,3 @@
+# Codex instructions for this repository
+
+Owner: Vladimír Bíža. This is an independent mathematics-and-computer-science publication package. Read `CODEX_PUBLISH_PROMPT.md` and `PUBLISHING.md`. Preserve author attribution, exact mathematics and proof structure. Do not mix unrelated physical TOE paper releases into this repository. Never commit secrets, tokens, cookies or personal profile private data. If the user asks you to publish, follow the exact confirmed-target workflow in `CODEX_PUBLISH_PROMPT.md`; verify actual GitHub/LinkedIn URLs and record them in `PUBLICATION_RESULTS.md`. For programmatic alterations, run provided Python tests and Rust tests (if toolchain is available). The `demo/index.html` must remain offline one-click (no CDN, no API key, no server).
