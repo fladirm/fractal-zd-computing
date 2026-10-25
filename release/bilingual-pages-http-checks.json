@@ -1,0 +1,30 @@
+{
+  "source_commit": "e95713bc1f995f036241be4b15a541575435f25b",
+  "verified_at": "2026-10-25T04:12:01.293231+00:00",
+  "results": [
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/?lang=en",
+      "status": 200,
+      "sha256": "ec0591c89e612c3d3ab52a32c6abbfd0b5328352adb202750dc628f715a1360b",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/?lang=cs",
+      "status": 200,
+      "sha256": "ec0591c89e612c3d3ab52a32c6abbfd0b5328352adb202750dc628f715a1360b",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/demo/?lang=en",
+      "status": 200,
+      "sha256": "23df5ce31f2e73cb34ee651d1fbf676502fddba4bbc2350df49cc86f71a369e6",
+      "matches_source": true
+    },
+    {
+      "url": "https://fladirm.github.io/fractal-zd-computing/demo/?lang=cs",
+      "status": 200,
+      "sha256": "23df5ce31f2e73cb34ee651d1fbf676502fddba4bbc2350df49cc86f71a369e6",
+      "matches_source": true
+    }
+  ]
+}

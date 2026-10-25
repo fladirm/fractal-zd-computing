@@ -35,7 +35,7 @@ Demo i web mají přepínač **EN / CZ**. Přeložené jsou čtyři scénáře, 
 
 Prošlo **62 offline jazykových a funkčních kontrol**, bez chyb JavaScriptu a bez externí sítě. Ověřena je i mobilní šířka 390 px, zachování jazyka a přenos jeho volby z webu do dema. [Výsledky](release/bilingual-demo-checks.json).
 
-Ověření nasazení EN/CZ: **ČEKÁ NA NASAZENÍ**.
+Ověření nasazení EN/CZ: **BĚŽÍ / PASS**, ověřeno **2026-10-25T04:12:12.381Z**. Všechny čtyři EN/CZ adresy webu a dema vracejí HTTP 200 a odpovídají nasazeným souborům. Prošlo **23 živých interakčních kontrol** bez chyb stránky. [HTTP výsledky](release/bilingual-pages-http-checks.json), [živé testy](release/bilingual-live-checks.json), [úspěšné CI](https://github.com/fladirm/fractal-zd-computing/actions/runs/40160937512), [úspěšné nasazení Pages](https://github.com/fladirm/fractal-zd-computing/actions/runs/40160937130).
 
 ## Testy a stav repozitáře
 

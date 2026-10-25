@@ -1,0 +1,31 @@
+{
+  "source_commit": "e95713bc1f995f036241be4b15a541575435f25b",
+  "verified_at": "2026-10-25T04:12:12.381Z",
+  "passed": 23,
+  "checks": [
+    "en landing language",
+    "en landing-to-demo language",
+    "en demo language",
+    "en internal math checks",
+    "en atlas computation",
+    "en recovery",
+    "en insufficient rank",
+    "en associator",
+    "en birth count",
+    "en language switch preserves scene",
+    "en language switch preserves input",
+    "cs landing language",
+    "cs landing-to-demo language",
+    "cs demo language",
+    "cs internal math checks",
+    "cs atlas computation",
+    "cs recovery",
+    "cs insufficient rank",
+    "cs associator",
+    "cs birth count",
+    "cs language switch preserves scene",
+    "cs language switch preserves input",
+    "no page errors"
+  ],
+  "errors": []
+}

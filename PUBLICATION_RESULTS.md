@@ -2,7 +2,7 @@
 
 **English** · [Čeština](PUBLICATION_RESULTS_CS.md)
 
-Author: **Vladimír Bíža**. Verification timestamp: **2026-10-25T03:42:43+00:00**.
+Author: **Vladimír Bíža**. Verification timestamp: **2026-10-25T04:12:12.381Z**.
 
 **GitHub publication is complete. The author reports having published on LinkedIn manually and requested no further LinkedIn changes. Its permalink has not been supplied or independently verified.**
 
@@ -57,7 +57,7 @@ The single-file offline demo and Pages landing now include an **EN / CZ** switch
 
 All four scenes, controls, calculations, explanations, status messages and canvas labels are available in both languages. Language changes preserve inputs, the current scene, the selected probe and the recovery outcome. Both languages remain embedded in the offline file, with no external dependency. **62 offline browser checks passed**, with no JavaScript errors or network resources; see [bilingual checks](release/bilingual-demo-checks.json). The Python oracle, educational benchmark and five Rust tests also passed after the interface changes.
 
-Bilingual deployment verification: **PENDING**. The existing `v1.0.0` tag and its original four PDFs remain unchanged; the interface update is published from `main`.
+Bilingual deployment verification: **LIVE / PASS**, checked at **2026-10-25T04:12:12.381Z**. All four EN/CZ landing/demo URLs returned HTTP 200 and matched the deployed source. **23 live interaction checks passed** with no page errors. [HTTP evidence](release/bilingual-pages-http-checks.json), [live interaction evidence](release/bilingual-live-checks.json). [Bilingual update CI](https://github.com/fladirm/fractal-zd-computing/actions/runs/40160937512) and [Pages deployment](https://github.com/fladirm/fractal-zd-computing/actions/runs/40160937130) both succeeded. The existing `v1.0.0` tag and its original four PDFs remain unchanged; the interface update is published from `main`.
 
 ## LinkedIn status reported by the author
 
